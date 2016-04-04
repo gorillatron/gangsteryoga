@@ -1,9 +1,10 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').load();
+require('babel-register')
 
 // Require keystone
-var keystone = require('keystone');
+var keystone = require("keystone")
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -13,19 +14,29 @@ keystone.init({
 
 	'name': 'gangsteryoga',
 	'brand': 'gangsteryoga',
-	
+
 	'less': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,
 	'user model': 'User'
 
 });
+
+// Cloudinary media
+
+keystone.set('cloudinary config', "cloudinary://151379816567168:rUQuVS_xnsJ7H-NBtKZ7sBPbFsk@dobqboa1a");
+// optional, will prefix all built-in tags with 'solyd_'
+keystone.set('cloudinary prefix', 'solyd');
+// optional, will prefix each image public_id with [{prefix}]/{list.path}/{field.path}/
+keystone.set('cloudinary folders', true);
+// optional, will force cloudinary to serve images over https
+keystone.set('cloudinary secure', true);
 
 // Load your project's Models
 

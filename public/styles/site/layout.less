@@ -14,3 +14,38 @@
     max-width: 100%;
     height: auto;
 }
+.navbar-default .navbar-brand {
+	color: @brand-primary;
+	font-family: 'Unica One', cursive;
+	font-size: 2.7em;
+}
+
+.nav ul li.active a{
+	font-weight: 600;
+}
+
+html {
+	background: url("/images/background_large.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+body {
+	@media (max-width: @screen-xs-max) { padding: 12px; }
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { padding: 24px; }
+	@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { padding: 48px; }
+	@media (min-width: @screen-lg-min) { padding: 64px; }
+}
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.full {
+    background: url("/images/background_large.jpg") no-repeat center center fixed;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+}

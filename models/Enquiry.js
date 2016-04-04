@@ -1,5 +1,8 @@
-var keystone = require('keystone');
-var Types = keystone.Field.Types;
+
+import keystone from 'keystone'
+
+const Types = keystone.Field.Types;
+
 
 /**
  * Enquiry Model

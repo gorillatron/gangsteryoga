@@ -5,6 +5,9 @@
 
 
 @font-size-base: 14px;
+@font-size-large: ceil((@font-size-base * 1.15));
+@font-size-h1: floor((@font-size-base * 2.1));
+@font-size-h2: floor((@font-size-base * 1.8));
 
 @brand-primary: rgb(246, 213, 70);
 
@@ -12,7 +15,14 @@
 
 @navbar-default-link-color: white;
 @navbar-default-link-active-color: @brand-primary;
+@navbar-default-link-hover-color: darken(@brand-primary, 20%);
 
 @navbar-default-bg: rgba(255,255,255, 0);
 
 @font-family-sans-serif: 'Hind Siliguri', sans-serif;
+
+@btn-default-color: white;
+@btn-default-border:  @brand-primary;
+@btn-default-bg:  transparent;
+@border-radius-base: 1px;
+@btn-border-radius-large: 1px;

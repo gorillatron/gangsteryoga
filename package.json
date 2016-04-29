@@ -11,6 +11,7 @@
     "babel-register": "^6.7.2",
     "dotenv": "^1.1.0",
     "keystone": "^0.3.16",
+    "parallax": "0.0.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

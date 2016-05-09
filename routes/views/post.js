@@ -1,18 +1,21 @@
-var keystone = require('keystone');
 
-exports = module.exports = function(req, res) {
+import keystone from 'keystone'
+
+
+export default function post(req, res) {
 	
-	var view = new keystone.View(req, res);
-	var locals = res.locals;
+	var view = new keystone.View(req, res)
+	var locals = res.locals
 	
 	// Set locals
-	locals.section = 'blog';
+	locals.section = 'blog'
 	locals.filters = {
 		post: req.params.post
-	};
+	}
+	
 	locals.data = {
 		posts: []
-	};
+	}
 	
 	// Load the current post
 	view.on('init', function(next) {
@@ -20,28 +23,28 @@ exports = module.exports = function(req, res) {
 		var q = keystone.list('Post').model.findOne({
 			state: 'published',
 			slug: locals.filters.post
-		}).populate('author categories');
+		}).populate('author categories')
 		
 		q.exec(function(err, result) {
-			locals.data.post = result;
-			next(err);
-		});
-		
-	});
+			locals.data.post = result
+			next(err)
+		})
+	
+	})
 	
 	// Load other posts
 	view.on('init', function(next) {
 		
-		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author').limit('4');
+		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author').limit('4')
 		
 		q.exec(function(err, results) {
-			locals.data.posts = results;
-			next(err);
-		});
+			locals.data.posts = results
+			next(err)
+		})
 		
-	});
+	})
 	
 	// Render the view
-	view.render('post');
+	view.render('post')
 	
-};
+}

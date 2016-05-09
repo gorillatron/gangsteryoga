@@ -8,7 +8,7 @@
  * modules in your project's /lib directory.
  */
 
-import _ from "underscore"
+import {some} from "lodash"
 
 
 /**
@@ -19,22 +19,21 @@ import _ from "underscore"
 	or replace it with your own templates / logic.
 */
 
-export var initLocals = function(req, res, next) {
+export const initLocals = function(req, res, next) {
 
-	var locals = res.locals;
+	var locals = res.locals
 
 	locals.navLinks = [
-		//{ label: '/',		key: 'home',		href: '/home' },
+		{ label: 'gangsteryoga.no',		key: 'index',		href: '/' },
 		{ label: 'Yoga',		key: 'yoga',		href: '/yoga' },
-		//{ label: 'Bilder',		key: 'gallery',		href: '/gallery' },
 		{ label: 'Kontakt',		key: 'contact',		href: '/contact' }
-	];
+	]
 
-	locals.user = req.user;
+	locals.user = req.user
 
-	next();
+	next()
 
-};
+}
 
 
 /**
@@ -48,13 +47,13 @@ export function flashMessages(req, res, next) {
 		success: req.flash('success'),
 		warning: req.flash('warning'),
 		error: req.flash('error')
-	};
+	}
 
-	res.locals.messages = _.any(flashMessages, function(msgs) { return msgs.length; }) ? flashMessages : false;
+	res.locals.messages = some(flashMessages, function(msgs) { return msgs.length; }) ? flashMessages : false
 
-	next();
+	next()
 
-};
+}
 
 
 /**
@@ -64,10 +63,10 @@ export function flashMessages(req, res, next) {
 export function requireUser(req, res, next) {
 
 	if (!req.user) {
-		req.flash('error', 'Please sign in to access this page.');
-		res.redirect('/keystone/signin');
+		req.flash('error', 'Please sign in to access this page.')
+		res.redirect('/keystone/signin')
 	} else {
-		next();
+		next()
 	}
 
-};
+}

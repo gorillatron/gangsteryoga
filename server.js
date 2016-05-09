@@ -1,10 +1,13 @@
-// Simulate config options from your production environment by
-// customising the .env file in your project's root folder.
-require('dotenv').load();
-require('babel-register')
+
 
 // Require keystone
-var keystone = require("keystone")
+import keystone from "keystone"
+
+
+export function start() {
+	keystone.start()
+}
+
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -26,21 +29,21 @@ keystone.init({
 	'auth': true,
 	'user model': 'User'
 
-});
+})
 
 // Cloudinary media
 
-keystone.set('cloudinary config', "cloudinary://151379816567168:rUQuVS_xnsJ7H-NBtKZ7sBPbFsk@dobqboa1a");
+keystone.set('cloudinary config', "cloudinary://151379816567168:rUQuVS_xnsJ7H-NBtKZ7sBPbFsk@dobqboa1a")
 // optional, will prefix all built-in tags with 'solyd_'
-keystone.set('cloudinary prefix', 'solyd');
+keystone.set('cloudinary prefix', 'gangsteryoga')
 // optional, will prefix each image public_id with [{prefix}]/{list.path}/{field.path}/
-keystone.set('cloudinary folders', true);
+keystone.set('cloudinary folders', true)
 // optional, will force cloudinary to serve images over https
-keystone.set('cloudinary secure', true);
+keystone.set('cloudinary secure', true)
 
 // Load your project's Models
 
-keystone.import('models');
+keystone.import('models')
 
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
@@ -51,21 +54,16 @@ keystone.set('locals', {
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable
-});
+})
 
 // Load your project's Routes
 
-keystone.set('routes', require('./routes'));
+keystone.set('routes', require('./routes'))
 
 // Configure the navigation bar in Keystone's Admin UI
 
 keystone.set('nav', {
 	'posts': ['posts', 'post-categories'],
-	'galleries': 'galleries',
 	'enquiries': 'enquiries',
 	'users': 'users'
-});
-
-// Start Keystone to connect to your database and initialise the web server
-
-keystone.start();
+})

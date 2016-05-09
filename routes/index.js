@@ -18,32 +18,41 @@
  * http://expressjs.com/api.html#app.VERB
  */
 
-var keystone = require('keystone');
-var middleware = require('./middleware');
-var importRoutes = keystone.importer(__dirname);
+import keystone from 'keystone'
+import {reduce, flow} from 'lodash'
+import {initLocals, flashMessages} from './middleware'
+
+// The keystone importer does not support es6 modules
+// so unpack the default export per imported route
+const importRoutes = flow(
+	keystone.importer(__dirname),
+	routes => reduce(routes, (routes, {default: handler}, name) =>
+		Object.assign(routes, {[name]: handler})
+	, {})
+)
+
 
 // Common Middleware
-keystone.pre('routes', middleware.initLocals);
-keystone.pre('render', middleware.flashMessages);
+keystone.pre('routes', initLocals)
+keystone.pre('render', flashMessages)
+
 
 // Import Route Controllers
-var routes = {
-	views: importRoutes('./views')
-};
+var views = importRoutes('./views')
+var routes = {views}
+
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
 
 	// Views
-	app.get('/', routes.views.landingpage);
-	app.get('/home', routes.views.index);
-	app.get('/yoga', routes.views.yoga);
-	app.get('/blog/:category?', routes.views.blog);
-	app.get('/blog/post/:post', routes.views.post);
-	app.get('/gallery', routes.views.gallery);
-	app.all('/contact', routes.views.contact);
+	app.get('/', routes.views.index)
+	app.get('/yoga', routes.views.yoga)
+	app.all('/contact', routes.views.contact)
+
+	app.get('/admin', (req, res) => res.redirect('/keystone'));
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
-};
+}

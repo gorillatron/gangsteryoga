@@ -604,4 +604,3 @@ h6 {
 .clearfix:after {
   clear: both;
 }
-@font-face{font-family:'Gotham Black';src:url('/fonts/gotham-black.eot');src:url('/fonts/gotham-black.eot?#iefix') format('embedded-opentype'),url('/fonts/gotham-black.woff') format('woff'),url('/fonts/gotham-black.ttf') format('truetype')}h1{font-family:"Gotham Black"}

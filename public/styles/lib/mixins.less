@@ -1,0 +1,47 @@
+
+.coverBackground(@url) {
+  background: url(@url) no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hamburger(@height: 20, @width: 20) {
+  width: @width;
+  height: @height;
+  cursor: pointer;
+  
+  .line {
+    height: @height / 100 * 8;
+    width: 100%;
+    margin-bottom: @height / 100 * 39;
+    background: white;
+    transition: transform 0.13s ease-in-out;
+    &:nth-child(3) {
+      margin-bottom: 0%;
+    }
+  }
+  
+  &:hover {
+    .line:nth-child(3) {
+      transform: translateY(4px);
+    }
+    .line:nth-child(1) {
+      transform: translateY(-4px);
+    }
+  }
+  
+  &.cross {
+    .line:nth-child(3) {
+      transform: translateY(-(@height / 100 * 39) - @height / 100 * 8) rotateZ(45deg);
+    }
+    .line:nth-child(2) {
+      transform: rotateZ(-45deg);
+    }
+    .line:nth-child(1) {
+      transform: translateY(@height / 100 * 39 + (@height / 100 * 8)) rotateZ(45deg);
+    }
+  }
+  
+}

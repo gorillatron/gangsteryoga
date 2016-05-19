@@ -33,22 +33,6 @@ User.relationship({ ref: 'Post', path: 'posts', refPath: 'author' })
 
 
 /**
- * Hooks
- */
-
-User.schema.post('save', function() {
-
-	const user = this
-
-	emailservice.send({
-		to: user.email,
-		from: 'jornandretangen@gmail.com',
-		subject: 'admin user change'
-	})
-})
-
-
-/**
  * Registration
  */
 

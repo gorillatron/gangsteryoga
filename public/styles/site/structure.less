@@ -26,14 +26,47 @@ body {
   overflow: auto;
   height: 100%;
   
-  .hamburger {
-    position: absolute;
-    top: 2vh;
-    right: 2vh;
-    .hamburger(17px, 22px);
-    .line {
-      background: white;
+  nav.side-bar {
+    position: fixed;
+    top: 0px;
+    right: -230px;
+    height: 100%;
+    width: 300px;
+    color: rgb(245,245,245);
+    background: rgba(10,10,10, 0.0001);
+    transition: background 0.2s, right 0.23s ease-out;
+    
+    .hamburger {
+      position: absolute;
+      top: 2vh;
+      left: 2vh;
+      .hamburger(17px, 22px);
+      .line {
+        background: white;
+      }
     }
+    
+    ul {
+      list-style: none;
+      margin: 37% 30%;
+    }
+    
+    &.open {
+      right: 0px;
+      background: rgba(10,10,10, 0.9);
+    }
+    
+    @media (max-width: 40.0rem) {
+      width: 100%;
+      right: -320px;
+      .hamburger {
+        transition: left 0.23s ease-out;
+        &.cross {
+          left: 90%;
+        }
+      }
+    }
+    
   }
   
   #hero {
@@ -54,6 +87,7 @@ body {
       
       @media (max-width: 40.0rem) {
         @offset: 70;
+        top: 35%;
         .logo(@main-logo-height - @offset, @main-logo-width - @offset);
         .absoluteCentered(@main-logo-height - @offset, @main-logo-width - @offset);
       }
@@ -74,7 +108,7 @@ body {
       
       @media (max-width: 40.0rem) {
         font-size: 2.7em;
-        top: 50%; 
+        top: 35%; 
       }
       
       textarea {

@@ -34,8 +34,16 @@
   
   typestream$
     .delay(937)
-    .subscribe(function(char) {
-      input.value = input.value + char
-    })
+    .subscribe(
+      function next(char) {
+        input.value = input.value + char
+      },
+      null,
+      function complete() {
+        setTimeout(function() {
+          var arrow = document.querySelectorAll(".footer .arrow")[0]
+          arrow.className = arrow.className + " show"
+        }, 500)
+      })
   
 })();

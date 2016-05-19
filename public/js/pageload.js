@@ -1,15 +1,13 @@
 
-
-!(function() {
-  
+function typeStream(opts) {
   var Observable = Rx.Observable
   
-  var text = "For de som tørr å møte seg selv."
+  
+  var textarea = document.querySelectorAll(opts.el)[0]
+  var text = opts.text || textarea.attributes.getNamedItem("data-text").value
   var words = text.split(" ")
-  
-  var input = document.querySelectorAll("#hero h1 textarea")[0]
-  
   var words$ = Observable.from(words)
+  
   
   var typestream$ = words$
     .concatMap(function(x) {
@@ -30,20 +28,39 @@
       return typestream$
     })
   
-  input.focus()
+  
+  textarea.focus()
+  textarea.addEventListener('keydown', function(e) {
+    e.preventDefault()
+  })
+  
   
   typestream$
     .delay(937)
     .subscribe(
       function next(char) {
-        input.value = input.value + char
+        textarea.value = textarea.value + char
       },
       null,
       function complete() {
-        setTimeout(function() {
-          var arrow = document.querySelectorAll(".footer .arrow")[0]
-          arrow.className = arrow.className + " show"
-        }, 500)
+        if(opts.onComplete) {
+          opts.onComplete()
+        }
       })
+   
+   return typestream$
+}
+
+!(function() {
+  
+  typeStream({
+    el: "#hero h1 textarea",
+    onComplete: function() {
+      setTimeout(function() {
+        var arrow = document.querySelectorAll(".footer .arrow")[0]
+        arrow.className = arrow.className + " show"
+      }, 500)
+    }
+  })
   
 })();

@@ -40,14 +40,12 @@ html.full
 		#content
 		
 			block content
-
-
-		script(src='/js/jquery/jquery-2.1.4.min.js')
-		script(src="/js/pageload.js")
 		
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
 		if user && user.canAccessKeystone
 			script(src='/keystone/js/content/editor.js')
-			
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.lite.min.js")
+		script(src="/js/pageload.js")
 		block js

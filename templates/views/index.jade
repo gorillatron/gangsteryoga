@@ -2,14 +2,28 @@ extends ../layouts/default
 
 block content
   
-  .container#root-container
+  #root-container
      
-     .hamburger
-      .line
-      .line
-      .line
-     
-    .row#root-row
-      
+     #hero
+      .main-logo
+        .background-fill
+          object(data='/images/logo_white.svg', type='image/svg+xml', height="100%" width="100%")
+            img(src='/images/logo_black.svg')
+      h1
+        textarea(value="")
         
+      .footer
+        p les mer
+        .arrow.down
+
+    .hamburger
+      .line
+      .line
+      .line
+    
+    .container
+      
+
+
+
       

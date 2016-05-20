@@ -1,5 +1,8 @@
 extends ../layouts/default
 
+block js
+  script(src="/js/hero.js")
+
 block content
   
   #loader
@@ -13,7 +16,8 @@ block content
   
   #root-container
      
-     #hero(data-background='/images/vend.jpg')
+     #hero
+      #hero-background(data-background='/images/vend.jpg')
       #main-logo
         .background-fill
         .svg

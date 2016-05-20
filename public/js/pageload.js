@@ -56,6 +56,7 @@ function typeStream(opts) {
 
 !(function() {
   
+  var loader = document.getElementById("loader")
   var root = document.getElementById("root-container")
   var hero = document.getElementById("hero")
   var logo = document.getElementById("main-logo")
@@ -74,6 +75,10 @@ function typeStream(opts) {
     
     raf(function() {
       root.classList.add("show")
+    })
+    
+    raf(function() {
+      loader.remove()
     })
     
     setTimeout(function() {

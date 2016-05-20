@@ -25,6 +25,12 @@ body {
   margin: 0px;
   overflow: auto;
   height: 100%;
+  opacity: 0.0001;
+  
+  &.show {
+    .animation(fadeIn 0.3s ease-in);
+    animation-fill-mode: forwards;
+  }
   
   nav.side-bar {
     position: fixed;
@@ -37,11 +43,12 @@ body {
     font-family: @main-font;
     transition: background 0.2s, right 0.23s ease-out;
     padding-left: 70px;
+    z-index: 100;
     
     .hamburger {
       position: fixed;
       top: 20px;
-      right: 35px;
+      right: 25px;
       .hamburger(25px, 26px);
       .line {
         background: white;
@@ -51,7 +58,7 @@ body {
     ul {
       text-align: right;
       list-style: none;
-      margin: 100px 35px 0px 0px;
+      margin: 100px 25px 0px 0px;
       li {
         margin-bottom: 2em;
       }
@@ -75,10 +82,13 @@ body {
     position: relative;
     overflow: auto;
     height: 100%;
-    .coverBackground('/images/vend.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     
     
-    .main-logo {
+    #main-logo {
       
       .logo(@main-logo-height, @main-logo-width);
       .absoluteCentered(@main-logo-height, @main-logo-width);
@@ -86,6 +96,30 @@ body {
       position: absolute; 
       top: 40%;
       left: 50%;
+      
+      .background-fill {
+        transform: scale(0.001);
+      }
+      
+      .svg {
+        opacity: 0.001;
+      }
+      
+      &.show {
+        
+        .background-fill {
+          .animation(scaleIn 0.2s ease-out);
+          animation-fill-mode: forwards;
+          animation-delay: 0.37s;
+        }
+        
+        .svg {
+          .animation(fadeIn 0.2s ease-in);
+          animation-fill-mode: forwards;
+          animation-delay: 0.05s;
+        }
+        
+      }
       
       @media (max-width: 40.0rem) {
         @offset: 70;
@@ -173,11 +207,6 @@ body {
 
 
 
-
-
-
-
-
 .logo(@height; @width) {
   
   height: @height; 
@@ -191,21 +220,18 @@ body {
     border-radius: 50%;
     z-index: 0;
     background: rgba(10,10,10, 0.4);
-    transform: scale(0.001);
-    .animation(scaleIn 0.3s ease-out);
-    animation-delay: 0.37s;
-    animation-fill-mode: forwards;  
+     
   }
   
-  object {
+  .svg {
     position: absolute;
     height: 100%;
     width: 100%;
     z-index: 2;
-    opacity: 0;
-    .animation(fadeIn 0.2s ease-in);
-    animation-delay: 0.17s;
-    animation-fill-mode: forwards;  
+    svg {
+      height: 100%;
+      width: 100%;
+    }
   }
   
 }

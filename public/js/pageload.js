@@ -15,7 +15,7 @@ function typeStream(opts) {
     .concatMap(function(x) {
       return Observable.of(x)
         .delay(
-          (Math.random() * 170) + (x.length * 1.5)
+          (Math.random() * 180) + (x.length * 1.57)
         )
     })
     .concatMap(function(word) {
@@ -24,7 +24,7 @@ function typeStream(opts) {
         .concatMap(function(letter) {
           return Observable.of(letter)
             .delay(
-              (Math.random() * 110)
+              (Math.random() * 120)
             )
         })
       return typestream$
@@ -97,7 +97,7 @@ function typeStream(opts) {
             }, 500)
           }
         })
-      }, 1130)
+      }, 1330)
       
     }, 600)
     

@@ -185,14 +185,15 @@ body {
   
   .background-fill {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
+    margin: 5%;
     border-radius: 50%;
     z-index: 0;
-    background: black;
+    background: rgba(10,10,10, 0.4);
     transform: scale(0.001);
-    .animation(scaleIn 0.2s ease-in);
-    animation-delay: 0.2s;
+    .animation(scaleIn 0.3s ease-out);
+    animation-delay: 0.37s;
     animation-fill-mode: forwards;  
   }
   
@@ -203,7 +204,7 @@ body {
     z-index: 2;
     opacity: 0;
     .animation(fadeIn 0.2s ease-in);
-    animation-delay: 0.37s;
+    animation-delay: 0.17s;
     animation-fill-mode: forwards;  
   }
   

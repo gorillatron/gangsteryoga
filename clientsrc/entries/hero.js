@@ -2,6 +2,8 @@
 import raf from "raf"
 import {Observable, Scheduler} from "rxjs"
 import typestream from "../lib/typestream"
+import ensurepos from "../lib/ensurepos"
+import currentwindowsize from "../lib/currentwindowsize"
 
 
 
@@ -61,8 +63,8 @@ load$.subscribe(_ => {
 
 const screensizes$ = Observable.fromEvent(window, 'resize')
   .throttleTime(33)
-  .map((e) => currentSize())
-  .startWith(currentSize())
+  .map((e) => currentwindowsize())
+  .startWith(currentwindowsize())
 
 
 const mousemoves$ = Observable.fromEvent(document, 'mousemove')
@@ -107,11 +109,3 @@ parallax$
     heroBackground.style.msTransform = transform
     heroBackground.style.webkitTransform = transform
   })
-
-function currentSize() {
-  return {y: window.innerHeight, x: window.innerWidth}
-}
-
-function ensurepos(n) {
-  return n >= 0 ? n : -1 * n
-}

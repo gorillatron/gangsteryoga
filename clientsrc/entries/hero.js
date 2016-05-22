@@ -1,50 +1,13 @@
 
 import raf from "raf"
 import {Observable, Scheduler} from "rxjs"
+import typestream from "../lib/typestream"
 
 
-function typeStream(opts) {
-  
-  var textarea = document.querySelectorAll(opts.el)[0]
-  var text = opts.text || textarea.attributes.getNamedItem("data-text").value
-  var words = text.split(" ")
-  var words$ = Observable.from(words)
-  
-  
-  var typestream$ = words$
-    .concatMap(x => 
-      Observable.of(x)
-        .delay(
-          (Math.random() * 180) + (x.length * 1.57)
-    ))
-    .concatMap(word => {
-      var letters$ = Observable.from(word.split("").concat(" "))
-      var typestream$ = letters$
-        .concatMap(letter =>
-          Observable.of(letter)
-            .delay(
-              (Math.random() * 120)
-            ))
-      return typestream$
-    })
-  
-  
-  textarea.focus()
-  textarea.addEventListener('keydown', e => {
-    e.preventDefault()
-  })
-  
-  
-  typestream$
-    .subscribeOn(Scheduler.animationFrame)
-    .subscribe(
-      char => textarea.value = textarea.value + char,
-      null,
-      _ => opts.onComplete && opts.onComplete()
-      )
-  
-  return typestream$
-}
+
+/**
+ * Hero Load animations
+ */
 
 const loader = document.getElementById("loader")
 const root = document.getElementById("root-container")
@@ -67,9 +30,16 @@ load$.subscribe(_ => {
     
     raf(_ => logo.classList.add("show"))
     
+    const textarea = document.querySelectorAll("#hero h1 textarea")[0]
+    
+    textarea.focus()
+    textarea.addEventListener('keydown', e => {
+      e.preventDefault()
+    })
+      
     setTimeout(_ => {
-      typeStream({
-        el: "#hero h1 textarea",
+      typestream({
+        el: textarea,
         onComplete: _ => {
           setTimeout(_ => {
             const arrow = document.querySelectorAll(".footer .arrow")[0]

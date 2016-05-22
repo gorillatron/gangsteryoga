@@ -1,7 +1,9 @@
 
+import {Observable} from "rxjs"
+
 const sidebar = document.getElementById("main-sidebar")
 const toggleButton = document.getElementById("menu-toggle")
-const menuClick$ = Rx.Observable.fromEvent(toggleButton, 'click')
+const menuClick$ = Observable.fromEvent(toggleButton, 'click')
 
 let open = false
 

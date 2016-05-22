@@ -1,14 +1,27 @@
 extends ../layouts/default
 
+block js
+  script(src="/js/hero.js")
+
 block content
+  
+  #loader
+    .spinner-wrapper
+      .sk-folding-cube
+        .sk-cube1.sk-cube
+        .sk-cube2.sk-cube
+        .sk-cube4.sk-cube
+        .sk-cube3.sk-cube
+  
   
   #root-container
      
      #hero
-      .main-logo
+      #hero-background(data-background='/images/vend.jpg')
+      #main-logo
         .background-fill
-        object(data='/gfx/logo_white.svg', type='image/svg+xml', height="100%" width="100%")
-          img(src='/gfx/logo_white.svg')
+        .svg
+          include ../../public/gfx/logo_white.svg
       h1
         textarea(value="", data-text="For de som tørr å møte seg selv.")
         

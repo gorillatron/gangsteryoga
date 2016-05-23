@@ -88,15 +88,22 @@
     color: rgb(240,240,240);
     width: 90%;
     text-align: center;
-    top: 60%;
+    top: 58.5%;
     left: 5%;
     margin-top: @main-logo-height / 2;
     word-wrap: true;
     overflow: visible;
     
+    
+    @media (max-width: 80.0rem) {
+      font-size: 2.9em;
+      top: 49%; 
+      height: 270px;
+    }
+    
     @media (max-width: 40.0rem) {
       font-size: 2.3em;
-      top: 35%; 
+      top: 37%; 
       height: 270px;
     }
     

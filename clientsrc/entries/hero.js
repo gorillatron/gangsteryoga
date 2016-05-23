@@ -4,6 +4,7 @@ import {Observable, Scheduler} from "rxjs"
 import typestream from "../lib/typestream"
 import ensurepos from "../lib/ensurepos"
 import currentwindowsize from "../lib/currentwindowsize"
+import {translate} from "../lib/transform"
 
 
 
@@ -103,9 +104,4 @@ const parallax$ = mousepos$.withLatestFrom(
 
 parallax$
   .subscribeOn(Scheduler.animationFrame)
-  .subscribe(frame => {
-    const transform = "translate(" +frame.left+ "px, " + frame.top + "px)"
-    heroBackground.style.mozTransform = transform
-    heroBackground.style.msTransform = transform
-    heroBackground.style.webkitTransform = transform
-  })
+  .subscribe(frame => translate(heroBackground, frame.left, frame.top))

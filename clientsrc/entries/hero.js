@@ -64,14 +64,14 @@ load$.subscribe(_ => {
 
 const screensizes$ = Observable.fromEvent(window, 'resize')
   .throttleTime(33)
-  .map((e) => currentwindowsize())
+  .map(ev => currentwindowsize())
   .startWith(currentwindowsize())
 
 
 const mousemoves$ = Observable.fromEvent(document, 'mousemove')
 const mousepos$ = mousemoves$
   .throttleTime(33)
-  .map((e) => ({x: e.clientX, y: e.clientY}))
+  .map(ev => ({x: e.clientX, y: e.clientY}))
 
 
 const parallax$ = mousepos$.withLatestFrom(

@@ -15,6 +15,14 @@ module.exports = {
   },
   
   devtool: "inline-source-map",
+  
+  // plugins: [
+  //   new webpack.optimize.UglifyJsPlugin({
+  //     compress: {
+  //       warnings: false
+  //     }
+  //   })
+  // ],
 
   module: {
     loaders: [

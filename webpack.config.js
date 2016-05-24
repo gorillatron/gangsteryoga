@@ -1,12 +1,15 @@
 
 var path = require('path')
 var webpack = require('webpack')
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var path = require('path')
 var argv = require('yargs').argv
 
 
+var pckgJSON = require("./package.json")
 var prod = argv.prod || false
 var entrypath = path.join(__dirname, './clientsrc/entries/')
+var distFolder = path.join(__dirname, "public/js")
 
 prod && 
   console.info("building for production")
@@ -24,8 +27,8 @@ module.exports = {
   },
   
   output: {
-    path: path.join(__dirname, "public/js"),
-    filename: "[name].js"
+    path: distFolder,
+    filename: "[name]." + pckgJSON.version + ".js"
   },
   
   
@@ -35,14 +38,19 @@ module.exports = {
   
   // Use plugins based on env
   plugins: ([
-    () =>
+    _ =>
       prod ?
         new webpack.optimize.UglifyJsPlugin({
           compress: {
             warnings: false
           }
         }) 
-      : null
+      : null,
+    _ =>
+      new CleanWebpackPlugin([distFolder], {
+        verbose: true, 
+        dry: false
+      })
   ])
   .map(p => p())
   .filter(p => p !== null),

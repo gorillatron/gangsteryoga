@@ -71,7 +71,7 @@ const screensizes$ = Observable.fromEvent(window, 'resize')
 const mousemoves$ = Observable.fromEvent(document, 'mousemove')
 const mousepos$ = mousemoves$
   .throttleTime(33)
-  .map(ev => ({x: e.clientX, y: e.clientY}))
+  .map(ev => ({x: ev.clientX, y: ev.clientY}))
 
 
 const parallax$ = mousepos$.withLatestFrom(

@@ -1,21 +1,26 @@
 
 var path = require('path')
 var webpack = require('webpack')
+var path = require('path')
 var argv = require('yargs').argv
 
 
 var prod = argv.prod || false
+var entrypath = path.join(__dirname, './clientsrc/entries/')
 
-if(prod) {
+prod && 
   console.info("building for production")
-}
 
 
 module.exports = {
   
+  /**
+   * Mainfiles of the client pages
+   * These will be built as singel files to the public folder
+   */
   entry: {
-    hero: "./clientsrc/entries/hero.js",
-    menu: "./clientsrc/entries/menu.js",
+    hero: path.join(entrypath, 'hero.js'),
+    menu: path.join(entrypath, 'menu.js'),
   },
   
   output: {
@@ -23,8 +28,12 @@ module.exports = {
     filename: "[name].js"
   },
   
+  
+  // If not prod then use sourcemaps
   devtool: prod ? null : "inline-source-map",
   
+  
+  // Use plugins based on env
   plugins: ([
     () =>
       prod ?
@@ -37,7 +46,9 @@ module.exports = {
   ])
   .map(p => p())
   .filter(p => p !== null),
-
+  
+  
+  // Compile using babel
   module: {
     loaders: [
       {

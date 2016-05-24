@@ -1,6 +1,15 @@
 
 var path = require('path')
 var webpack = require('webpack')
+var argv = require('yargs').argv
+
+
+var prod = argv.prod || false
+
+if(prod) {
+  console.info("building for production")
+}
+
 
 module.exports = {
   
@@ -14,15 +23,20 @@ module.exports = {
     filename: "[name].js"
   },
   
-  devtool: "inline-source-map",
+  devtool: prod ? null : "inline-source-map",
   
-  // plugins: [
-  //   new webpack.optimize.UglifyJsPlugin({
-  //     compress: {
-  //       warnings: false
-  //     }
-  //   })
-  // ],
+  plugins: ([
+    () =>
+      prod ?
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false
+          }
+        }) 
+      : null
+  ])
+  .map(p => p())
+  .filter(p => p !== null),
 
   module: {
     loaders: [

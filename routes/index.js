@@ -49,6 +49,7 @@ exports = module.exports = function(app) {
 	app.get('/', routes.views.index)
 	app.get('/yoga', routes.views.yoga)
 	app.all('/contact', routes.views.contact)
+	app.all('/gallery/:key', routes.views.gallery)
 
 	app.get('/admin', (req, res) => res.redirect('/keystone'));
 

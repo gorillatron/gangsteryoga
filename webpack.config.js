@@ -24,6 +24,7 @@ module.exports = {
   entry: {
     hero: path.join(entrypath, 'hero.js'),
     menu: path.join(entrypath, 'menu.js'),
+    gallery: path.join(entrypath, 'gallery.js')
   },
   
   output: {

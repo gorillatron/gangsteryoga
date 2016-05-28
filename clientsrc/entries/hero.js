@@ -4,6 +4,7 @@ import {Observable, Scheduler} from "rxjs"
 import typestream from "../lib/typestream"
 import ensurepos from "../lib/ensurepos"
 import currentwindowsize from "../lib/currentwindowsize"
+import {translate} from "../lib/transform"
 
 
 
@@ -61,20 +62,20 @@ load$.subscribe(_ => {
  * Hero Parallaxing
  */
 
-const screensizes$ = Observable.fromEvent(window, 'resize')
+const windowsizes$ = Observable.fromEvent(window, 'resize')
   .throttleTime(33)
-  .map((e) => currentwindowsize())
+  .map(ev => currentwindowsize())
   .startWith(currentwindowsize())
 
 
 const mousemoves$ = Observable.fromEvent(document, 'mousemove')
 const mousepos$ = mousemoves$
   .throttleTime(33)
-  .map((e) => ({x: e.clientX, y: e.clientY}))
+  .map(ev => ({x: ev.clientX, y: ev.clientY}))
 
 
 const parallax$ = mousepos$.withLatestFrom(
-  screensizes$,
+  windowsizes$,
   (mpos, screen) => {
     
     const maxOffsett = 5
@@ -103,9 +104,4 @@ const parallax$ = mousepos$.withLatestFrom(
 
 parallax$
   .subscribeOn(Scheduler.animationFrame)
-  .subscribe(frame => {
-    const transform = "translate(" +frame.left+ "px, " + frame.top + "px)"
-    heroBackground.style.mozTransform = transform
-    heroBackground.style.msTransform = transform
-    heroBackground.style.webkitTransform = transform
-  })
+  .subscribe(frame => translate(heroBackground, frame.left, frame.top))

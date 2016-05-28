@@ -9,6 +9,7 @@
  */
 
 import {some} from "lodash"
+import packagejson from "../package.json"
 
 
 /**
@@ -22,7 +23,9 @@ import {some} from "lodash"
 export const initLocals = function(req, res, next) {
 
 	var locals = res.locals
-
+	
+	locals.packagejson = packagejson
+	
 	locals.navLinks = [
 		{ label: 'gangsteryoga.no',		key: 'index',		href: '/' },
 		{ label: 'Yoga',		key: 'yoga',		href: '/yoga' },

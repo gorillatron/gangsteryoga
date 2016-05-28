@@ -1,21 +1,65 @@
 
 var path = require('path')
 var webpack = require('webpack')
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+var path = require('path')
+var argv = require('yargs').argv
+
+
+var pckgJSON = require("./package.json")
+var prod = argv.prod || false
+var entrypath = path.join(__dirname, './clientsrc/entries/')
+var distFolder = path.join(__dirname, "public/js")
+
+
+prod ? 
+  console.info("building for production"):
+console.info("building for development")
+
 
 module.exports = {
   
+  /**
+   * Mainfiles of the client pages
+   * These will be built as singel files to the public folder
+   */
   entry: {
-    hero: "./clientsrc/entries/hero.js",
-    menu: "./clientsrc/entries/menu.js",
+    hero: path.join(entrypath, 'hero.js'),
+    menu: path.join(entrypath, 'menu.js'),
+    gallery: path.join(entrypath, 'gallery.js')
   },
   
   output: {
-    path: path.join(__dirname, "public/js"),
-    filename: "[name].js"
+    path: distFolder,
+    filename: "[name]." + pckgJSON.version + ".js"
   },
   
-  devtool: "inline-source-map",
-
+  
+  // If not prod then use sourcemaps
+  devtool: prod ? null : "inline-source-map",
+  
+  
+  // Use plugins based on env
+  plugins: ([
+    _ =>
+      prod ?
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false
+          }
+        }) 
+      : null,
+    _ =>
+      new CleanWebpackPlugin([distFolder], {
+        verbose: true, 
+        dry: false
+      })
+  ])
+  .map(p => p())
+  .filter(p => p !== null),
+  
+  
+  // Compile using babel
   module: {
     loaders: [
       {

@@ -2,10 +2,11 @@
 #hero {
   
   position: relative;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  margin-bottom: 5vh;
   
   
   #hero-background {
@@ -84,19 +85,26 @@
   
   h1 {
     position: absolute;
-    font-size: 3.7em;
+    font-size: 5.5rem;
     color: rgb(240,240,240);
     width: 90%;
     text-align: center;
-    top: 60%;
+    top: 58.5%;
     left: 5%;
     margin-top: @main-logo-height / 2;
     word-wrap: true;
     overflow: visible;
     
+    
+    @media (max-width: 80.0rem) {
+      font-size: 2.9em;
+      top: 49%; 
+      height: 270px;
+    }
+    
     @media (max-width: 40.0rem) {
       font-size: 2.3em;
-      top: 35%; 
+      top: 37%; 
       height: 270px;
     }
     
@@ -138,12 +146,13 @@
       border-radius: 4em;
       margin: 20px auto;
       transform: scale(0.0001);
+      cursor: pointer;
       
       &.show {
         .animation(bounceIn 0.3s ease-in);
         animation-fill-mode: forwards;  
       }
-      
+     
       img {
         height: 42%;
         width: 42%;

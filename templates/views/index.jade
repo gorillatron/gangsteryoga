@@ -1,22 +1,13 @@
 extends ../layouts/default
 
 block js
-  script(src="/js/hero.js")
+  +vscript("hero")
 
 block content
   
-  #loader
-    .spinner-wrapper
-      .sk-folding-cube
-        .sk-cube1.sk-cube
-        .sk-cube2.sk-cube
-        .sk-cube4.sk-cube
-        .sk-cube3.sk-cube
-  
-  
   #root-container
      
-     #hero
+    #hero
       #hero-background(data-background='/images/vend.jpg')
       #main-logo
         .background-fill
@@ -39,8 +30,31 @@ block content
           li Om Yoga
           li Kontakt
     
-    .container
-      
+    
+    
+    .container.content
+      .row
+        .columne
+        
+          h1 Gangster Yoga for selvinnsikt – Hva er det?
+          
+          p Gangster Yoga setter søkelys på det å være menneske og hvordan man får kontakt med
+            det innerste i seg selv. Det handler om å være tøff nok til å møte seg selv uten å flykte.
+            Puste seg igjennom utfordringer. Kjenne på stivheter og ubehag, og gradvis bygge opp
+            en større klarhet i sinnet som blir vedvarende og stabil.
+            
+          p Fordelene med en god yoga praksis er mange. Man slipper spenninger, bygger styrke, får
+            bedre kjernemuskulatur, blir mykere og kjenner seg lettere i kropp og sinn. Fordøyelsen
+            blir mye bedre og man sover bedre om natten. Mentalt blir man roligere og mer fokusert
+            og rent psykisk får man kontakt med en dypere side av seg selv. Det hjelper mot angst,
+            hovmod, irritasjon, anspenthet og søvnløshet.
+
+          p De som praktiserer Yoga over tid, legger ofte bort dårlige matvaner og destruktive
+            adferdsmønstre og holdningsmønstre – helt enkelt fordi det kjennes forstyrrende på
+            personlig utvikling. Den praktiske opplevelsen av yoga er noe som beriker livet på alle
+            plan. Man lærer seg å leve mer konstruktivt og velger å ta vare på en indre klarhet og
+            velvære, framfor materielle behov som penger, makt eller image.
+                
 
 
 

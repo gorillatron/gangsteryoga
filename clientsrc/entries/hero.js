@@ -62,7 +62,7 @@ load$.subscribe(_ => {
  * Hero Parallaxing
  */
 
-const screensizes$ = Observable.fromEvent(window, 'resize')
+const windowsizes$ = Observable.fromEvent(window, 'resize')
   .throttleTime(33)
   .map(ev => currentwindowsize())
   .startWith(currentwindowsize())
@@ -75,7 +75,7 @@ const mousepos$ = mousemoves$
 
 
 const parallax$ = mousepos$.withLatestFrom(
-  screensizes$,
+  windowsizes$,
   (mpos, screen) => {
     
     const maxOffsett = 5

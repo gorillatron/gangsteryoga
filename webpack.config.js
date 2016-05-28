@@ -11,8 +11,10 @@ var prod = argv.prod || false
 var entrypath = path.join(__dirname, './clientsrc/entries/')
 var distFolder = path.join(__dirname, "public/js")
 
-prod && 
-  console.info("building for production")
+
+prod ? 
+  console.info("building for production"):
+console.info("building for development")
 
 
 module.exports = {

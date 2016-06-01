@@ -104,4 +104,5 @@ const parallax$ = mousepos$.withLatestFrom(
 
 parallax$
   .subscribeOn(Scheduler.animationFrame)
-  .subscribe(frame => translate(heroBackground, frame.left, frame.top))
+  .subscribe(frame => 
+    translate(heroBackground, frame.left, frame.top))

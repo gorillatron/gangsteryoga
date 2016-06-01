@@ -4,7 +4,7 @@ import {Observable, Scheduler} from "rxjs"
 import typestream from "../lib/typestream"
 import ensurepos from "../lib/ensurepos"
 import currentwindowsize from "../lib/currentwindowsize"
-import {translate} from "../lib/transform"
+import {translate} from "../lib/css"
 
 
 

@@ -11,20 +11,19 @@ const Types = keystone.Field.Types
  */
 
 const Enquiry = new keystone.List('Enquiry', {
+	label: "Kontaktforespørsel",
+	plural: "Kontaktforespørseler",
 	nocreate: true,
 	noedit: true
 })
 
 
 Enquiry.add({
-	name: { type: Types.Name, required: [true, "Navn mangler"] },
-	email: { type: Types.Email, required: [true, "Epost mangler"] },
-	phone: { type: String },
-	enquiryType: { type: Types.Select, options: [
-		{ value: 'message', label: 'Legge igjen en beskjed' }
-	] },
-	message: { type: Types.Markdown, required: [true, "Beskjed mangler"] },
-	createdAt: { type: Date, default: Date.now }
+	name: { type: Types.Name, required: [true, "Navn mangler"], label: "Navn" },
+	email: { type: Types.Email, required: [true, "Epost mangler"], label: "Epost" },
+	phone: { type: String, label: "Telefon" },
+	message: { type: Types.Markdown, required: [true, "Beskjed mangler"], label: "Beskjed" },
+	createdAt: { type: Date, default: Date.now, label: "Opprettet dato" }
 })
 
 

@@ -11,15 +11,17 @@ const Types = keystone.Field.Types
  */
 
 const Gallery = new keystone.List('Gallery', {
+	label: "Galleri",
+	plural: "Gallerier",
 	autokey: { from: 'name', path: 'key', unique: true },
 })
 
 
 Gallery.add({
-	name: { type: String, required: true },
-	publishedDate: { type: Date, default: Date.now },
-	heroImage: { type: Types.CloudinaryImage },
-	images: { type: Types.CloudinaryImages }
+	name: { type: String, required: true, label: "Navn" },
+	publishedDate: { type: Date, default: Date.now, label: "Publisert dato" },
+	heroImage: { type: Types.CloudinaryImage, label: "Hovedbilde" },
+	images: { type: Types.CloudinaryImages, label: "Bilder" }
 })
 
 

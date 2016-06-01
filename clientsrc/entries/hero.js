@@ -36,9 +36,9 @@ load$.subscribe(_ => {
     const textarea = document.querySelectorAll("#hero h1 textarea")[0]
     
     textarea.focus()
-    textarea.addEventListener('keydown', e => {
-      e.preventDefault()
-    })
+    
+    textarea.addEventListener('keydown', e => 
+      e.preventDefault())
       
     setTimeout(_ => {
       typestream({

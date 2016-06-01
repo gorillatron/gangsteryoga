@@ -62,13 +62,17 @@ load$.subscribe(_ => {
  * Hero Parallaxing
  */
 
+const hero = document.getElementById("hero")
+
 const windowsizes$ = Observable.fromEvent(window, 'resize')
   .throttleTime(33)
   .map(ev => currentwindowsize())
   .startWith(currentwindowsize())
 
+const mouseleaves$ = Observable.fromEvent(hero, 'mouseleave')
+const mouseenters$ = Observable.fromEvent(hero, 'mouseenter')
 
-const mousemoves$ = Observable.fromEvent(document, 'mousemove')
+const mousemoves$ = Observable.fromEvent(hero, 'mousemove')
 const mousepos$ = mousemoves$
   .throttleTime(33)
   .map(ev => ({x: ev.clientX, y: ev.clientY}))
@@ -101,6 +105,16 @@ const parallax$ = mousepos$.withLatestFrom(
     return {top, left}
   }
 )
+
+
+mouseleaves$.subscribe(ev => 
+  hero.classList.add("animate-translate"))
+  
+mouseenters$
+  .delay(400)
+  .subscribe(ev => 
+    hero.classList.remove("animate-translate"))
+
 
 parallax$
   .subscribeOn(Scheduler.animationFrame)

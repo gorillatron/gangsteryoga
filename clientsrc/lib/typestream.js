@@ -11,13 +11,14 @@ export default function typestream(opts) {
   var text = opts.text || textarea.attributes.getNamedItem("data-text").value
   var words = text.split(" ")
   var words$ = Observable.from(words)
+  var speed = opts.speed || 1
 
 
   var typestream$ = words$
     .concatMap(x => 
       Observable.of(x)
         .delay(
-          (Math.random() * 180) + (x.length * 1.57)
+          (Math.random() * 180 / speed) + ((x.length * 1.57) / speed)
     ))
     .concatMap(word => {
       var letters$ = Observable.from(word.split("").concat(" "))
@@ -25,7 +26,7 @@ export default function typestream(opts) {
         .concatMap(letter =>
           Observable.of(letter)
             .delay(
-              (Math.random() * 120)
+              (Math.random() * 120) / speed
             ))
       return typestream$
     })

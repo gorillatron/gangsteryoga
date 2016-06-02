@@ -4,7 +4,7 @@ import {Observable, Scheduler} from "rxjs"
 import typestream from "../lib/typestream"
 import ensurepos from "../lib/ensurepos"
 import currentwindowsize from "../lib/currentwindowsize"
-import {translate} from "../lib/transform"
+import {translate} from "../lib/css"
 
 
 
@@ -36,9 +36,9 @@ load$.subscribe(_ => {
     const textarea = document.querySelectorAll("#hero h1 textarea")[0]
     
     textarea.focus()
-    textarea.addEventListener('keydown', e => {
-      e.preventDefault()
-    })
+    
+    textarea.addEventListener('keydown', e => 
+      e.preventDefault())
       
     setTimeout(_ => {
       typestream({
@@ -62,13 +62,17 @@ load$.subscribe(_ => {
  * Hero Parallaxing
  */
 
+const hero = document.getElementById("hero")
+
 const windowsizes$ = Observable.fromEvent(window, 'resize')
   .throttleTime(33)
   .map(ev => currentwindowsize())
   .startWith(currentwindowsize())
 
+const mouseleaves$ = Observable.fromEvent(hero, 'mouseleave')
+const mouseenters$ = Observable.fromEvent(hero, 'mouseenter')
 
-const mousemoves$ = Observable.fromEvent(document, 'mousemove')
+const mousemoves$ = Observable.fromEvent(hero, 'mousemove')
 const mousepos$ = mousemoves$
   .throttleTime(33)
   .map(ev => ({x: ev.clientX, y: ev.clientY}))
@@ -102,6 +106,17 @@ const parallax$ = mousepos$.withLatestFrom(
   }
 )
 
+
+mouseleaves$.subscribe(ev => 
+  hero.classList.add("animate-translate"))
+  
+mouseenters$
+  .delay(400)
+  .subscribe(ev => 
+    hero.classList.remove("animate-translate"))
+
+
 parallax$
   .subscribeOn(Scheduler.animationFrame)
-  .subscribe(frame => translate(heroBackground, frame.left, frame.top))
+  .subscribe(frame => 
+    translate(heroBackground, frame.left, frame.top))

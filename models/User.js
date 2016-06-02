@@ -4,37 +4,32 @@ import emailservice from '../services/email'
 
 const Types = keystone.Field.Types
 
+
 /**
  * User Model
  * ==========
  */
 
-const User = new keystone.List('User')
-
-User.add({
-	name: { type: Types.Name, required: true, index: true },
-	email: { type: Types.Email, initial: true, required: true, index: true },
-	password: { type: Types.Password, initial: true, required: true }
-}, 'Permissions', {
-	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true }
+const User = new keystone.List('User', {
+	label: "Bruker",
+	plural: "Brukere",
 })
 
-// Provide access to Keystone
+
+User.add({
+	name: { type: Types.Name, required: true, index: true, label: "Navn" },
+	email: { type: Types.Email, initial: true, required: true, index: true, label: "Epost" },
+	password: { type: Types.Password, initial: true, required: true, label: "Passord" }
+}, 
+'Permissions', {
+	isAdmin: { type: Boolean, label: 'Admin', index: true }
+})
+
+
 User.schema.virtual('canAccessKeystone').get(function() {
 	return this.isAdmin
 })
 
-
-/**
- * Relationships
- */
-
-User.relationship({ ref: 'Post', path: 'posts', refPath: 'author' })
-
-
-/**
- * Registration
- */
 
 User.defaultColumns = 'name, email, isAdmin'
 User.register()

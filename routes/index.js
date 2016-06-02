@@ -22,6 +22,7 @@ import keystone from 'keystone'
 import {reduce, flow} from 'lodash'
 import {initLocals, flashMessages} from './middleware'
 
+
 // The keystone importer does not support es6 modules
 // so unpack the default export per imported route
 const importRoutes = flow(

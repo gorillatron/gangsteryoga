@@ -1,12 +1,12 @@
 
 import raf from "raf"
 import {Observable, Scheduler} from "rxjs"
-import {tween, timeline} from "popmotion"
+import {tween, timeline, easing} from "popmotion"
 import ensurepos from "../lib/ensurepos"
 import currentwindowsize from "../lib/currentwindowsize"
-import {translate} from "../lib/css"
+import {translate3d} from "../lib/css"
 
-const seperatorHeight = 200
+const seperator = 80
 const seperatorPadding = 40
 
 const parallaxImagesContainer = document.querySelector("#parallax-images")
@@ -24,20 +24,24 @@ const parallaxImageSize$ = windowsizes$.map((size) => size)
 
 const setScrollTop = event => {
   const y = document.body.scrollTop * 0.760
-  translate(parallaxImagesContainer, 0, -y)
+  translate3d(parallaxImagesContainer, 0, -y)
 }
 
 
-parallaxImageSize$.subscribe(size => {
-  parallaxImages.forEach(img => {
-    img.style.height = size.y + ((seperatorHeight - seperatorPadding) / 2) + "px"
+parallaxImageSize$
+  .subscribeOn(Scheduler.animationFrame)
+  .subscribe(size => {
+    parallaxImages.forEach(img => {
+      img.style.height = size.y + seperator + "px"
+    })
+    fullBlocks.forEach(block => {
+      block.style.height = size.y + "px"
+    })
   })
-  fullBlocks.forEach(block => {
-    block.style.height = size.y + "px"
-  })
-})
 
-scrolls$.subscribe(setScrollTop)
+scrolls$
+  .subscribeOn(Scheduler.animationFrame)
+  .subscribe(setScrollTop)
 
 
 const downChevron = document.querySelector(".button.down")
@@ -48,6 +52,7 @@ downChevronClicks$.subscribe(() => {
   const animation = tween({
     values: {
       top: {
+        ease: easing.easeOut,
         from: document.body.scrollTop,
         to: document.querySelector(".block.first").offsetTop - 20
       },
@@ -62,6 +67,7 @@ downChevronClicks$.subscribe(() => {
 })
 
 raf(() => setScrollTop())
+
 raf(() => {
   document.body.classList.add("show")
 })

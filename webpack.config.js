@@ -1,5 +1,6 @@
 
 var path = require('path')
+var fs = require('fs')
 var webpack = require('webpack')
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var path = require('path')
@@ -16,6 +17,10 @@ prod ?
   console.info("building for production"):
 console.info("building for development")
 
+var entries = fs.readdirSync(entrypath).reduce((acc, entryname) => {
+  acc[entryname.replace(".js", "")] = path.join(entrypath, entryname)
+  return acc
+}, {})
 
 module.exports = {
   
@@ -23,11 +28,7 @@ module.exports = {
    * Mainfiles of the client pages
    * These will be built as singel files to the public folder
    */
-  entry: {
-    hero: path.join(entrypath, 'hero.js'),
-    menu: path.join(entrypath, 'menu.js'),
-    gallery: path.join(entrypath, 'gallery.js')
-  },
+  entry: entries,
   
   output: {
     path: distFolder,

@@ -1,5 +1,4 @@
 
-
 const sidebar = document.getElementById("main-sidebar")
 const toggleButton = document.getElementById("menu-toggle")
 

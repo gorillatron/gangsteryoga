@@ -1,7 +1,7 @@
 
 import raf from "raf"
 import {Observable, Scheduler} from "rxjs"
-import {tween} from "popmotion"
+import {tween, timeline} from "popmotion"
 import ensurepos from "../lib/ensurepos"
 import currentwindowsize from "../lib/currentwindowsize"
 import {translate} from "../lib/css"
@@ -47,7 +47,6 @@ const downChevronClicks$ = Observable.fromEvent(downChevron, "click")
 downChevronClicks$.subscribe(() => {
   const animation = tween({
     values: {
-      
       top: {
         from: document.body.scrollTop,
         to: document.querySelector(".block.first").offsetTop - 20

@@ -43,6 +43,7 @@ load$.subscribe(_ => {
     setTimeout(_ => {
       typestream({
         el: textarea,
+        speed: 1,
         onComplete: _ => {
           setTimeout(_ => {
             const arrow = document.querySelectorAll(".footer .arrow")[0]

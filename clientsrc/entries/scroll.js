@@ -1,6 +1,7 @@
 
 import raf from "raf"
 import {Observable, Scheduler} from "rxjs"
+import {tween} from "popmotion"
 import ensurepos from "../lib/ensurepos"
 import currentwindowsize from "../lib/currentwindowsize"
 import {translate} from "../lib/css"
@@ -33,5 +34,26 @@ parallaxImageSize$.subscribe(size => {
   })
 })
 
-setScrollTop()
 scrolls$.subscribe(setScrollTop)
+
+
+const downChevron = document.querySelector(".button.down")
+const downChevronClicks$ = Observable.fromEvent(downChevron, "click")
+
+downChevronClicks$.subscribe(() => {
+  const animation = tween({
+    values: {
+      
+      top: {
+        from: document.body.scrollTop,
+        to: document.querySelector(".block.first").offsetTop - 20
+      },
+    },
+    duration: 667,
+    onFrame: (val) => {
+      window.scrollTo(0, val.top)
+      setScrollTop()
+    }
+  })
+  animation.start()
+})

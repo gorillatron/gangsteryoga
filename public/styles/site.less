@@ -14,10 +14,11 @@
 // You can also add your own custom variables to this file for
 // use in your site stylesheets.
 
-@import (inline) "./vendor/milligram.css";
+@import "http://yui.yahooapis.com/pure/0.6.0/pure-min.css";
 
 @import "site/reset.less";
 @import "site/variables.less";
+@import "site/buttons.less";
 @import "lib/mixins.less";
 @import "lib/animations.less";
 @import "site/layout.less";
@@ -36,8 +37,14 @@
     &.a { .coverBackground("/images/vend.jpg"); }
     &.b { .coverBackground("/images/shavasanahorizon.jpg"); }
     &.c { .coverBackground("/images/background_large.jpg"); }
-    &.d { background: blue }
+    &.d { .coverBackground("/images/shavasanahorizon.jpg"); }
+    &.e { .coverBackground("/images/background_large.jpg"); }
+    &.f { .coverBackground("/images/vend.jpg"); }
   }
+}
+
+.main-font() {
+  font-family: "Alte Haas Grotesk";
 }
 
 #content {
@@ -49,9 +56,28 @@
 
   }
   .block.seperator {
-    background-color: white;
-    height: 320px;
+    background-color: rgba(0,0,0, 0.95);
+    color: rgba(253,253,253, 0.95);
+    height: 280px;
     padding: 40px;
     text-align: center;
+    
+    h1 {
+      text-transform: uppercase;
+      font-size: 4em;
+    }
+
+    h1:first-child, p:first-child {
+      margin-top: 50px;
+    }
+
+  }
+  .block.seperator.first {
+    color: inherit;
+    background-color: rgba(255,255,255, 0.98);
+    p {
+      font-size: 1.9em;
+      .main-font();
+    }
   }
 }

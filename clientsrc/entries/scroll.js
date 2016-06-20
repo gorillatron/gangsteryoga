@@ -5,7 +5,7 @@ import ensurepos from "../lib/ensurepos"
 import currentwindowsize from "../lib/currentwindowsize"
 import {translate} from "../lib/css"
 
-const seperatorHeight = 240
+const seperatorHeight = 200
 const seperatorPadding = 40
 
 const parallaxImagesContainer = document.querySelector("#parallax-images")
@@ -19,6 +19,11 @@ const windowsizes$ = Observable.fromEvent(window, 'resize')
 
 const parallaxImageSize$ = windowsizes$.map(size => size)
 
+const setScrollTop = event => {
+  const y = document.body.scrollTop * 0.76
+  translate(parallaxImagesContainer, 0, -y)
+}
+
 parallaxImageSize$.subscribe(size => {
   parallaxImages.forEach(img => {
     img.style.height = size.y + ((seperatorHeight - seperatorPadding) / 2) + "px"
@@ -28,7 +33,5 @@ parallaxImageSize$.subscribe(size => {
   })
 })
 
-scrolls$.subscribe(event => {
-  const y = document.body.scrollTop * 0.8
-  translate(parallaxImagesContainer, 0, -y)
-})
+setScrollTop()
+scrolls$.subscribe(setScrollTop)

@@ -40,6 +40,7 @@ scrolls$.subscribe(setScrollTop)
 const downChevron = document.querySelector(".button.down")
 const downChevronClicks$ = Observable.fromEvent(downChevron, "click")
 
+
 downChevronClicks$.subscribe(() => {
   const animation = tween({
     values: {
@@ -51,9 +52,14 @@ downChevronClicks$.subscribe(() => {
     },
     duration: 667,
     onFrame: (val) => {
-      window.scrollTo(0, val.top)
-      setScrollTop()
+      raf(() => window.scrollTo(0, val.top))
+      raf(() => setScrollTop())
     }
   })
   animation.start()
+})
+
+raf(() => setScrollTop())
+raf(() => {
+  document.body.classList.add("show")
 })

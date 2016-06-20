@@ -31,6 +31,14 @@ html {
   background-color: black;
 }
 
+body {
+  opacity: 0.0001;
+  transition: opacity 0.37s ease-in;
+  &.show {
+    opacity: 1;
+  }
+}
+
 .container {
   margin: 0 auto;
   max-width: 80rem;

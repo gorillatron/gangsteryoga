@@ -18,12 +18,15 @@ const windowsizes$ = Observable.fromEvent(window, 'resize')
   .map(ev => currentwindowsize())
   .startWith(currentwindowsize())
 
+
 const parallaxImageSize$ = windowsizes$.map(size => size)
+
 
 const setScrollTop = event => {
   const y = document.body.scrollTop * 0.76
   translate(parallaxImagesContainer, 0, -y)
 }
+
 
 parallaxImageSize$.subscribe(size => {
   parallaxImages.forEach(img => {

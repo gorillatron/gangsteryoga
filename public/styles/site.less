@@ -32,6 +32,8 @@ html {
 }
 
 body {
+  width: 100%;
+  box-sizing: border-box;
   opacity: 0.0001;
   transition: opacity 0.37s ease-in;
   &.show {
@@ -41,7 +43,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 80rem;
+  max-width: 100%;
   padding: 0 2rem;
   position: relative;
 }
@@ -89,6 +91,7 @@ header#main-header {
   top: 0px;
   left: 0px;
   width: 100%;
+
   .block.full#hero {
     img.logo {
       position: relative;
@@ -96,6 +99,10 @@ header#main-header {
       width: 20rem;
       height: 20rem;
       margin: 12rem auto 0px auto;
+      @media @desktop-query {
+        width: 30rem;
+        height: 30rem;
+      }
     }
     .button.down {
       border-radius: 40px;
@@ -108,10 +115,12 @@ header#main-header {
       margin-left: -20px;
       img {
         width: 100%;
-        height: : 100%;
+        height: 100%;
       }
     }
+    
   }
+
   .block.seperator {
     background-color: rgba(0,0,0, 0.95);
     color: rgba(253,253,253, 0.95);

@@ -1,4 +1,6 @@
 
+@import "./mediaqueries.less";
+
 .coverBackground(@url) {
   background: url(@url) no-repeat; 
   -webkit-background-size: cover;
@@ -62,4 +64,18 @@
 .absoluteCentered(@height; @width) {
   margin-left: -(@width / 2);
   margin-top: -(@height / 2);
+}
+
+.pull-right {
+  vertical-align: top;
+  float: right;
+}
+
+.pull-left {
+  vertical-align: top;
+  float: left;
+}
+
+.main-font() {
+  font-family: "Alte Haas Grotesk";
 }

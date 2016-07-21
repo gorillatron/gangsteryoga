@@ -4,8 +4,8 @@
 import keystone from "keystone"
 
 
-export function start() {
-	keystone.start()
+export function start(cb = _ => console.log("server running...")) {
+	keystone.start(cb)
 }
 
 

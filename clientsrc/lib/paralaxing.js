@@ -1,63 +1,9 @@
 
 import raf from "raf"
 import {Observable, Scheduler} from "rxjs"
-import typestream from "../lib/typestream"
-import ensurepos from "../lib/ensurepos"
-import currentwindowsize from "../lib/currentwindowsize"
-import {translate} from "../lib/css"
-
-
-
-/**
- * Hero Load animations
- */
-
-const loader = document.getElementById("loader")
-const root = document.getElementById("root-container")
-const heroBackground = document.getElementById("hero-background")
-const logo = document.getElementById("main-logo")
-const backgroundUrl = heroBackground.attributes.getNamedItem("data-background").value
-
-const image = new Image()
-const load$ = Observable.fromEvent(image, 'load').take(1)
-
-image.src = backgroundUrl
-
-load$.subscribe(_ => {
-  
-  raf(_ => heroBackground.style['background-image'] = 'url(' + backgroundUrl + ')')
-  raf(_ => root.classList.add("show"))
-  raf(_ => loader.remove())
-  
-  setTimeout(_ => {
-    
-    raf(_ => logo.classList.add("show"))
-    
-    const textarea = document.querySelectorAll("#hero h1 textarea")[0]
-    
-    textarea.focus()
-    
-    textarea.addEventListener('keydown', e => 
-      e.preventDefault())
-      
-    setTimeout(_ => {
-      typestream({
-        el: textarea,
-        speed: 1,
-        onComplete: _ => {
-          setTimeout(_ => {
-            const arrow = document.querySelectorAll(".footer .arrow")[0]
-            arrow.className = arrow.className + " show"
-          }, 500)
-        }
-      })
-    }, 1330)
-    
-  }, 600)
-  
-})
-
-
+import currentwindowsize from "./currentwindowsize"
+import ensurepos from "./ensurepos"
+import {translate} from "./css"
 
 /**
  * Hero Parallaxing

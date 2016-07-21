@@ -1,17 +1,8 @@
 
-const sidebar = document.getElementById("main-sidebar")
-const toggleButton = document.getElementById("menu-toggle")
+const sidebar = $("#main-sidebar")
+const toggleButton = $("#menu-toggle")
 
-let open = false
-
-toggleButton.addEventListener("click", event => {
-  open = !open
-  if(open) {
-    sidebar.classList.add("open")
-    toggleButton.classList.add("cross")
-  }
-  else {
-    sidebar.classList.remove("open")
-    toggleButton.classList.remove("cross")
-  }
+toggleButton.on("click", event => {
+  sidebar.toggleClass("open")
+  toggleButton.toggleClass("cross")
 })

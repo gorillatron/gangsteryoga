@@ -5,19 +5,32 @@
 
 h1, h2, h3, h4, h5, h6 {
   .main-font();
-  font-weight: 300;
-  margin-bottom: 2.2rem;
-  margin-top: 0;
 }
 
-p, code, blockquote {
-  margin-bottom: 2rem;
+h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, table {
+  margin-bottom: @content-spacing-base;
 }
 
-.content section {
-  margin-bottom: 2rem;
+h1 {
+  font-size: floor((@font-size-base * 2.1))
 }
 
-body {
-  font-family: 'Raleway', sans-serif;
+h2 {
+  font-size: floor((@font-size-base * 1.8))
+}
+
+h3 {
+  font-size: floor((@font-size-base * 1.5))
+}
+
+h4 {
+  font-size: floor((@font-size-base * 1.3))
+}
+
+h5 {
+  font-size: floor((@font-size-base * 1.15))
+}
+
+p, code, blockquote, ul, ol, table {
+  font-size: @font-size-base;
 }

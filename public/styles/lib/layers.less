@@ -1,0 +1,52 @@
+
+@base-z: 1;
+
+
+.layber-a() {
+  z-index: @base-z;
+}
+
+.layber-b() {
+  z-index: @base-z + 1;
+}
+
+.layber-c() {
+  z-index: @base-z + 2;
+}
+
+.layber-d() {
+  z-index: @base-z + 3;
+}
+
+.layber-e() {
+  z-index: @base-z + 4;
+}
+
+.layber-f() {
+  z-index: @base-z + 5;
+}
+
+
+.layber-a {
+  .layber-a();
+}
+
+.layber-b {
+  .layber-b();
+}
+
+.layber-c {
+  .layber-c();
+}
+
+.layber-d {
+  .layber-d();
+}
+
+.layber-e {
+  .layber-e();
+}
+
+.layber-f {
+  .layber-f();
+}

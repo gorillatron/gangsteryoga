@@ -16,6 +16,13 @@
 @import 'basscss-hide';
 
 
+/* Basscss Addons */
+@import 'basscss-addons/modules/responsive-margin';
+@import 'basscss-addons/modules/responsive-padding';
+@import 'basscss-addons/modules/responsive-layout';
+@import 'basscss-addons/modules/responsive-position';
+
+
 /* Site modules */
 @import './variables';
 @import './cover';

@@ -1,20 +1,51 @@
 
-#cover {
-  background-image: url('/images/cover.png');
-  background-size: cover;
-  min-height: 60rem;
-  transition: margin-top 0.15s ease-out;
+@defin-mixin over-max-width {
+  
 }
 
+#front-page {
 
-@media (max-width: 96rem) {
   #cover {
-    margin-top: 0px;
+    background-image: url('/images/cover.png');
+    background-size: cover;
+    
+    transition: margin-top 0.15s ease-out;
+
+    @media (--breakpoint-md) {
+      min-height: 60rem;
+    }
+
+    .logo {
+      height: 7rem;
+      width: 7rem;
+      background-image: url('/gfx/gy_logo_svart_positiv.png');
+      background-size: cover;
+    }
+
+    .hamburger-wrapper {
+      padding-top: var(--space-2);
+    }
+
+    .hamburger {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .hamburger .line {
+      background: rgb(20,20,20);
+      width: 100%;
+      height: 15%;
+      margin-bottom: 25%
+    }
+
   }
+
+  .content {
+    
+  }
+
 }
 
-.logo {
-  height: 5rem;
-  width: 5rem;
-  background-image: url('/gfx/hvit_positiv.svg');
-}
+
+
+

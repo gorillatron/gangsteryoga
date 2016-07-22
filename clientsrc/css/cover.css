@@ -58,6 +58,7 @@
 
       .text-block {
         height: 100%;
+        background-color: white;
         color: var(--light-green);
         border: 10px solid var(--light-green);
         display: table;
@@ -104,6 +105,14 @@
 
     .pull-up-3 {
       margin-top: -calc(var(--content-block-height) + var(--space-3));
+    }
+
+    .pull-up-6 {
+      margin-top: -calc(calc(var(--content-block-height) + var(--space-3)) * 2.7);
+    }
+
+    .large-photo {
+      height: 64rem;
     }
 
   }

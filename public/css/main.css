@@ -966,6 +966,7 @@ hr{
 }
 #front-page .content .text .text-block{
   height:100%;
+  background-color:white;
   color:#adffd8;
   border:10px solid #adffd8;
   display:table;
@@ -1008,6 +1009,12 @@ hr{
 }
 #front-page .content .pull-up-3{
   margin-top:-23rem;
+}
+#front-page .content .pull-up-6{
+  margin-top:-62.1rem;
+}
+#front-page .content .large-photo{
+  height:64rem;
 }
 html, body{
   min-height:100%;

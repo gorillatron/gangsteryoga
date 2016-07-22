@@ -8,7 +8,6 @@
   #cover {
     background-image: url('/images/cover.png');
     background-size: cover;
-    
     transition: margin-top 0.15s ease-out;
 
     @media (--breakpoint-md) {
@@ -20,9 +19,11 @@
       width: 7rem;
       background-image: url('/gfx/gy_logo_svart_positiv.png');
       background-size: cover;
+      transition: all 0.15s ease-out;
     }
 
     .hamburger-wrapper {
+      transition: all 0.15s ease-out;
       padding-top: var(--space-2);
     }
 
@@ -41,7 +42,23 @@
   }
 
   .content {
-    
+
+    .text, .link {
+      height: var(--content-block-height);
+    }
+
+    .text {
+      box-sizing: border-box;
+      .text-block {
+        color: var(--light-green);
+        border: 10px solid var(--light-green);
+      }
+    }
+
+    .link {
+      background-size: cover;
+    }
+
   }
 
 }

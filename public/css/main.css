@@ -908,6 +908,14 @@ hr{
   .lg-bottom-0{ bottom:0 }
   .lg-left-0{ left:0 }
 }
+@font-face{
+  font-family:'AlteHaasGrotesk';
+  src:url('/fonts/AlteHaasGroteskRegular.ttf');
+}
+@font-face{
+  font-family:'AlteHaasGroteskBold';
+  src:url('/fonts/AlteHaasGroteskBold.ttf');
+}
 @defin-mixin over-max-width{
   
 }
@@ -927,8 +935,12 @@ hr{
   width:7rem;
   background-image:url('/gfx/gy_logo_svart_positiv.png');
   background-size:cover;
+  -webkit-transition:all 0.15s ease-out;
+  transition:all 0.15s ease-out;
 }
 #front-page #cover .hamburger-wrapper{
+  -webkit-transition:all 0.15s ease-out;
+  transition:all 0.15s ease-out;
   padding-top:1.5rem;
 }
 #front-page #cover .hamburger{
@@ -941,10 +953,21 @@ hr{
   height:15%;
   margin-bottom:25%
 }
-#front-page .content{
-  
+#front-page .content .text, #front-page .content .link{
+  height:20rem;
+}
+#front-page .content .text{
+  box-sizing:border-box;
+}
+#front-page .content .text .text-block{
+  color:#adffd8;
+  border:10px solid #adffd8;
+}
+#front-page .content .link{
+  background-size:cover;
 }
 html, body{
   min-height:100%;
+  font-family:"AlteHaasGrotesk";
 }
 

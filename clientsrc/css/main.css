@@ -24,11 +24,13 @@
 
 
 /* Site modules */
+@import './fonts';
 @import './variables';
 @import './cover';
 
 
 html, body {
   min-height: 100%;
+  font-family: "AlteHaasGrotesk";
 }
 

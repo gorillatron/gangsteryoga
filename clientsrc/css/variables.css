@@ -27,6 +27,10 @@
   --breakpoint-md: min-width 52em;
   --breakpoint-lg: min-width 96rem;
 
+  --content-block-height: 20rem;
+
+  --light-green: #adffd8;
+
 }
 
 @custom-media --breakpoint-sm (min-width: 40em);

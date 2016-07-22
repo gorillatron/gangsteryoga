@@ -964,10 +964,15 @@ hr{
   border:10px solid #adffd8;
 }
 #front-page .content .link{
+  line-height:20rem;
   background-size:cover;
 }
 html, body{
   min-height:100%;
   font-family:"AlteHaasGrotesk";
+}
+a{
+  text-decoration:none;
+  color:inherit;
 }
 

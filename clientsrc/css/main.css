@@ -34,3 +34,8 @@ html, body {
   font-family: "AlteHaasGrotesk";
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+

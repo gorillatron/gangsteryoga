@@ -1,7 +1,8 @@
 
-@import 'basscss-basic';
+
 
 /* Basscss Modules */
+@import 'basscss-basic';
 @import 'basscss-type-scale';
 @import 'basscss-typography';
 @import 'basscss-layout';
@@ -14,22 +15,13 @@
 @import 'basscss-border';
 @import 'basscss-hide';
 
-:root {
-  /*--h1: 2rem;
-  --h2: 1.5rem;
-  --h3: 1.25rem;
-  --h4: 1rem;
-  --h5: .875rem;
-  --h6: .75rem;
-  --bold-font-weight: bold;
-  --space-1: .5rem;
-  --space-2: 1rem;
-  --space-3: 2rem;
-  --space-4: 4rem;
-  --border-width: 1px;
-  --border-radius: 3px;*/
-  --width-1: 32rem;
-  --width-2: 48rem;
-  --width-3: 64rem;
-  --width-4: 96rem;
+
+/* Site modules */
+@import './variables';
+@import './cover';
+
+
+html, body {
+  min-height: 100%;
 }
+

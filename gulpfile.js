@@ -1,4 +1,5 @@
 const gulp = require("gulp")
+const path = require("path")
 const gutil = require("gulp-util")
 const webpack = require("webpack")
 const postcss = require('gulp-postcss')
@@ -28,15 +29,19 @@ gulp.task('watch-js', ["webpack"], () => {
 })
 
 
-
 gulp.task('css', function () {
   var processors = [
+    require('postcss-vars').processor,
     require('postcss-import')({}),
-    require('postcss-custom-media')({}),
     require('postcss-custom-properties')({}),
     require('postcss-calc')({}),
     require('postcss-color-function')({}),
     require('postcss-discard-comments')({}),
+    require('postcss-image-inliner')({
+      assetsPaths: [
+        path.join(__dirname, "./clientsrc")
+      ]
+    }),
     require('autoprefixer')({})
   ]
   return gulp.src('./clientsrc/css/main.css')

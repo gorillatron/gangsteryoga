@@ -1,0 +1,20 @@
+
+#cover {
+  background-image: url('/images/cover.png');
+  background-size: cover;
+  min-height: 60rem;
+  transition: margin-top 0.15s ease-out;
+}
+
+
+@media (max-width: 96rem) {
+  #cover {
+    margin-top: 0px;
+  }
+}
+
+.logo {
+  height: 5rem;
+  width: 5rem;
+  background-image: url('/gfx/hvit_positiv.svg');
+}

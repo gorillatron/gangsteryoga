@@ -955,17 +955,59 @@ hr{
 }
 #front-page .content .text, #front-page .content .link{
   height:20rem;
+  box-sizing:border-box;
+  overflow:hidden;
 }
 #front-page .content .text{
   box-sizing:border-box;
 }
+#front-page .content .text.vertical{
+  height:40rem;
+}
 #front-page .content .text .text-block{
+  height:100%;
   color:#adffd8;
   border:10px solid #adffd8;
+  display:table;
+}
+#front-page .content .text .text-block p{
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
 }
 #front-page .content .link{
+  position:relative;
   line-height:20rem;
   background-size:cover;
+  font-size:3rem;
+}
+#front-page .content .link .image{
+  display:table;
+  z-index:1;
+  height:100%;
+  width:101%;
+  background-size:cover;
+}
+#front-page .content .link .image .text{
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+}
+#front-page .content .link.outlined-r{
+  box-shadow:0px 0px 0px 15px rgb(255,255,255);
+}
+#front-page .content .link.outlined-l{
+  box-shadow:0px 0px 0px 15px rgb(255,255,255);
+}
+#front-page .content .photo{
+  background-size:cover;
+  height:40rem;
+}
+#front-page .content .photo.overflow-down{
+  height:43rem;
+}
+#front-page .content .pull-up-3{
+  margin-top:-23rem;
 }
 html, body{
   min-height:100%;

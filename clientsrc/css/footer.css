@@ -1,0 +1,23 @@
+
+#footer {
+  
+  section.info {
+    color: var(--offwhite);
+    background-color: var(--dark-gray);
+    
+    .background-logo {
+      position: absolute;
+      top: -12%;
+      right: 1%;
+      background-image: url(/gfx/logo_white.svg);
+      background-size: cover;
+      height: 130%;
+      width: 600px;
+      opacity: 0.1;
+    }
+
+  }
+
+  section.copyright {}
+
+}

@@ -916,9 +916,6 @@ hr{
   font-family:'AlteHaasGroteskBold';
   src:url('/fonts/AlteHaasGroteskBold.ttf');
 }
-@defin-mixin over-max-width{
-  
-}
 #front-page #cover{
   background-image:url('/images/cover.png');
   background-size:cover;
@@ -981,6 +978,8 @@ hr{
   line-height:20rem;
   background-size:cover;
   font-size:3rem;
+  text-decoration:none;
+  color:inherit;
 }
 #front-page .content .link .image{
   display:table;
@@ -1016,12 +1015,23 @@ hr{
 #front-page .content .large-photo{
   height:64rem;
 }
+#footer section.info{
+  color:rgb(247,247,247);
+  background-color:rgb(20,20,20);
+}
+#footer section.info .background-logo{
+  position:absolute;
+  top:-12%;
+  right:1%;
+  background-image:url(/gfx/logo_white.svg);
+  background-size:cover;
+  height:130%;
+  width:600px;
+  opacity:0.1;
+}
+#footer section.copyright{}
 html, body{
   min-height:100%;
   font-family:"AlteHaasGrotesk";
-}
-a{
-  text-decoration:none;
-  color:inherit;
 }
 

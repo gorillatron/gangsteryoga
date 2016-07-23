@@ -26,16 +26,12 @@
 /* Site modules */
 @import './fonts';
 @import './variables';
-@import './cover';
+@import './front-page';
+@import './footer';
 
 
 html, body {
   min-height: 100%;
   font-family: "AlteHaasGrotesk";
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 

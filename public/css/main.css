@@ -962,8 +962,10 @@ hr{
 #front-page .content .text{
   box-sizing:border-box;
 }
-#front-page .content .text.vertical{
-  height:40rem;
+@media (min-width: 52em){
+  #front-page .content .text.vertical{
+    height:40rem;
+  }
 }
 #front-page .content .text .text-block{
   height:100%;

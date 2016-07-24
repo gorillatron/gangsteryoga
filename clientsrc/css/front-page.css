@@ -52,7 +52,9 @@
       box-sizing: border-box;
 
       &.vertical {
-        height: calc(var(--content-block-height) * 2);
+        @media (--breakpoint-md) {
+          height: calc(var(--content-block-height) * 2);
+        }
       }
 
       .text-block {

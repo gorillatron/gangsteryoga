@@ -78,12 +78,13 @@
       font-size: 3rem;
       text-decoration: none;
       color: inherit;
+      overflow-y: hidden;
 
       .image {
         display: table;
         z-index: 1;
         height: 100%;
-        width: 101%;
+        width: 100%;
         background-size: cover;
         .text {
           display: table-cell; 

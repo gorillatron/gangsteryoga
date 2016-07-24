@@ -41,7 +41,9 @@
   .content {
 
     .text, .link {
-      height: var(--content-block-height);
+      @media (--breakpoint-md) {
+        height: var(--content-block-height);
+      }
       box-sizing: border-box;
       overflow: hidden;
     }
@@ -107,11 +109,15 @@
     }
 
     .pull-up-3 {
-      margin-top: -calc(var(--content-block-height) + var(--space-3));
+      @media (--breakpoint-md) {
+        margin-top: -calc(var(--content-block-height) + var(--space-3));
+      }
     }
 
     .pull-up-6 {
-      margin-top: -calc(calc(var(--content-block-height) + var(--space-3)) * 2.7);
+      @media (--breakpoint-md) {
+        margin-top: -calc(calc(var(--content-block-height) + var(--space-3)) * 2.7);
+      }
     }
 
     .large-photo {

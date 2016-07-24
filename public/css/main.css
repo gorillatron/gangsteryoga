@@ -951,9 +951,13 @@ hr{
   margin-bottom:25%
 }
 #front-page .content .text, #front-page .content .link{
-  height:20rem;
   box-sizing:border-box;
   overflow:hidden;
+}
+@media (min-width: 52em){
+  #front-page .content .text, #front-page .content .link{
+    height:20rem;
+  }
 }
 #front-page .content .text{
   box-sizing:border-box;
@@ -1006,11 +1010,15 @@ hr{
 #front-page .content .photo.overflow-down{
   height:43rem;
 }
-#front-page .content .pull-up-3{
-  margin-top:-23rem;
+@media (min-width: 52em){
+  #front-page .content .pull-up-3{
+    margin-top:-23rem;
+  }
 }
-#front-page .content .pull-up-6{
-  margin-top:-62.1rem;
+@media (min-width: 52em){
+  #front-page .content .pull-up-6{
+    margin-top:-62.1rem;
+  }
 }
 #front-page .content .large-photo{
   height:64rem;

@@ -3,20 +3,30 @@
 #front-page {
 
   #cover {
-    background-image: url('/images/cover.png');
+    position: relative;
+    background-image: url('/images/cover_mobile.png');
+    height: 100vh;
     background-size: cover;
     transition: margin-top 0.15s ease-out;
 
     @media (--breakpoint-md) {
+      background-image: url('/images/cover.png');
       min-height: 60rem;
     }
 
     .logo {
-      height: 7rem;
-      width: 7rem;
+      height: 12rem;
+      width: 12rem;
       background-image: url('/gfx/gy_logo_svart_positiv.png');
       background-size: cover;
       transition: all 0.15s ease-out;
+      margin-top: 25vh;
+
+      @media (--breakpoint-md) {
+        height: 7rem;
+        width: 7rem;
+      }
+
     }
 
     .hamburger-wrapper {
@@ -73,22 +83,27 @@
 
     .link {
       position: relative;
-      line-height: var(--content-block-height);
+      min-height: var(--content-block-height);
       font-size: 3rem;
       text-decoration: none;
       color: inherit;
-      overflow-y: hidden;
+      overflow: hidden;
+      cursor: pointer;
 
       .image {
         display: table;
         z-index: 1;
-        height: 100%;
-        width: 100%;
+        min-height: var(--content-block-height);
+        width: 100.1%;
         background-size: cover;
         .text {
           display: table-cell; 
           vertical-align: middle; 
           text-align: center; 
+        }
+        transition: transform 0.137s ease-out;
+        &:hover {
+          transform: scale(1.137);
         }
       }
 

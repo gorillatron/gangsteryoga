@@ -183,14 +183,6 @@
     color: var(--light-green);
   }
   
-  &.pre-open {
-    display: block;
-  }
-
-  &.open {
-    opacity: 1;
-  }
-
   a.back {
     position: absolute;
     margin-left: -2em;

@@ -1106,12 +1106,6 @@ hr{
 .content-container .content{
   color:#adffd8;
 }
-.content-container.pre-open{
-  display:block;
-}
-.content-container.open{
-  opacity:1;
-}
 .content-container a.back{
   position:absolute;
   margin-left:-2em;

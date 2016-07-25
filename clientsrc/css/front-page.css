@@ -50,6 +50,13 @@
 
   .content {
 
+    .sm-punchline {
+      background-color: black;
+      color: var(--light-green);
+      font-size: 1.37em;
+      line-height: 1.5em;
+    }
+
     .text, .link {
       @media (--breakpoint-md) {
         height: var(--content-block-height);

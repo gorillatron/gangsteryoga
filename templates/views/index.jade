@@ -4,7 +4,7 @@ extends ../layouts/default
 block content
   #front-page
 
-    header#cover
+    header#cover.md-mb3
       .clearfix
         .logo.m2.md-mt4.mx-auto
         .hamburger-wrapper.top-0.right-0.mt2.mr2.md-m4.absolute
@@ -13,14 +13,18 @@ block content
             .line
             .line
 
-    section.content.clearfix.sm-px0.md-px2.my3.lg-px4
+    section.content.clearfix.sm-px0.md-px2.mb3.lg-px4
 
       .clearfix.lg-mxn3
 
-        .col.col-12.md-col-3.mb2.z1
+        .col.col-12.md-col-3.mb2.z1.sm-hide.xs-hide
           .clearfix
-            .col.col-12.photo.md-mb2.sm-hide.xs-hide(style="background-image: url(/images/webgangster-filter-lys.png)")
-
+            .col.col-12.photo.md-mb2(style="background-image: url(/images/webgangster-filter-lys.png)")
+            
+        .col.col-12.md-hide.lg-hide
+          .clearfix
+            .col.col-12.px2.py1.sm-punchline.mb3
+              p Gangster Yoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv. Det handler om å være tøff nok til å møte seg selv. Puste seg gjennom utfordringer. Kjenne på stivheter og ubehag, og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil.
             
         .col.col-12.px3.md-px0.md-col-9
           .clearfix

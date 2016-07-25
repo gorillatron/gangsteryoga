@@ -990,6 +990,12 @@ hr{
   height:15%;
   margin-bottom:25%
 }
+#front-page .content .sm-punchline{
+  background-color:black;
+  color:#adffd8;
+  font-size:1.37em;
+  line-height:1.5em;
+}
 #front-page .content .text, #front-page .content .link{
   box-sizing:border-box;
   overflow:hidden;

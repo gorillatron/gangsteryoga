@@ -946,10 +946,17 @@ hr{
   font-family:'AlteHaasGroteskBold';
   src:url('/fonts/AlteHaasGroteskBold.ttf');
 }
+#front-page{
+
+  opacity:0.0001;
+  -webkit-transition:opacity 0.137s ease-out;
+  transition:opacity 0.137s ease-out;
+
+}
 #front-page #cover{
   position:relative;
   background-image:url('/images/cover_mobile.png');
-  height:100vh;
+  height:85vh;
   background-size:cover;
   -webkit-transition:margin-top 0.15s ease-out;
   transition:margin-top 0.15s ease-out;
@@ -1100,7 +1107,7 @@ hr{
   height:100%;
   opacity:0.001;
   box-sizing:border-box;
-  background:rgba(10,10,10, 0.95);
+  background:rgba(10,10,10, 0.97);
 
 }
 .content-container .content{

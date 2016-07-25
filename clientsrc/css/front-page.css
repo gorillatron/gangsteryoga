@@ -2,10 +2,13 @@
 
 #front-page {
 
+  opacity: 0.0001;
+  transition: opacity 0.137s ease-out;
+
   #cover {
     position: relative;
     background-image: url('/images/cover_mobile.png');
-    height: 100vh;
+    height: 85vh;
     background-size: cover;
     transition: margin-top 0.15s ease-out;
 
@@ -177,7 +180,7 @@
   height: 100%;
   opacity: 0.001;
   box-sizing: border-box;
-  background: rgba(10,10,10, 0.95);
+  background: rgba(10,10,10, 0.97);
 
   .content {
     color: var(--light-green);

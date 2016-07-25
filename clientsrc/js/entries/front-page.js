@@ -57,3 +57,7 @@ page('/:page', (ctx, next) => {
 
 
 page()
+
+setTimeout(_ => $("#front-page").css('opacity', 1), 66)
+
+$('.content-container').on('mousewheel', e => e.preventDefault())

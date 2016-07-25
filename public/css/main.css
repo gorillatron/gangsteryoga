@@ -961,18 +961,18 @@ hr{
   }
 }
 #front-page #cover .logo{
-  height:12rem;
-  width:12rem;
+  height:20vh;
+  width:20vh;
   background-image:url('/gfx/gy_logo_svart_positiv.png');
   background-size:cover;
   -webkit-transition:all 0.15s ease-out;
   transition:all 0.15s ease-out;
   margin-top:25vh;
 }
-@media (min-width: 52em){
+@media (min-width: 96rem){
   #front-page #cover .logo{
-    height:7rem;
-    width:7rem;
+    height:15vh;
+    width:15vh;
   }
 }
 #front-page #cover .hamburger-wrapper{

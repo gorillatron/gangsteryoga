@@ -15,16 +15,16 @@
     }
 
     .logo {
-      height: 12rem;
-      width: 12rem;
+      height: 20vh;
+      width: 20vh;
       background-image: url('/gfx/gy_logo_svart_positiv.png');
       background-size: cover;
       transition: all 0.15s ease-out;
       margin-top: 25vh;
 
-      @media (--breakpoint-md) {
-        height: 7rem;
-        width: 7rem;
+      @media (--breakpoint-lg) {
+        height: 15vh;
+        width: 15vh;
       }
 
     }

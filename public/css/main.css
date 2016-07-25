@@ -1088,6 +1088,35 @@ hr{
 #front-page .content .large-photo{
   height:64rem;
 }
+.content-container{
+  display:none;
+  position:fixed;
+  z-index:300;
+  -webkit-transition:all 0.137s ease-out;
+  transition:all 0.137s ease-out;
+  top:0%;
+  left:0%;
+  width:100%;
+  height:100%;
+  opacity:0.001;
+  box-sizing:border-box;
+  background:rgba(10,10,10, 0.95);
+
+}
+.content-container .content{
+  color:#adffd8;
+}
+.content-container.pre-open{
+  display:block;
+}
+.content-container.open{
+  opacity:1;
+}
+.content-container a.back{
+  position:absolute;
+  margin-left:-2em;
+  color:inherit;
+}
 #footer section.info{
   color:rgb(247,247,247);
   background-color:rgb(20,20,20);

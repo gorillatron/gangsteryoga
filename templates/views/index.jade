@@ -1,4 +1,8 @@
 extends ../layouts/default
+include ../mixins/vscript
+
+block js
+  +vscript('front-page')
 
 
 block content
@@ -39,15 +43,15 @@ block content
             .col.col-12.md-col-6.text.md-pl3.mb3.md-mb0.md-pr3
               .text-block.p3.center
                 p.h2.lg-h1 “Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.”  
-            a.col.col-12.md-col-6.link.center.mb3
-              .image(href="#vårtarbeid", style="background-image: url(/images/vårtarbeid.png)")
+            a.col.col-12.md-col-6.link.center.mb3(href="/vaartarbeid",)
+              .image( style="background-image: url(/images/vårtarbeid.png)")
                 span.text Vårt Arbeid
           .clearfix.md-pl3.xs-hide.sm-hide
             .col.col-12.photo.overflow-down.pt2(style="background-image: url(/images/webgangster_bw.png)")
 
         .col.col-12.pull-up-3
-          a.col.col-12.md-col-4.link.outlined-r.center.px3.md-p0
-            .image(href="#yogasommetode", style="background-image: url(/images/yogasommetode.png)")
+          a.col.col-12.md-col-4.link.outlined-r.center.px3.md-p0(href="/yogasommetode")
+            .image(style="background-image: url(/images/yogasommetode.png)")
                 span.text Yoga som metode
           .col.col-7
         
@@ -57,15 +61,15 @@ block content
               .col-col-12.text.vertical.md-pr4.mb3.px3.md-p0.xs-hide.sm-hide
                 .text-block.p3.center
                   p.h2.lg-h1 “Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.”
-              a.col.col-12.link.outlined-r.center.px3.md-p0
-                .image(href="#fengsler", style="background-image: url(/images/yogasommetode.png)")
+              a.col.col-12.link.outlined-r.center.px3.md-p0(href="/fengsler")
+                .image(style="background-image: url(/images/yogasommetode.png)")
                     span.text Fenglser
 
             .col.col-12.md-col-4.xs-hide.sm-hide &nbsp;
 
             .col.col-12.md-col-4
-              a.col.col-12.link.outlined-l.center.md-mt3.mb0.md-mb3.p3.md-p0
-                .image(href="#instruktører", style="background-image: url(/images/instruktører.png)")
+              a.col.col-12.link.outlined-l.center.md-mt3.mb0.md-mb3.p3.md-p0(href="/instruktoerer")
+                .image(style="background-image: url(/images/instruktører.png)")
                   span.text Instruktører
               .col.col-12.pl3.pr3.lg-pr0.lg-pl4.text.vertical
                 .text-block.p3.center
@@ -80,6 +84,46 @@ block content
                 .col.col-11.lg-col-10.photo.large-photo.md-mb2(style="background-image: url(/images/webgangster_27_bw.png)")
             .col.col-3 &nbsp;
            
+
+  .content-container.vaartarbeid
+    .content.lg-py4
+      .clearfix.mx-auto.center.max-width-3.p2.sm-px3.lg-py4 
+        h1.mb3 
+          a.back.absolute.left.pr2.text-decoration-none(href="/") ← 
+          | Vårt arbeid
+        h4.mb3 Yoga for dem som tørr å møte seg selv.
+        p Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.
+        p Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.
+  
+  .content-container.yogasommetode
+    .content.lg-py4
+      .clearfix.mx-auto.center.max-width-3.p2.sm-px3.lg-py4 
+        h1.mb3 
+          a.back.absolute.left.pr2.text-decoration-none(href="/") ← 
+          | Yoga som metode
+        h4.mb3 Yoga for dem som tørr å møte seg selv.
+        p Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.
+        p Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his
+  
+   .content-container.instruktoerer
+    .content.lg-py4
+      .clearfix.mx-auto.center.max-width-3.p2.sm-px3.lg-py4 
+        h1.mb3 
+          a.back.absolute.left.pr2.text-decoration-none(href="/") ← 
+          | Instruktører
+        h4.mb3 Yoga for dem som tørr å møte seg selv.
+        p Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.
+        p Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.
+  
+  .content-container.fengsler
+    .content.lg-py4
+      .clearfix.mx-auto.center.max-width-3.p2.sm-px3.lg-py4 
+        h1.mb3 
+          a.back.absolute.left.pr2.text-decoration-none(href="/") ← 
+          | Fengsler
+        h4.mb3 Yoga for dem som tørr å møte seg selv.
+        p Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.
+        p Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his. Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.
   
                 
 

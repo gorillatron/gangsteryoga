@@ -982,7 +982,6 @@ hr{
 #front-page .content .link{
   position:relative;
   line-height:20rem;
-  background-size:cover;
   font-size:3rem;
   text-decoration:none;
   color:inherit;
@@ -1000,11 +999,13 @@ hr{
   vertical-align:middle;
   text-align:center;
 }
-#front-page .content .link.outlined-r{
-  box-shadow:0px 0px 0px 15px rgb(255,255,255);
-}
-#front-page .content .link.outlined-l{
-  box-shadow:0px 0px 0px 15px rgb(255,255,255);
+@media (min-width: 52em){
+  #front-page .content .link.outlined-r{
+    box-shadow:0px 0px 0px 15px rgb(255,255,255);
+  }
+  #front-page .content .link.outlined-l{
+    box-shadow:0px 0px 0px 15px rgb(255,255,255);
+  }
 }
 #front-page .content .photo{
   background-size:cover;

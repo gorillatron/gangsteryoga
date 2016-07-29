@@ -1,0 +1,16 @@
+
+.subpage.instruktoerer {
+
+  .instructors {
+    .instructor {
+      .photo {
+        border-radius: 100%;
+        height: 10rem;
+        width: 10rem;
+        background-color: black;
+        background-size: cover;
+      }
+    }
+  }
+
+}

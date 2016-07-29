@@ -3,7 +3,43 @@ import page from 'page'
 import raf from 'raf'
 
 
-let openPage = null
+
+export default () => {
+
+  let $openPage = null
+
+  page('*', (ctx, next) => {
+    animatePageIn()
+    if($openPage) {
+      animateSubpageOut($openPage, _ => {
+        $openPage = null
+        next()
+      })
+    }
+    else {
+      next()
+    }
+  })
+
+  page('/', (ctx, next) => {
+    if($openPage) {
+      animateSubpageOut($openPage)
+    }
+  })
+
+  page('/:page', (ctx, next) => {
+    const {page} = ctx.params
+    const $page = $(`.subpage.${page}`)
+
+    $openPage = $page
+    
+    raf(_ => animateSubpageIn($openPage))
+    
+  })
+
+  page()
+
+}
 
 
 const animatePageIn = (cb = f => f) => {
@@ -36,35 +72,5 @@ const animateSubpageOut = ($page, cb = f => f) => {
 }
 
 
-export default () => {
 
-  page('*', (ctx, next) => {
-    animatePageIn()
-    if(openPage) {
-      animateSubpageOut(openPage, next)
-    }
-    else {
-      next()
-    }
-  })
-
-  page('/', (ctx, next) => {
-    if(openPage) {
-      animateSubpageOut(openPage)
-    }
-  })
-
-  page('/:page', (ctx, next) => {
-    const {page} = ctx.params
-    const $page = $(`.content-container.${page}`)
-
-    openPage = $page
-    console.log("LOL")
-    raf(_ => animateSubpageIn($page))
-    
-  })
-
-  page()
-
-}
 

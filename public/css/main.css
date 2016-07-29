@@ -1052,17 +1052,17 @@ hr{
   min-height:20rem;
   width:100.1%;
   background-size:cover;
-  -webkit-transition:-webkit-transform 0.137s ease-out;
-  transition:-webkit-transform 0.137s ease-out;
-  transition:transform 0.137s ease-out;
-  transition:transform 0.137s ease-out, -webkit-transform 0.137s ease-out;
 }
 #front-page .content .link .image .text{
   display:table-cell;
   vertical-align:middle;
   text-align:center;
+  -webkit-transition:-webkit-transform 0.137s ease-out;
+  transition:-webkit-transform 0.137s ease-out;
+  transition:transform 0.137s ease-out;
+  transition:transform 0.137s ease-out, -webkit-transform 0.137s ease-out;
 }
-#front-page .content .link .image:hover{
+#front-page .content .link .image:hover .text{
   -webkit-transform:scale(1.137);
           transform:scale(1.137);
 }
@@ -1094,7 +1094,7 @@ hr{
 #front-page .content .large-photo{
   height:64rem;
 }
-.content-container{
+.subpage{
   display:none;
   position:fixed;
   z-index:300;
@@ -1107,15 +1107,23 @@ hr{
   opacity:0.001;
   box-sizing:border-box;
   background:rgba(10,10,10, 0.97);
+  overflow-y:scroll;
 
 }
-.content-container .content{
+.subpage .content-container .content{
   color:#adffd8;
 }
-.content-container a.back{
+.subpage .content-container a.back{
   position:absolute;
   margin-left:-2em;
   color:inherit;
+}
+.subpage.instruktoerer .instructors .instructor .photo{
+  border-radius:100%;
+  height:10rem;
+  width:10rem;
+  background-color:black;
+  background-size:cover;
 }
 #footer section.info{
   color:rgb(247,247,247);

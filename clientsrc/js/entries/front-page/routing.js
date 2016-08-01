@@ -11,9 +11,12 @@ const showPage = (ctx, next) => {
   const {page} = ctx.params
   const $page = $(`.subpage.${page}`)
 
-  if($page.length) {
+  if($page.length && !$page.is($openPage)) {
     $openPage = $page
     raf(_ => animateSubpageIn($openPage, next))
+  }
+  else if($page.length) {
+    next()
   }
   else {
     console.warn("unhandled 404", page)
@@ -44,7 +47,10 @@ const animatePageIn = (cb = f => f) => {
 
 
 const animateSubpageIn = ($page, cb) => {
-  $page.show()
+  $page.css({
+    display: 'block',
+    opacity: 0.00001
+  })
   raf(_ => {
     $page.animate({
       opacity: 1

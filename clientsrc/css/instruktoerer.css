@@ -1,14 +1,34 @@
 
 .subpage.instruktoerer {
 
-  .instructors {
+  .instructor-list {
+
     .instructor {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+
+      &:hover {
+        .photo {
+          transform: scale(1.1);
+        }
+      }
+
       .photo {
+        transition: transform 0.137s ease-in-out;
         border-radius: 100%;
         height: 10rem;
         width: 10rem;
         background-color: black;
         background-size: cover;
+      }
+    }
+  }
+
+  .instructor-detail {
+    .photo {
+      img {
+        max-height: 30vh;
       }
     }
   }

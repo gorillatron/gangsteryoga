@@ -12,7 +12,8 @@ const Types = keystone.Field.Types
 
 const Instructor = new keystone.List('Instructor', {
 	label: "Instruktør",
-	plural: "Instruktører"
+	plural: "Instruktører",
+	autokey: { from: 'name', path: 'key', unique: true },
 })
 
 

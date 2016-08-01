@@ -184,6 +184,7 @@
   box-sizing: border-box;
   background: rgba(10,10,10, 0.97);
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 
   .content-container {
     .content {

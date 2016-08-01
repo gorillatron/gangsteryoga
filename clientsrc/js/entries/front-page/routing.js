@@ -4,6 +4,23 @@ import raf from 'raf'
 import qraf from '../../lib/qraf'
 
 
+export default () => {
+
+  page('/', closeOpenPage)
+  page('/:page', closeOpenPage, showPage)
+  page('/:page/*', showPage)
+  page('/instruktoerer/', closeOpenInstructor)
+  page('/instruktoerer/:instructor', closeOpenInstructor, showInstructor)
+
+  animatePageIn()
+
+  listenForEscapeButton(_ => history.back())
+
+  page()
+  
+}
+
+
 let $openPage = null
 let $openInstructorDetails = null
 
@@ -117,18 +134,10 @@ const listenForEscapeButton = (cb) => {
 }
 
 
-page('/', closeOpenPage)
-page('/:page', closeOpenPage, showPage)
-page('/:page/*', showPage)
-page('/instruktoerer/', closeOpenInstructor)
-page('/instruktoerer/:instructor', closeOpenInstructor, showInstructor)
 
 
-export default () => {
-  animatePageIn()
-  listenForEscapeButton(_ => history.back())
-  page()
-}
+
+
 
 
 

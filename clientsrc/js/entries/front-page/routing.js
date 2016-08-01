@@ -74,7 +74,7 @@ const animateSubpageOut = ($page, cb = f => f) => {
 }
 
 
-const showInstructor = (ctx, next) => {
+const showInstructor = (ctx) => {
   const $instructorList = $('.instructor-list')
   const $instructorDetails = $(`.instructor-detail[data-instructor-key=${ctx.params.instructor}]`)
   
@@ -93,18 +93,27 @@ const showInstructor = (ctx, next) => {
 
 const closeOpenInstructor = (ctx, next) => {
   const $instructorList = $('.instructor-list')
-  $instructorList.fadeIn(137)
-  
-  if($openInstructorDetails) {
-    $openInstructorDetails
-      .animate({ opacity: 0.0001 }, 137, () => {
-        $openInstructorDetails.addClass('display-none')
-        next()
-      })
-  }
-  else {
-    next()
-  }
+  qraf([
+    _ => $instructorList.fadeIn(137),
+    $openInstructorDetails ?
+       _ =>
+        $openInstructorDetails
+          .animate({ opacity: 0.0001 }, 137, () => {
+            $openInstructorDetails.addClass('display-none')
+            $openInstructorDetails = null
+            next()
+          })
+      :
+      next
+  ])
+}
+
+
+const listenForEscapeButton = (cb) => {
+  $('body').keyup(event => {
+    (event.keyCode == 27 && $openPage) &&
+      cb()
+  })
 }
 
 
@@ -117,6 +126,7 @@ page('/instruktoerer/:instructor', closeOpenInstructor, showInstructor)
 
 export default () => {
   animatePageIn()
+  listenForEscapeButton(_ => history.back())
   page()
 }
 

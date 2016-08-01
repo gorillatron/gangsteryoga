@@ -1136,7 +1136,18 @@ hr{
 .subpage .content-container a.back{
   color:inherit;
 }
+.subpage.instruktoerer .instructors .instructor{
+  cursor:pointer;
+}
+.subpage.instruktoerer .instructors .instructor:hover .photo{
+  -webkit-transform:scale(1.1);
+          transform:scale(1.1);
+}
 .subpage.instruktoerer .instructors .instructor .photo{
+  -webkit-transition:-webkit-transform 0.137s ease-in-out;
+  transition:-webkit-transform 0.137s ease-in-out;
+  transition:transform 0.137s ease-in-out;
+  transition:transform 0.137s ease-in-out, -webkit-transform 0.137s ease-in-out;
   border-radius:100%;
   height:10rem;
   width:10rem;

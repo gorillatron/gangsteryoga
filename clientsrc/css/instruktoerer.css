@@ -25,4 +25,12 @@
     }
   }
 
+  .instructor-detail {
+    .photo {
+      img {
+        max-height: 30vh;
+      }
+    }
+  }
+
 }

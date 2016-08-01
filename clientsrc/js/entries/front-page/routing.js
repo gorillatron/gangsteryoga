@@ -68,18 +68,24 @@ const animateSubpageOut = ($page, cb = f => f) => {
 const showInstructor = (ctx, next) => {
   const $instructorList = $('.instructor-list')
   const $instructorDetails = $(`.instructor-detail[data-instructor-key=${ctx.params.instructor}]`)
-  $instructorList.fadeOut(137)
-  $instructorDetails
-    .removeClass('display-none')
-    .css('opacity', 0.0001)
-    .animate({ opacity: 1 }, 137)
+  
   $openInstructorDetails = $instructorDetails
+  
+  raf(_ => $instructorList.fadeOut(137, _ => {
+    raf(_ => $openPage.scrollTop(0))
+    raf(_ => 
+      $instructorDetails
+        .removeClass('display-none')
+        .css('opacity', 0.0001)
+        .animate({ opacity: 1 }, 137))
+  }))
 }
 
 
 const closeOpenInstructor = (ctx, next) => {
   const $instructorList = $('.instructor-list')
   $instructorList.fadeIn(137)
+  
   if($openInstructorDetails) {
     $openInstructorDetails
       .animate({ opacity: 0.0001 }, 137, () => {

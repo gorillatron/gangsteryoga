@@ -22,12 +22,14 @@
 @import 'basscss-addons/modules/responsive-layout';
 @import 'basscss-addons/modules/responsive-position';
 @import 'basscss-addons/modules/responsive-type-scale';
+@import './basscss-addons/margin';
 
 
 /* Site modules */
 @import './fonts';
 @import './variables';
 @import './front-page';
+@import './instruktoerer';
 @import './footer';
 
 

@@ -27,5 +27,5 @@ Instructor.add({
 
 
 Instructor.defaultSort = 'name'
-Instructor.defaultColumns = 'name, email'
+Instructor.defaultColumns = 'name, email, createdAt'
 Instructor.register()

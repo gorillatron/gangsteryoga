@@ -54,11 +54,10 @@
 
   }
 
-  nav {
-    ul {
-      li {
-
-      }
+  #main-nav {
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   }
 
@@ -117,15 +116,18 @@
         min-height: var(--content-block-height);
         width: 100.1%;
         background-size: cover;
+
         .text {
           display: table-cell; 
           vertical-align: middle; 
           text-align: center; 
+          transition: transform 0.137s ease-out;
         }
-        transition: transform 0.137s ease-out;
-        &:hover {
+
+        &:hover .text {
           transform: scale(1.137);
         }
+
       }
 
       @media (--breakpoint-md) {
@@ -169,7 +171,7 @@
 
 }
 
-.content-container {
+.subpage {
   display: none;
   position: fixed;
   z-index: 300;
@@ -181,15 +183,16 @@
   opacity: 0.001;
   box-sizing: border-box;
   background: rgba(10,10,10, 0.97);
+  overflow-y: scroll;
 
-  .content {
-    color: var(--light-green);
-  }
-  
-  a.back {
-    position: absolute;
-    margin-left: -2em;
-    color: inherit;
+  .content-container {
+    .content {
+      color: var(--light-green);
+    }
+    
+    a.back {
+      color: inherit;
+    }
   }
 
 }

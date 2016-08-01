@@ -19,7 +19,7 @@ console.info("building for development")
 
 
 var entries = fs.readdirSync(entrypath).reduce((acc, entryname) => {
-  acc[entryname.replace(".js", "")] = path.join(entrypath, entryname)
+  acc[entryname] = path.join(entrypath, entryname, 'index.js')
   return acc
 }, {})
 

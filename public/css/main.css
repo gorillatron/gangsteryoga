@@ -379,7 +379,7 @@ hr{
   }
 
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
 
   .lg-col{
     float:left;
@@ -447,7 +447,7 @@ hr{
 @media (min-width: 52em){
   .md-flex{ display:-webkit-box; display:-ms-flexbox; display:flex }
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
   .lg-flex{ display:-webkit-box; display:-ms-flexbox; display:flex }
 }
 .flex-column{ -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column }
@@ -541,7 +541,7 @@ hr{
 @media (min-width: 52em) and (max-width: 64em){
   .md-hide{ display:none !important }
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
   .lg-hide{ display:none !important }
 }
 .display-none{ display:none !important }
@@ -649,7 +649,7 @@ hr{
   .md-mx-auto{ margin-left:auto; margin-right:auto; }
 
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
 
   .lg-m0{ margin:0 }
   .lg-mt0{ margin-top:0 }
@@ -787,7 +787,7 @@ hr{
   .md-py4{ padding-top:5rem; padding-bottom:5rem }
 
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
 
   .lg-p0{ padding:0 }
   .lg-pt0{ padding-top:0 }
@@ -862,7 +862,7 @@ hr{
   .md-right{ float:right }
 
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
 
   .lg-inline{ display:inline }
   .lg-block{ display:block }
@@ -898,7 +898,7 @@ hr{
   .md-bottom-0{ bottom:0 }
   .md-left-0{ left:0 }
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
   .lg-relative{ position:relative }
   .lg-absolute{ position:absolute }
   .lg-fixed{ position:fixed }
@@ -928,7 +928,7 @@ hr{
   .md-h5{ font-size:.875rem }
   .md-h6{ font-size:.75rem }
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
   .lg-h00{ font-size:4rem }
   .lg-h0{ font-size:3rem }
   .lg-h1{ font-size:2rem }
@@ -938,6 +938,22 @@ hr{
   .lg-h5{ font-size:.875rem }
   .lg-h6{ font-size:.75rem }
 }
+.mtn1{ margin-top:-.7rem }
+.mrn1{ margin-right:-.7rem }
+.mbn1{ margin-bottom:-.7rem }
+.mln1{ margin-left:-.7rem }
+.mtn2{ margin-top:-1.5rem }
+.mrn2{ margin-right:-1.5rem }
+.mbn2{ margin-bottom:-1.5rem }
+.mln2{ margin-left:-1.5rem }
+.mtn3{ margin-top:-3rem }
+.mrn3{ margin-right:-3rem }
+.mbn3{ margin-bottom:-3rem }
+.mln3{ margin-left:-3rem }
+.mtn4{ margin-top:-5rem }
+.mrn4{ margin-right:-5rem }
+.mbn4{ margin-bottom:-5rem }
+.mln4{ margin-left:-5rem }
 @font-face{
   font-family:'AlteHaasGrotesk';
   src:url('/fonts/AlteHaasGroteskRegular.ttf');
@@ -980,7 +996,7 @@ hr{
   transition:all 0.15s ease-out;
   margin-top:25vh;
 }
-@media (min-width: 96rem){
+@media (min-width: 64rem){
   #front-page #cover .logo{
     height:15vh;
     width:15vh;
@@ -1002,7 +1018,10 @@ hr{
   height:15%;
   margin-bottom:25%
 }
-#front-page nav ul li{}
+#front-page #main-nav a{
+  text-decoration:none;
+  color:inherit;
+}
 #front-page .content .sm-punchline{
   background-color:black;
   color:#adffd8;
@@ -1053,17 +1072,17 @@ hr{
   min-height:20rem;
   width:100.1%;
   background-size:cover;
-  -webkit-transition:-webkit-transform 0.137s ease-out;
-  transition:-webkit-transform 0.137s ease-out;
-  transition:transform 0.137s ease-out;
-  transition:transform 0.137s ease-out, -webkit-transform 0.137s ease-out;
 }
 #front-page .content .link .image .text{
   display:table-cell;
   vertical-align:middle;
   text-align:center;
+  -webkit-transition:-webkit-transform 0.137s ease-out;
+  transition:-webkit-transform 0.137s ease-out;
+  transition:transform 0.137s ease-out;
+  transition:transform 0.137s ease-out, -webkit-transform 0.137s ease-out;
 }
-#front-page .content .link .image:hover{
+#front-page .content .link .image:hover .text{
   -webkit-transform:scale(1.137);
           transform:scale(1.137);
 }
@@ -1095,7 +1114,7 @@ hr{
 #front-page .content .large-photo{
   height:64rem;
 }
-.content-container{
+.subpage{
   display:none;
   position:fixed;
   z-index:300;
@@ -1108,15 +1127,21 @@ hr{
   opacity:0.001;
   box-sizing:border-box;
   background:rgba(10,10,10, 0.97);
+  overflow-y:scroll;
 
 }
-.content-container .content{
+.subpage .content-container .content{
   color:#adffd8;
 }
-.content-container a.back{
-  position:absolute;
-  margin-left:-2em;
+.subpage .content-container a.back{
   color:inherit;
+}
+.subpage.instruktoerer .instructors .instructor .photo{
+  border-radius:100%;
+  height:10rem;
+  width:10rem;
+  background-color:black;
+  background-size:cover;
 }
 #footer section.info{
   color:rgb(247,247,247);

@@ -1,9 +1,11 @@
 
 .subpage.instruktoerer {
 
-  .instructors {
+  .instructor-list {
 
     .instructor {
+      text-decoration: none;
+      color: inherit;
       cursor: pointer;
 
       &:hover {

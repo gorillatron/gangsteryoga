@@ -52,6 +52,7 @@ exports = module.exports = function(app) {
 	app.get('/fengsler', routes.views.index)
 	app.get('/yogasommetode', routes.views.index)
 	app.get('/instruktoerer', routes.views.index)
+	app.get('/instruktoerer/*', routes.views.index)
 	
 	app.all('/contact', routes.views.contact)
 	app.all('/gallery/:key', routes.views.gallery)

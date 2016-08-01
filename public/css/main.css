@@ -1136,14 +1136,16 @@ hr{
 .subpage .content-container a.back{
   color:inherit;
 }
-.subpage.instruktoerer .instructors .instructor{
+.subpage.instruktoerer .instructor-list .instructor{
+  text-decoration:none;
+  color:inherit;
   cursor:pointer;
 }
-.subpage.instruktoerer .instructors .instructor:hover .photo{
+.subpage.instruktoerer .instructor-list .instructor:hover .photo{
   -webkit-transform:scale(1.1);
           transform:scale(1.1);
 }
-.subpage.instruktoerer .instructors .instructor .photo{
+.subpage.instruktoerer .instructor-list .instructor .photo{
   -webkit-transition:-webkit-transform 0.137s ease-in-out;
   transition:-webkit-transform 0.137s ease-in-out;
   transition:transform 0.137s ease-in-out;

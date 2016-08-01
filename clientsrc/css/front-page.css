@@ -54,6 +54,13 @@
 
   }
 
+  #main-nav {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
   .content {
 
     .sm-punchline {
@@ -184,8 +191,6 @@
     }
     
     a.back {
-      position: absolute;
-      margin-left: -2em;
       color: inherit;
     }
   }

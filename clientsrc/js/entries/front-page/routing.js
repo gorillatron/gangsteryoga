@@ -31,9 +31,14 @@ export default () => {
     const {page} = ctx.params
     const $page = $(`.subpage.${page}`)
 
-    $openPage = $page
+    if($page.length) {
+      $openPage = $page
+      raf(_ => animateSubpageIn($openPage))
+    }
+    else {
+      console.warn("unhandled 404", page)
+    }
     
-    raf(_ => animateSubpageIn($openPage))
     
   })
 

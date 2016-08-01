@@ -1,6 +1,7 @@
 
 import page from 'page'
 import raf from 'raf'
+import qraf from '../../lib/qraf'
 
 
 let $openPage = null
@@ -47,15 +48,17 @@ const animatePageIn = (cb = f => f) => {
 
 
 const animateSubpageIn = ($page, cb) => {
-  $page.css({
-    display: 'block',
-    opacity: 0.00001
-  })
-  raf(_ => {
-    $page.animate({
-      opacity: 1
-    }, 137, cb)
-  })
+  qraf([
+    _ => 
+      $page.css({
+        display: 'block',
+        opacity: 0.00001
+      }),
+    _ => 
+      $page.animate({
+        opacity: 1
+      }, 137, cb)
+  ])
 }
 
 
@@ -77,14 +80,14 @@ const showInstructor = (ctx, next) => {
   
   $openInstructorDetails = $instructorDetails
   
-  raf(_ => $instructorList.fadeOut(137, _ => {
-    raf(_ => $openPage.scrollTop(0))
-    raf(_ => 
-      $instructorDetails
-        .removeClass('display-none')
-        .css('opacity', 0.0001)
-        .animate({ opacity: 1 }, 137))
-  }))
+  qraf([
+    _ => $instructorList.fadeOut(137),
+    _ => $openPage.scrollTop(0),
+    _ => $instructorDetails
+           .removeClass('display-none')
+           .css('opacity', 0.0001)
+           .animate({ opacity: 1 }, 137)
+  ])
 }
 
 

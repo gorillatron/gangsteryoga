@@ -7,9 +7,13 @@
 
   #cover {
     position: relative;
-    height: 75vh;
+    height: 95vh;
     transition: all 0.137s ease-out;
     overflow: hidden;
+
+    @media (--breakpoint-md) {
+      height: 75vh;
+    }
 
     .background-image {
       z-index: 1;

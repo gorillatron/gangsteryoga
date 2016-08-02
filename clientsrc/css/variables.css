@@ -25,7 +25,7 @@
 
   --breakpoint-sm: min-width 40em;
   --breakpoint-md: min-width 52em;
-  --breakpoint-lg: min-width 96rem;
+  --breakpoint-lg: min-width 64rem;
 
   --content-block-height: 20rem;
 

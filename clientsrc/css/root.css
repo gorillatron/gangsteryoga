@@ -1,0 +1,6 @@
+
+#root {
+  @media(min-width: 96rem) {
+    margin-top: var(--space-4);
+  }
+}

@@ -28,6 +28,7 @@
 /* Site modules */
 @import './fonts';
 @import './variables';
+@import './root';
 @import './front-page';
 @import './instruktoerer';
 @import './footer';

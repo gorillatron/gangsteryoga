@@ -1,6 +1,24 @@
 
 import page from 'page'
 import raf from 'raf'
+import qraf from '../../lib/qraf'
+
+
+export default () => {
+
+  page('/', closeOpenPage)
+  page('/:page', closeOpenPage, showPage)
+  page('/:page/*', showPage)
+  page('/instruktoerer/', closeOpenInstructor)
+  page('/instruktoerer/:instructor', closeOpenInstructor, showInstructor)
+
+  animatePageIn()
+
+  listenForEscapeButton(_ => history.back())
+
+  page()
+  
+}
 
 
 let $openPage = null
@@ -47,15 +65,17 @@ const animatePageIn = (cb = f => f) => {
 
 
 const animateSubpageIn = ($page, cb) => {
-  $page.css({
-    display: 'block',
-    opacity: 0.00001
-  })
-  raf(_ => {
-    $page.animate({
-      opacity: 1
-    }, 137, cb)
-  })
+  qraf([
+    _ => 
+      $page.css({
+        display: 'block',
+        opacity: 0.00001
+      }),
+    _ => 
+      $page.animate({
+        opacity: 1
+      }, 137, cb)
+  ])
 }
 
 
@@ -71,51 +91,53 @@ const animateSubpageOut = ($page, cb = f => f) => {
 }
 
 
-const showInstructor = (ctx, next) => {
+const showInstructor = (ctx) => {
   const $instructorList = $('.instructor-list')
   const $instructorDetails = $(`.instructor-detail[data-instructor-key=${ctx.params.instructor}]`)
   
   $openInstructorDetails = $instructorDetails
   
-  raf(_ => $instructorList.fadeOut(137, _ => {
-    raf(_ => $openPage.scrollTop(0))
-    raf(_ => 
-      $instructorDetails
-        .removeClass('display-none')
-        .css('opacity', 0.0001)
-        .animate({ opacity: 1 }, 137))
-  }))
+  qraf([
+    _ => $instructorList.fadeOut(137),
+    _ => $openPage.scrollTop(0),
+    _ => $instructorDetails
+           .removeClass('display-none')
+           .css('opacity', 0.0001)
+           .animate({ opacity: 1 }, 137)
+  ])
 }
 
 
 const closeOpenInstructor = (ctx, next) => {
   const $instructorList = $('.instructor-list')
-  $instructorList.fadeIn(137)
-  
-  if($openInstructorDetails) {
-    $openInstructorDetails
-      .animate({ opacity: 0.0001 }, 137, () => {
-        $openInstructorDetails.addClass('display-none')
-        next()
-      })
-  }
-  else {
-    next()
-  }
+  qraf([
+    _ => $instructorList.fadeIn(137),
+    $openInstructorDetails ?
+       _ =>
+        $openInstructorDetails
+          .animate({ opacity: 0.0001 }, 137, () => {
+            $openInstructorDetails.addClass('display-none')
+            $openInstructorDetails = null
+            next()
+          })
+      :
+      next
+  ])
 }
 
 
-page('/', closeOpenPage)
-page('/:page', closeOpenPage, showPage)
-page('/:page/*', showPage)
-page('/instruktoerer/', closeOpenInstructor)
-page('/instruktoerer/:instructor', closeOpenInstructor, showInstructor)
-
-
-export default () => {
-  animatePageIn()
-  page()
+const listenForEscapeButton = (cb) => {
+  $('body').keyup(event => {
+    (event.keyCode == 27 && $openPage) &&
+      cb()
+  })
 }
+
+
+
+
+
+
 
 
 

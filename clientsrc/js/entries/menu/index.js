@@ -1,18 +1,34 @@
 
+
 const sidebar = $("#main-sidebar")
 const toggleButton = $("#cover .hamburger")
 const nav = $("#main-nav")
 const cover = $("#cover")
 
-let open = false
+let state = {open: false, closeTimer: null}
+
 
 toggleButton.on("click", event => {
-  open = !open
-  
+  setMenu(!state.open)
+})
+
+
+const setMenu = open => {
   let transform = null
 
-  if(open) {
+  state.open = open
+
+  $(document).off('click.menuclose')
+
+  if(state.closeTimer) {
+    clearTimeout(state.closeTimer)
+    state.closeTimer = null
+  }
+
+  if(state.open) {
     transform = 'translatex(-' + nav.outerWidth() + 'px)'
+    setTimeout(_ => $(document).one('click.menuclose', _ => setMenu(false)))
+    state.closeTimer = setTimeout(_ => setMenu(false), 5000)
   }
   else {
     transform = 'translatex(0px)'
@@ -24,6 +40,4 @@ toggleButton.on("click", event => {
     '-webkit-transform': transform,
     'transform': transform
   })
-
-  toggleButton.toggleClass("cross")
-})
+}

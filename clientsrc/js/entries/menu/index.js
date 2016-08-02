@@ -5,6 +5,7 @@ const toggleButton = $("#cover .hamburger")
 const nav = $("#main-nav")
 const cover = $("#cover")
 
+let menuCloseTime = 5 * 1000
 let state = {open: false, closeTimer: null}
 
 
@@ -28,7 +29,7 @@ const setMenu = open => {
   if(state.open) {
     transform = 'translatex(-' + nav.outerWidth() + 'px)'
     setTimeout(_ => $(document).one('click.menuclose', _ => setMenu(false)))
-    state.closeTimer = setTimeout(_ => setMenu(false), 5000)
+    state.closeTimer = setTimeout(_ => setMenu(false), menuCloseTime)
   }
   else {
     transform = 'translatex(0px)'

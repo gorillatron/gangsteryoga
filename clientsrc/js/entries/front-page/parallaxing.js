@@ -1,24 +1,54 @@
 
-import concat from 'lodash/concat'
-import {Observable} from 'rxjs/Observable'
-import 'rxjs/add/observable/fromEvent'
-import 'rxjs/add/observable/interval'
-import 'rxjs/add/operator/map'
-import 'rxjs/add/operator/pairwise'
-import 'rxjs/add/operator/throttleTime'
-import 'rxjs/add/operator/startWith'
-import 'rxjs/add/operator/withLatestFrom'
-import 'rxjs/add/operator/delay'
-import currentwindowsize from '../../lib/currentwindowsize'
-import ensurepos from '../../lib/ensurepos'
+import {AnimationFrameScheduler} from 'rxjs/scheduler/AnimationFrameScheduler'
+import 'rxjs/add/operator/subscribeOn'
+import parallaxing from '../../lib/parallaxing'
 
 
 export default () => {
-    
   $(document).on('ready', (event) => {
-    
+
+    // const parallax$ = parallaxing({ 
+    //   target: $(document),
+    //   maxOffsett: 5
+    // })
+    // .subscribeOn(AnimationFrameScheduler)
+    // .share()
+
+    // parallax$
+    //   .subscribe(frame => {
+    //     translate($('#cover .background-image'), frame)
+    // })
+
+    // parallax$
+    //   .map(({top, left}) => ({ top: top / 100 * 20, left: left / 100 * 15 }))
+    //   .subscribe(frame => {
+    //     translate($('.photo'), frame)
+    // })
+
+    // parallax$
+    //   .map(({top, left}) => ({ top: top / 100 * 40, left: left / 100 * 60 }))
+    //   .subscribe(frame => {
+    //     translate($('.link'), frame)
+    // })
+
+    // parallax$
+    //   .map(({top, left}) => ({ top: (top / 100 * 35) * -1, left: (left / 100 * 35 * -1) }))
+    //   .subscribe(frame => {
+    //     translate($('.text-block'), frame)
+    // })
+
   })
 
+}
+
+const translate = (target, frame) => {
+  const transform = `translate(${frame.left}px, ${frame.top}px)`
+  target.css({
+    '-ms-transform': transform,
+    '-moz-transform': transform,
+    '-webkit-transform': transform,
+    'transform': transform
+  })
 }
 
 

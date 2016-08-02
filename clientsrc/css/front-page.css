@@ -7,19 +7,30 @@
 
   #cover {
     position: relative;
-    background-image: url('/images/cover_mobile.png');
-    height: 90vh;
-    background-size: cover;
-    transition: margin-top 0.15s ease-out;
+    height: 75vh;
+    transition: all 0.137s ease-out;
+    overflow: hidden;
 
-    @media (--breakpoint-md) {
-      background-image: url('/images/cover.png');
-      min-height: 60rem;
+    .background-image {
+      z-index: 1;
+      position: absolute;
+      background-image: url('/images/cover_mobile.png');
+      background-size: cover;
+      height: 106%;
+      width: 106%;
+      margin: -2.5%;
+      @media (--breakpoint-md) {
+        background-image: url('/images/cover.png');
+        min-height: 60rem;
+      }
+      &.animate-translate {
+        transition: transform 0.400s ease-in-out;
+      }
     }
 
-    transition: transform 0.137s ease-out;
-
     .logo {
+      position: relative;
+      z-index: 2;
       height: 30vh;
       width: 30vh;
       background-image: url('/gfx/gy_logo_svart_positiv.png');
@@ -35,6 +46,7 @@
     }
 
     .hamburger-wrapper {
+      z-index: 2;
       transition: all 0.15s ease-out;
       padding-top: var(--space-2);
     }
@@ -80,6 +92,7 @@
 
     .text {
       box-sizing: border-box;
+      transition: all 0.137s ease-out;
 
       &.vertical {
         @media (--breakpoint-md) {
@@ -103,8 +116,9 @@
 
     .link {
       position: relative;
+      transition: all 0.137s ease-out;
       min-height: var(--content-block-height);
-      font-size: 3rem;
+      font-size: 2.5rem;
       text-decoration: none;
       color: inherit;
       overflow: hidden;
@@ -144,6 +158,7 @@
     }
 
     .photo {
+      transition: all 0.137s ease-out;
       background-size: cover;
       height: calc(calc(var(--content-block-height) * 2));
       &.overflow-down {

@@ -973,6 +973,15 @@ hr{
   -webkit-transition:opacity 0.137s ease-out;
   transition:opacity 0.137s ease-out;
 
+  padding-right:6rem;
+  padding-left:6rem;
+
+}
+@media(min-width: 1700px){
+  #front-page{
+    padding-right:0;
+    padding-left:0;
+  }
 }
 #front-page header#main-header .logo{
   position:relative;
@@ -984,15 +993,23 @@ hr{
   -webkit-transition:all 0.15s ease-out;
   transition:all 0.15s ease-out;
 }
-#front-page header#main-header .hamburger-wrapper{
-  z-index:2;
-  -webkit-transition:all 0.15s ease-out;
-  transition:all 0.15s ease-out;
-}
 #front-page header#main-header .hamburger{
-  width:2.5rem;
-  height:2.5rem;
+  margin-top:1.8em;
+  width:3.2rem;
+  height:3.2rem;
   cursor:pointer;
+  -webkit-transition:-webkit-transform 0.2137s ease-out;
+  transition:-webkit-transform 0.2137s ease-out;
+  transition:transform 0.2137s ease-out;
+  transition:transform 0.2137s ease-out, -webkit-transform 0.2137s ease-out;
+  -webkit-transform:translateX(0rem);
+          transform:translateX(0rem);
+}
+@media(min-width: 1700px){
+  #front-page header#main-header .hamburger{
+    -webkit-transform:translateX(7rem);
+            transform:translateX(7rem);
+  }
 }
 #front-page header#main-header .hamburger .line{
   background:rgb(20,20,20);

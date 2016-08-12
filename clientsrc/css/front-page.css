@@ -7,6 +7,14 @@
   opacity: 0.0001;
   transition: opacity 0.137s ease-out;
 
+  padding-right: var(--space-4);
+  padding-left: var(--space-4);
+
+  @media(--breakpoint-xlg) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
 
   header#main-header {
 
@@ -20,15 +28,16 @@
       transition: all 0.15s ease-out;
     }
 
-    .hamburger-wrapper {
-      z-index: 2;
-      transition: all 0.15s ease-out;
-    }
-
     .hamburger {
-      width: 2.5rem;
-      height: 2.5rem;
+      margin-top: 1.8em;
+      width: 3.2rem;
+      height: 3.2rem;
       cursor: pointer;
+      transition: transform 0.2137s ease-out;
+      transform: translateX(0rem);
+      @media(--breakpoint-xlg) {
+        transform: translateX(7rem);
+      }
     }
 
     .hamburger .line {

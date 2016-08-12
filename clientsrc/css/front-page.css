@@ -215,7 +215,7 @@
   height: 100%;
   opacity: 0.001;
   box-sizing: border-box;
-  background: rgba(10,10,10, 0.97);
+  background: rgba(10,10,10, 0.98);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 

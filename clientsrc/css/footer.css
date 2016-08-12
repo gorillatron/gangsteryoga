@@ -1,6 +1,8 @@
 
 #footer {
   
+  font-size: 0.8em;
+
   section.info {
     color: var(--offwhite);
     background-color: var(--dark-gray);

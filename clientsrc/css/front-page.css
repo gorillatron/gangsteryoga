@@ -1,59 +1,28 @@
 
 
+
+
 #front-page {
 
   opacity: 0.0001;
   transition: opacity 0.137s ease-out;
 
-  #cover {
-    position: relative;
-    height: 95vh;
-    transition: all 0.137s ease-out;
-    overflow: hidden;
 
-    @media (--breakpoint-md) {
-      height: 75vh;
-    }
-
-    .background-image {
-      z-index: 1;
-      position: absolute;
-      background-image: url('/images/cover_mobile.png');
-      background-size: cover;
-      height: 106%;
-      width: 106%;
-      margin: -2.5%;
-      @media (--breakpoint-md) {
-        background-image: url('/images/cover.png');
-        min-height: 60rem;
-      }
-      &.animate-translate {
-        transition: transform 0.400s ease-in-out;
-      }
-    }
+  header#main-header {
 
     .logo {
       position: relative;
       z-index: 2;
-      height: 30vh;
-      width: 30vh;
+      height: 8vh;
+      width: 8vh;
       background-image: url('/gfx/gy_logo_svart_positiv.png');
       background-size: cover;
       transition: all 0.15s ease-out;
-      margin-top: 25vh;
-
-      @media (--breakpoint-lg) {
-        margin-top: 8vh;
-        height: 12vh;
-        width: 12vh;
-      }
-
     }
 
     .hamburger-wrapper {
       z-index: 2;
       transition: all 0.15s ease-out;
-      padding-top: var(--space-2);
     }
 
     .hamburger {
@@ -68,22 +37,21 @@
       height: 15%;
       margin-bottom: 25%
     }
-
   }
 
-  #main-nav {
-    a {
-      text-decoration: none;
-      color: inherit;
+  
+
+
+  section#content {
+
+    section#hero {
+      background-image: url(/images/webgangster-bw-copy@3x.png);
+      background-size: cover;
+      height: calc(var(--width-4) * 0.6625);
     }
-  }
 
-  .content {
-
-    .sm-punchline {
-      background-color: black;
-      color: var(--light-green);
-      font-size: 1.37em;
+    section.wide-text {
+      font-size: 2.2em;
       line-height: 1.5em;
     }
 
@@ -148,43 +116,16 @@
         }
 
       }
-
-      @media (--breakpoint-md) {
-        &.outlined-r {
-          box-shadow: 0px 0px 0px 15px rgb(255,255,255);
-        }
-        
-        &.outlined-l {
-          box-shadow: 0px 0px 0px 15px rgb(255,255,255);
-        }
-      }
       
 
     }
 
     .photo {
-      transition: all 0.137s ease-out;
       background-size: cover;
       height: calc(calc(var(--content-block-height) * 2));
       &.overflow-down {
         height: calc(calc(var(--content-block-height) * 2) + var(--space-3));
       }
-    }
-
-    .pull-up-3 {
-      @media (--breakpoint-md) {
-        margin-top: -calc(var(--content-block-height) + var(--space-3));
-      }
-    }
-
-    .pull-up-6 {
-      @media (--breakpoint-md) {
-        margin-top: -calc(calc(var(--content-block-height) + var(--space-3)) * 2.7);
-      }
-    }
-
-    .large-photo {
-      height: 64rem;
     }
 
   }

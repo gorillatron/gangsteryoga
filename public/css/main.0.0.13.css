@@ -977,8 +977,8 @@ hr{
 #front-page header#main-header .logo{
   position:relative;
   z-index:2;
-  height:8vh;
-  width:8vh;
+  height:7rem;
+  width:7rem;
   background-image:url('/gfx/gy_logo_svart_positiv.png');
   background-size:cover;
   -webkit-transition:all 0.15s ease-out;

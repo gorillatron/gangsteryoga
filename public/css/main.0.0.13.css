@@ -1001,9 +1001,9 @@ hr{
   margin-bottom:25%
 }
 #front-page section#content section.hero{
-  background-image:url(/images/webgangster-bw-copy@3x.png);
+  position:relative;
   background-size:cover;
-  height:54.325rem;
+  height:51.865rem;
 }
 #front-page section#content section.wide-text{
   font-size:2.2em;
@@ -1020,6 +1020,7 @@ hr{
   transition:all 0.137s ease-out;
 }
 #front-page section#content .text .content-wrap{
+  position:relative;
   height:100%;
   background-color:white;
   color:#adffd8;
@@ -1030,6 +1031,27 @@ hr{
   display:table-cell;
   vertical-align:middle;
   text-align:center;
+}
+#front-page section#content .text .content-wrap .dots{
+  position:absolute;
+  width:40%;
+  height:15px;
+  right:3rem;
+}
+#front-page section#content .text .content-wrap .dots.top{
+  top:-15px;
+}
+#front-page section#content .text .content-wrap .dots.bottom{
+  top:none;
+  bottom:-15px;
+}
+#front-page section#content .text .content-wrap .dots .dot{
+  display:inline-block;
+  vertical-align:top;
+  width:13%;
+  margin-left:7%;
+  height:15px;
+  background:white;
 }
 #front-page section#content .link{
   display:block;
@@ -1085,11 +1107,21 @@ hr{
           transform:scale(0);
 }
 #front-page section#content .photo{
+  position:relative;
   background-size:cover;
-  font-size:2.2em;
 }
 #front-page section#content .photo img{
   width:100%;
+}
+#front-page section#content .photo .text, #front-page section#content .hero .text{
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  font-size:2.2em;
+  color:white;
+}
+#front-page section#content .hero .text{
+  margin-left:15%;
 }
 .subpage{
   display:none;

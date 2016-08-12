@@ -45,9 +45,9 @@
   section#content {
 
     section.hero {
-      background-image: url(/images/webgangster-bw-copy@3x.png);
+      position: relative;
       background-size: cover;
-      height: calc(var(--width-4) * 0.6625);
+      height: calc(var(--width-4) * 0.6325);
     }
 
     section.wide-text {
@@ -66,6 +66,7 @@
       transition: all 0.137s ease-out;
 
       .content-wrap {
+        position: relative;
         height: 100%;
         background-color: white;
         color: var(--light-green);
@@ -76,6 +77,32 @@
           vertical-align: middle; 
           text-align: center; 
         }
+
+        .dots {
+          position: absolute;
+          width: 40%;
+          height: 15px;
+          right: var(--space-3);
+
+          &.top {
+            top: -15px;
+          }
+
+          &.bottom {
+            top: none;
+            bottom: -15px;
+          }
+
+          .dot {
+            display: inline-block;
+            vertical-align: top;
+            width: 13%;
+            margin-left: 7%;
+            height: 15px;
+            background: white;
+          }
+        }
+
       }
     }
 
@@ -130,11 +157,25 @@
     }
 
     .photo {
+      position: relative;
       background-size: cover;
-      font-size: 2.2em;
       img {
         width: 100%;
       }
+    }
+
+    .photo, .hero {
+      .text {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        font-size: 2.2em;
+        color: white;
+      }
+    }
+
+    .hero .text {
+      margin-left: 15%;
     }
 
   }

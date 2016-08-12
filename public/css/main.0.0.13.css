@@ -1000,7 +1000,7 @@ hr{
   height:15%;
   margin-bottom:25%
 }
-#front-page section#content section#hero{
+#front-page section#content section.hero{
   background-image:url(/images/webgangster-bw-copy@3x.png);
   background-size:cover;
   height:54.325rem;
@@ -1013,70 +1013,83 @@ hr{
   box-sizing:border-box;
   overflow:hidden;
 }
-@media (min-width: 52em){
-  #front-page section#content .text, #front-page section#content .link{
-    height:20rem;
-  }
-}
 #front-page section#content .text{
+  font-size:2.2em;
   box-sizing:border-box;
   -webkit-transition:all 0.137s ease-out;
   transition:all 0.137s ease-out;
 }
-@media (min-width: 52em){
-  #front-page section#content .text.vertical{
-    height:40rem;
-  }
-}
-#front-page section#content .text .text-block{
+#front-page section#content .text .content-wrap{
   height:100%;
   background-color:white;
   color:#adffd8;
-  border:10px solid #adffd8;
+  border:15px solid #adffd8;
   display:table;
 }
-#front-page section#content .text .text-block p{
+#front-page section#content .text .content-wrap span{
   display:table-cell;
   vertical-align:middle;
   text-align:center;
 }
 #front-page section#content .link{
+  display:block;
+  font-family:"AlteHaasGroteskBold";
   position:relative;
   -webkit-transition:all 0.137s ease-out;
   transition:all 0.137s ease-out;
-  min-height:20rem;
-  font-size:2.5rem;
+  height:22rem;
+  font-size:1.60rem;
   text-decoration:none;
   color:inherit;
   overflow:hidden;
   cursor:pointer;
 }
 #front-page section#content .link .image{
-  display:table;
+  position:absolute;
+  -webkit-transform:scale(1);
+          transform:scale(1);
+  -webkit-transition:all 0.137s ease-out;
+  transition:all 0.137s ease-out;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
   z-index:1;
-  min-height:20rem;
-  width:100.1%;
   background-size:cover;
 }
-#front-page section#content .link .image .text{
-  display:table-cell;
-  vertical-align:middle;
-  text-align:center;
+#front-page section#content .link .text{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  display:table;
+  z-index:2;
   -webkit-transition:-webkit-transform 0.137s ease-out;
   transition:-webkit-transform 0.137s ease-out;
   transition:transform 0.137s ease-out;
   transition:transform 0.137s ease-out, -webkit-transform 0.137s ease-out;
+  color:#adffd8;
 }
-#front-page section#content .link .image:hover .text{
+#front-page section#content .link .text span{
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+}
+#front-page section#content .link:hover .text{
   -webkit-transform:scale(1.137);
           transform:scale(1.137);
 }
+#front-page section#content .link:hover .image{
+  -webkit-transform:scale(0);
+          transform:scale(0);
+}
 #front-page section#content .photo{
   background-size:cover;
-  height:40rem;
+  font-size:2.2em;
 }
-#front-page section#content .photo.overflow-down{
-  height:43rem;
+#front-page section#content .photo img{
+  width:100%;
 }
 .subpage{
   display:none;

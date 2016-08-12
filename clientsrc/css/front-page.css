@@ -33,7 +33,7 @@
       width: 3.2rem;
       height: 3.2rem;
       cursor: pointer;
-      transition: transform 0.2137s ease-out;
+      transition: transform 0.7137s cubic-bezier(.7,.38,.35,1.38);
       transform: translateX(0rem);
       @media(--breakpoint-xlg) {
         transform: translateX(7rem);
@@ -56,6 +56,7 @@
     section.hero {
       position: relative;
       background-size: cover;
+      transition: height 0.2137s ease-in;
 
       @media(--breakpoint-xlg) {
         height: calc(var(--width-4) * 0.65);
@@ -142,7 +143,7 @@
       .image {
         position: absolute;
         transform: scale(1);
-        transition: all 0.137s ease-out;
+        transition: all 0.15s ease-out;
         top: 0px;
         left: 0px;
         width: 100%;
@@ -159,7 +160,7 @@
         height: 100%;
         display: table;
         z-index: 2;
-        transition: transform 0.137s ease-out;
+        transition: transform 0.2537s cubic-bezier(.53,-0.54,.51,1.47);
         color: var(--light-green);
         span {
           display: table-cell;

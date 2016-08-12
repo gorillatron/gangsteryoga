@@ -27,7 +27,8 @@
                     a.back.absolute.left.pr2.mln3.text-decoration-none.sm-hide.xs-hide(href="/instruktoerer") ← 
                     | #{instructor.name.full}
                 .clearfix.mb3
-                  .col.col-12.photo.mb2
-                    img(src=instructor.photo.secure_url)
+                  .col.col-12.mb2
+                    .photo.mx-auto
+                      img(src=instructor.photo.secure_url)
                   .col.col-12.bio
                     div!=instructor.bio.html

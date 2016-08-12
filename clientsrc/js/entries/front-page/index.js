@@ -1,12 +1,20 @@
 
 import routing from './routing'
 import parallaxing from './parallaxing'
-
-$('.subpage').scroll((event) => {
-  event.stopPropagation()
-  event.preventDefault()
-  return false
-})
+import scrolling from './scrolling'
 
 routing()
-parallaxing()
+
+$(document).ready(() => {
+
+  $('.subpage').scroll((event) => {
+    event.stopPropagation()
+    event.preventDefault()
+    return false
+  })
+
+  
+  scrolling()
+  parallaxing()
+
+})

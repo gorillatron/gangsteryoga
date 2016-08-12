@@ -5,7 +5,7 @@ import parallaxing from '../../lib/parallaxing'
 
 
 export default () => {
-  $(document).on('ready', (event) => {
+ 
 
     // const parallax$ = parallaxing({ 
     //   target: $(document),
@@ -37,7 +37,6 @@ export default () => {
     //     translate($('.text-block'), frame)
     // })
 
-  })
 
 }
 

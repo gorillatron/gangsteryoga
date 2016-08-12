@@ -130,7 +130,7 @@ hr{
 .max-width-1{ max-width:32rem }
 .max-width-2{ max-width:48rem }
 .max-width-3{ max-width:64rem }
-.max-width-4{ max-width:96rem }
+.max-width-4{ max-width:82rem }
 .border-box{ box-sizing:border-box }
 .align-baseline{ vertical-align:baseline }
 .align-top{ vertical-align:top }
@@ -974,175 +974,154 @@ hr{
   transition:opacity 0.137s ease-out;
 
 }
-#front-page #cover{
-  position:relative;
-  height:95vh;
-  -webkit-transition:all 0.137s ease-out;
-  transition:all 0.137s ease-out;
-  overflow:hidden;
-}
-@media (min-width: 52em){
-  #front-page #cover{
-    height:75vh;
-  }
-}
-#front-page #cover .background-image{
-  z-index:1;
-  position:absolute;
-  background-image:url('/images/cover_mobile.png');
-  background-size:cover;
-  height:106%;
-  width:106%;
-  margin:-2.5%;
-}
-@media (min-width: 52em){
-  #front-page #cover .background-image{
-    background-image:url('/images/cover.png');
-    min-height:60rem;
-  }
-}
-#front-page #cover .background-image.animate-translate{
-  -webkit-transition:-webkit-transform 0.400s ease-in-out;
-  transition:-webkit-transform 0.400s ease-in-out;
-  transition:transform 0.400s ease-in-out;
-  transition:transform 0.400s ease-in-out, -webkit-transform 0.400s ease-in-out;
-}
-#front-page #cover .logo{
+#front-page header#main-header .logo{
   position:relative;
   z-index:2;
-  height:30vh;
-  width:30vh;
+  height:8vh;
+  width:8vh;
   background-image:url('/gfx/gy_logo_svart_positiv.png');
   background-size:cover;
   -webkit-transition:all 0.15s ease-out;
   transition:all 0.15s ease-out;
-  margin-top:25vh;
 }
-@media (min-width: 64rem){
-  #front-page #cover .logo{
-    margin-top:8vh;
-    height:12vh;
-    width:12vh;
-  }
-}
-#front-page #cover .hamburger-wrapper{
+#front-page header#main-header .hamburger-wrapper{
   z-index:2;
   -webkit-transition:all 0.15s ease-out;
   transition:all 0.15s ease-out;
-  padding-top:1.5rem;
 }
-#front-page #cover .hamburger{
+#front-page header#main-header .hamburger{
   width:2.5rem;
   height:2.5rem;
   cursor:pointer;
 }
-#front-page #cover .hamburger .line{
+#front-page header#main-header .hamburger .line{
   background:rgb(20,20,20);
   width:100%;
   height:15%;
   margin-bottom:25%
 }
-#front-page #main-nav a{
-  text-decoration:none;
-  color:inherit;
+#front-page section#content section.hero{
+  position:relative;
+  background-size:cover;
+  height:51.865rem;
 }
-#front-page .content .sm-punchline{
-  background-color:black;
-  color:#adffd8;
-  font-size:1.37em;
+#front-page section#content section.wide-text{
+  font-size:2.2em;
   line-height:1.5em;
 }
-#front-page .content .text, #front-page .content .link{
+#front-page section#content .text, #front-page section#content .link{
   box-sizing:border-box;
   overflow:hidden;
 }
-@media (min-width: 52em){
-  #front-page .content .text, #front-page .content .link{
-    height:20rem;
-  }
-}
-#front-page .content .text{
+#front-page section#content .text{
+  font-size:2.2em;
   box-sizing:border-box;
   -webkit-transition:all 0.137s ease-out;
   transition:all 0.137s ease-out;
 }
-@media (min-width: 52em){
-  #front-page .content .text.vertical{
-    height:40rem;
-  }
-}
-#front-page .content .text .text-block{
+#front-page section#content .text .content-wrap{
+  position:relative;
   height:100%;
   background-color:white;
   color:#adffd8;
-  border:10px solid #adffd8;
+  border:15px solid #adffd8;
   display:table;
 }
-#front-page .content .text .text-block p{
+#front-page section#content .text .content-wrap span{
   display:table-cell;
   vertical-align:middle;
   text-align:center;
 }
-#front-page .content .link{
+#front-page section#content .text .content-wrap .dots{
+  position:absolute;
+  width:40%;
+  height:15px;
+  right:3rem;
+}
+#front-page section#content .text .content-wrap .dots.top{
+  top:-15px;
+}
+#front-page section#content .text .content-wrap .dots.bottom{
+  top:none;
+  bottom:-15px;
+}
+#front-page section#content .text .content-wrap .dots .dot{
+  display:inline-block;
+  vertical-align:top;
+  width:13%;
+  margin-left:7%;
+  height:15px;
+  background:white;
+}
+#front-page section#content .link{
+  display:block;
+  font-family:"AlteHaasGroteskBold";
   position:relative;
   -webkit-transition:all 0.137s ease-out;
   transition:all 0.137s ease-out;
-  min-height:20rem;
-  font-size:2.5rem;
+  height:22rem;
+  font-size:1.60rem;
   text-decoration:none;
   color:inherit;
   overflow:hidden;
   cursor:pointer;
 }
-#front-page .content .link .image{
-  display:table;
+#front-page section#content .link .image{
+  position:absolute;
+  -webkit-transform:scale(1);
+          transform:scale(1);
+  -webkit-transition:all 0.137s ease-out;
+  transition:all 0.137s ease-out;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
   z-index:1;
-  min-height:20rem;
-  width:100.1%;
   background-size:cover;
 }
-#front-page .content .link .image .text{
-  display:table-cell;
-  vertical-align:middle;
-  text-align:center;
+#front-page section#content .link .text{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  display:table;
+  z-index:2;
   -webkit-transition:-webkit-transform 0.137s ease-out;
   transition:-webkit-transform 0.137s ease-out;
   transition:transform 0.137s ease-out;
   transition:transform 0.137s ease-out, -webkit-transform 0.137s ease-out;
+  color:#adffd8;
 }
-#front-page .content .link .image:hover .text{
+#front-page section#content .link .text span{
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+}
+#front-page section#content .link:hover .text{
   -webkit-transform:scale(1.137);
           transform:scale(1.137);
 }
-@media (min-width: 52em){
-  #front-page .content .link.outlined-r{
-    box-shadow:0px 0px 0px 15px rgb(255,255,255);
-  }
-  #front-page .content .link.outlined-l{
-    box-shadow:0px 0px 0px 15px rgb(255,255,255);
-  }
+#front-page section#content .link:hover .image{
+  -webkit-transform:scale(0);
+          transform:scale(0);
 }
-#front-page .content .photo{
-  -webkit-transition:all 0.137s ease-out;
-  transition:all 0.137s ease-out;
+#front-page section#content .photo{
+  position:relative;
   background-size:cover;
-  height:40rem;
 }
-#front-page .content .photo.overflow-down{
-  height:43rem;
+#front-page section#content .photo img{
+  width:100%;
 }
-@media (min-width: 52em){
-  #front-page .content .pull-up-3{
-    margin-top:-23rem;
-  }
+#front-page section#content .photo .text, #front-page section#content .hero .text{
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  font-size:2.2em;
+  color:white;
 }
-@media (min-width: 52em){
-  #front-page .content .pull-up-6{
-    margin-top:-62.1rem;
-  }
-}
-#front-page .content .large-photo{
-  height:64rem;
+#front-page section#content .hero .text{
+  margin-left:15%;
 }
 .subpage{
   display:none;
@@ -1189,6 +1168,11 @@ hr{
 }
 .subpage.instruktoerer .instructor-detail .photo img{
   max-height:30vh;
+}
+#footer{
+  
+  font-size:0.8em;
+
 }
 #footer section.info{
   color:rgb(247,247,247);

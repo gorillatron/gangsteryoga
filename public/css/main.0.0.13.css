@@ -1020,7 +1020,12 @@ hr{
 #front-page section#content section.hero{
   position:relative;
   background-size:cover;
-  height:43.665rem;
+  height:43.46rem;
+}
+@media(min-width: 1700px){
+  #front-page section#content section.hero{
+    height:53.3rem;
+  }
 }
 #front-page section#content section.wide-text{
   font-size:2.2em;

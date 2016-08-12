@@ -56,7 +56,12 @@
     section.hero {
       position: relative;
       background-size: cover;
-      height: calc(var(--width-4) * 0.5325);
+
+      @media(--breakpoint-xlg) {
+        height: calc(var(--width-4) * 0.65);
+      }
+
+      height: calc(var(--width-4) * 0.53);
     }
 
     section.wide-text {

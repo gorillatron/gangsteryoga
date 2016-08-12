@@ -5,13 +5,13 @@ include ../mixins/vscript
 block js
   +vscript('front-page')
 
-mixin dots() 
-  .dots.top
+mixin dots(className) 
+  .dots.top(class=className)
     .dot
     .dot
     .dot
     .dot
-  .dots.bottom
+  .dots.bottom(class=className)
     .dot
     .dot
     .dot
@@ -64,10 +64,10 @@ block content
                 | Yoga 
                 br
                 | som metode
-          .text.my4.p4
+          .text.mt4.p3
             .content-wrap.p4 
               span “Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.”
-              +dots()
+              +dots("right")
 
       
       section.hero.max-width-4.mx-auto.mb4(style="background-image: url(/images/webgangster-bw@2x.png);")
@@ -88,10 +88,10 @@ block content
             .text.px3
               span 
                 | Fengsler
-          .text.my4.p4
+          .text.mt4.p3
             .content-wrap.p4 
               span “Lorem ipsum dolor sit amet, et vitae forensibus sed, eripuit tincidunt eu his.”
-              +dots()
+              +dots("left")
         
         .col.col-6.pl4
           .photo.mb4

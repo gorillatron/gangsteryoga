@@ -47,7 +47,7 @@
     section.hero {
       position: relative;
       background-size: cover;
-      height: calc(var(--width-4) * 0.6325);
+      height: calc(var(--width-4) * 0.5325);
     }
 
     section.wide-text {
@@ -82,7 +82,14 @@
           position: absolute;
           width: 40%;
           height: 15px;
-          right: var(--space-3);
+
+          &.right {
+            right: var(--space-2);
+          }
+
+          &.left {
+            left: var(--space-2);
+          }
 
           &.top {
             top: -15px;

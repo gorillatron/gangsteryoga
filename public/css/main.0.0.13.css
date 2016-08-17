@@ -988,8 +988,8 @@ hr{
   width:7rem;
   background-image:url('/gfx/gy_logo_svart_positiv.png');
   background-size:cover;
-  -webkit-transition:all 0.15s ease-out;
-  transition:all 0.15s ease-out;
+  -webkit-transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);
+  transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);
   height:5rem;
   width:5rem;
 }
@@ -1004,10 +1004,8 @@ hr{
   width:2.2rem;
   height:2.2rem;
   cursor:pointer;
-  -webkit-transition:-webkit-transform 0.7137s cubic-bezier(.7,.38,.35,1.38);
-  transition:-webkit-transform 0.7137s cubic-bezier(.7,.38,.35,1.38);
-  transition:transform 0.7137s cubic-bezier(.7,.38,.35,1.38);
-  transition:transform 0.7137s cubic-bezier(.7,.38,.35,1.38), -webkit-transform 0.7137s cubic-bezier(.7,.38,.35,1.38);
+  -webkit-transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);
+  transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);
   -webkit-transform:translateX(0rem);
           transform:translateX(0rem);
 }
@@ -1034,8 +1032,8 @@ hr{
 #front-page section#content section.hero{
   position:relative;
   background-size:cover;
-  -webkit-transition:height 0.2137s ease-in;
-  transition:height 0.2137s ease-in;
+  -webkit-transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);
+  transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);
   height:43.46rem;
 }
 @media(min-width: 1700px){

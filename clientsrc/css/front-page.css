@@ -198,7 +198,7 @@
 
       &.text-link {
         .box {
-          border: 15px solid rgba(0,0,0, 0.7);
+          border: 15px solid rgba(0,0,0, 0.9);
         }
         .text {
           z-index: 2;

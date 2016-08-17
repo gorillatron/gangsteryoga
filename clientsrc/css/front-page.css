@@ -202,13 +202,13 @@
         }
         .text {
           z-index: 2;
-          color: rgba(0,0,0, 0.7);
+          color: rgba(0,0,0, 0.85);
         }
       }
       
       &:hover .text {
         transform: scale(1.137);
-        color: rgba(0,0,0, 0.7);
+        color: rgba(0,0,0, 0.85);
       }
 
       &:hover .image, &:hover .box {

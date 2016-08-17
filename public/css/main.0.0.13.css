@@ -1163,12 +1163,12 @@ hr{
 }
 #front-page section#content .link.text-link .text{
   z-index:2;
-  color:rgba(0,0,0, 0.7);
+  color:rgba(0,0,0, 0.85);
 }
 #front-page section#content .link:hover .text{
   -webkit-transform:scale(1.137);
           transform:scale(1.137);
-  color:rgba(0,0,0, 0.7);
+  color:rgba(0,0,0, 0.85);
 }
 #front-page section#content .link:hover .image, #front-page section#content .link:hover .box{
   opacity:0;

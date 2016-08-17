@@ -78,13 +78,16 @@
     }
 
     section.wide-text {
-      font-size: var(--h1);
+      font-size: calc(var(--h1) * 0.8);
       line-height: 1.5em;
       color: rgba(0,0,0, 0.7);
       .text-content {
         @media(--breakpoint-xlg) {
           width: 50%;
           margin: 0px auto;
+        }
+        @media(--breakpoint-lg) {
+          font-size: var(--h1);
         }
       }
     }

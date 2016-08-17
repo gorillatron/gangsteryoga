@@ -1044,7 +1044,7 @@ hr{
   }
 }
 #front-page section#content section.wide-text{
-  font-size:2.2rem;
+  font-size:1.76rem;
   line-height:1.5em;
   color:rgba(0,0,0, 0.7);
 }
@@ -1052,6 +1052,11 @@ hr{
   #front-page section#content section.wide-text .text-content{
     width:50%;
     margin:0px auto;
+  }
+}
+@media(min-width: 64rem){
+  #front-page section#content section.wide-text .text-content{
+    font-size:2.2rem;
   }
 }
 #front-page section#content .text, #front-page section#content .link{

@@ -1045,6 +1045,13 @@ hr{
   font-size:1.76rem;
   line-height:1.5em;
   color:rgba(0,0,0, 0.7);
+  display:table;
+  width:100%;
+  height:12em;
+}
+#front-page section#content section.wide-text .text-content{
+  display:table-cell;
+  vertical-align:middle;
 }
 @media(min-width: 1700px){
   #front-page section#content section.wide-text .text-content{
@@ -1056,6 +1063,16 @@ hr{
   #front-page section#content section.wide-text .text-content{
     font-size:2.2rem;
   }
+}
+#front-page section#content section.wide-text.gitter, #front-page section#content section.wide-text.gitter-plain{
+  background-repeat:no-repeat;
+  background-position:63% center;
+}
+#front-page section#content section.wide-text.gitter{
+  background-image:url(/images/gitter-01@2x.png);
+}
+#front-page section#content section.wide-text.gitter-plain{
+  background-image:url(/images/gitter-plain-01@2x.png);
 }
 #front-page section#content .text, #front-page section#content .link{
   box-sizing:border-box;
@@ -1079,32 +1096,6 @@ hr{
   display:table-cell;
   vertical-align:middle;
   text-align:center;
-}
-#front-page section#content .text .content-wrap .dots{
-  position:absolute;
-  width:40%;
-  height:15px;
-}
-#front-page section#content .text .content-wrap .dots.right{
-  right:2rem;
-}
-#front-page section#content .text .content-wrap .dots.left{
-  left:2rem;
-}
-#front-page section#content .text .content-wrap .dots.top{
-  top:-15px;
-}
-#front-page section#content .text .content-wrap .dots.bottom{
-  top:none;
-  bottom:-15px;
-}
-#front-page section#content .text .content-wrap .dots .dot{
-  display:inline-block;
-  vertical-align:top;
-  width:12%;
-  margin-left:11%;
-  height:15px;
-  background:white;
 }
 #front-page section#content .link{
   display:block;

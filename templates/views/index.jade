@@ -5,18 +5,6 @@ include ../mixins/vscript
 block js
   +vscript('front-page')
 
-mixin dots(className) 
-  .dots.top(class=className)
-    .dot
-    .dot
-    .dot
-    .dot
-  .dots.bottom(class=className)
-    .dot
-    .dot
-    .dot
-    .dot
-
 block content
 
   include ./subpages/fengsler
@@ -42,7 +30,7 @@ block content
       section.hero.max-width-4.mx-auto.mb4(style="background-image: url(/images/webgangster-bw-copy@3x.png);")
 
 
-      section.wide-text.my4.clearfix.py2.lg-py4.px1
+      section.wide-text.my4.clearfix.py2.lg-py4.px1.gitter
         .text-content.center.lg-py3  Gangster Yoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv.
       
 
@@ -72,7 +60,7 @@ block content
       section.hero.max-width-4.mx-auto.mb4(style="background-image: url(/images/webgangster-bw@2x.png);")
 
 
-      section.wide-text.my4.clearfix.py2.lg-py4.px1
+      section.wide-text.my4.clearfix.py2.lg-py4.px1.gitter-plain
         .text-content.center.lg-py3
           | ...kjenne på stivheter og ubehag, 
           br

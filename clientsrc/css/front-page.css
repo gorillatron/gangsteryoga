@@ -81,7 +81,12 @@
       font-size: calc(var(--h1) * 0.8);
       line-height: 1.5em;
       color: rgba(0,0,0, 0.7);
+      display: table;
+      width: 100%;
+      height: 12em;
       .text-content {
+        display: table-cell;
+        vertical-align: middle;
         @media(--breakpoint-xlg) {
           width: 50%;
           margin: 0px auto;
@@ -90,6 +95,20 @@
           font-size: var(--h1);
         }
       }
+
+      &.gitter, &.gitter-plain {
+        background-repeat: no-repeat;
+        background-position: 63% center;
+      }
+
+      &.gitter {
+        background-image: url(/images/gitter-01@2x.png);
+      }
+
+      &.gitter-plain {
+        background-image: url(/images/gitter-plain-01@2x.png);
+      }
+
     }
 
     .text, .link {
@@ -114,39 +133,6 @@
           vertical-align: middle; 
           text-align: center; 
         }
-
-        .dots {
-          position: absolute;
-          width: 40%;
-          height: 15px;
-
-          &.right {
-            right: var(--space-2);
-          }
-
-          &.left {
-            left: var(--space-2);
-          }
-
-          &.top {
-            top: -15px;
-          }
-
-          &.bottom {
-            top: none;
-            bottom: -15px;
-          }
-
-          .dot {
-            display: inline-block;
-            vertical-align: top;
-            width: 12%;
-            margin-left: 11%;
-            height: 15px;
-            background: white;
-          }
-        }
-
       }
     }
 

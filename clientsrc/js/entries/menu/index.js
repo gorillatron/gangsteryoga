@@ -21,12 +21,15 @@ const setMenu = open => {
 
   $(document).off('click.menuclose')
 
+  const menuHeight = menu.innerHeight()
+
   if(state.closeTimer) {
     clearTimeout(state.closeTimer)
     state.closeTimer = null
   }
 
   if(state.open) {
+    menu.css({ top: `-${(menuHeight / 2) / 2}px` })
     toggleButton.addClass('close')
     menu.removeClass('closed')
     state.closeTimer = setTimeout(_ => setMenu(false), menuCloseTime)

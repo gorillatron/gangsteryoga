@@ -6,7 +6,7 @@
   transition: all 0.7137s cubic-bezier(.7,.38,.35,1.38);
 
   @media(--breakpoint-lg) {
-    transform: translateY(-70%);
+    transform: translateY(-100%);
   }
 
   @media(--breakpoint-xlg) {

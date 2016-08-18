@@ -991,8 +991,8 @@ hr{
 }
 @media(min-width: 64rem){
   #front-page{
-    -webkit-transform:scale(0.9);
-            transform:scale(0.9);
+    -webkit-transform:scale(0.85);
+            transform:scale(0.85);
   }
 }
 @media(min-width: 1700px){
@@ -1257,8 +1257,8 @@ hr{
 }
 @media(min-width: 64rem){
   #footer{
-    -webkit-transform:translateY(-70%);
-            transform:translateY(-70%);
+    -webkit-transform:translateY(-100%);
+            transform:translateY(-100%);
   }
 }
 @media(min-width: 1700px){

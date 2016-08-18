@@ -8,18 +8,21 @@ import {Observable, Scheduler} from "rxjs"
 export default function typestream(opts) {
   
   const textarea = opts.el
-  const text = opts.text || textarea.attributes.getNamedItem("data-text").value
+  const text = opts.text || textarea.text()
   const words = text.split(" ")
   const words$ = Observable.from(words)
-  const speed = opts.speed || 1
+  const speed = opts.speed || 1.5
 
-  textarea.addEventListener('keydown', e => e.preventDefault())
+  textarea.on('keydown', e => e.preventDefault())
+
+  textarea.text("")
+  
 
   const typestream$ = words$
     .concatMap(x => 
       Observable.of(x)
         .delay(
-          (Math.random() * 180 / speed) + ((x.length * 1.57) / speed)
+          (Math.random() * 180 / speed) + ((x.length * 2.17) / speed)
     ))
     .concatMap(word => {
       const letters$ = Observable.from(word.split("").concat(" "))
@@ -27,7 +30,7 @@ export default function typestream(opts) {
         .concatMap(letter =>
           Observable.of(letter)
             .delay(
-              (Math.random() * 120) / speed
+              (Math.random() * 220) / speed
             ))
       return typestream$
     })
@@ -36,7 +39,10 @@ export default function typestream(opts) {
   typestream$
     .subscribeOn(Scheduler.animationFrame)
     .subscribe(
-      char => textarea.value = textarea.value + char,
+      char => {
+        let val = textarea.text() + char
+        textarea.text(val)
+      },
       null,
       _ => opts.onComplete && opts.onComplete()
       )

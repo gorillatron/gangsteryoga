@@ -13,6 +13,12 @@ toggleButton.on("click", event => {
   setMenu(!state.open)
 })
 
+menu.on('click', (event) => {
+  if(menu.hasClass('closed')) {
+    event.preventDefault()
+    return false
+  }
+})
 
 const setMenu = open => {
   let transform = null

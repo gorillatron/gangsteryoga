@@ -1006,7 +1006,7 @@ hr{
   z-index:2;
   height:7rem;
   width:7rem;
-  background-image:url('/gfx/gy_logo_svart_positiv.png');
+  background-image:url('/images/gy_logo_svart_positiv-01.svg');
   background-size:cover;
   -webkit-transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);
   transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);

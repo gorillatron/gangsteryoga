@@ -1,7 +1,7 @@
 
 
-const sidebar = $("#main-sidebar")
-const toggleButton = $("#cover .hamburger")
+const menu = $("#main-menu")
+const toggleButton = $(".hamburger")
 const nav = $("#main-nav")
 const cover = $("#cover")
 
@@ -27,18 +27,12 @@ const setMenu = open => {
   }
 
   if(state.open) {
-    transform = 'translatex(-' + nav.outerWidth() + 'px)'
-    setTimeout(_ => $(document).one('click.menuclose', _ => setMenu(false)))
+    toggleButton.addClass('close')
+    menu.removeClass('closed')
     state.closeTimer = setTimeout(_ => setMenu(false), menuCloseTime)
   }
   else {
-    transform = 'translatex(0px)'
+    menu.addClass('closed')
+    toggleButton.removeClass('close')
   }
-  
-  cover.css({
-    '-ms-transform': transform,
-    '-moz-transform': transform,
-    '-webkit-transform': transform,
-    'transform': transform
-  })
 }

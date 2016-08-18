@@ -1020,6 +1020,7 @@ hr{
   }
 }
 #front-page header#main-header .hamburger{
+  z-index:2;
   margin-top:1.8em;
   width:2.2rem;
   height:2.2rem;
@@ -1038,10 +1039,65 @@ hr{
   }
 }
 #front-page header#main-header .hamburger .line{
+  -webkit-transition:all 0.137s cubic-bezier(.7,.38,.35,1.38);
+  transition:all 0.137s cubic-bezier(.7,.38,.35,1.38);
   background:rgb(20,20,20);
   width:100%;
   height:15%;
   margin-bottom:25%
+}
+#front-page header#main-header .hamburger.close .line:nth-child(1){
+  display:none;
+}
+#front-page header#main-header .hamburger.close .line:nth-child(2){
+  -webkit-transform:rotateZ(-45deg);
+          transform:rotateZ(-45deg);
+  margin-bottom:0%;
+}
+#front-page header#main-header .hamburger.close .line:nth-child(3){
+  -webkit-transform:rotateZ(45deg);
+          transform:rotateZ(45deg);
+  margin-top:-15%;
+}
+#front-page header#main-header #main-menu{
+  font-size:1.4em;
+  -webkit-transition:all 0.3137s cubic-bezier(.7,.38,.35,1.38);
+  transition:all 0.3137s cubic-bezier(.7,.38,.35,1.38);
+  -webkit-transform:translateX(0rem);
+          transform:translateX(0rem);
+  font-weight:bold;
+  z-index:1;
+  top:-50%;
+  transform:translateX(0rem);
+  opacity:1;
+  -webkit-transform:translateX(-4rem);
+          transform:translateX(-4rem);
+}
+@media(min-width: 1700px){
+  #front-page header#main-header #main-menu{
+    -webkit-transform:translateX(1rem);
+            transform:translateX(1rem);
+  }
+  #front-page header#main-header #main-menu.closed{
+    -webkit-transform:translateX(-2rem);
+            transform:translateX(-2rem);
+  }
+}
+#front-page header#main-header #main-menu.closed{
+  opacity:0;
+  -webkit-transform:translateX(0rem);
+          transform:translateX(0rem);
+}
+@media(min-width: 1700px){
+  #front-page header#main-header #main-menu.closed{
+    -webkit-transform:translateX(-2rem);
+            transform:translateX(-2rem);
+  }
+}
+#front-page header#main-header #main-menu ul li a{
+  text-decoration:none;
+  color:black;
+  text-transform:uppercase;
 }
 @media(min-width: 1700px){
   #front-page section#content section.links{

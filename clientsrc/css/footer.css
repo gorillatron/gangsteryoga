@@ -3,6 +3,16 @@
   
   font-size: 0.8em;
 
+  transition: all 0.7137s cubic-bezier(.7,.38,.35,1.38);
+
+  @media(--breakpoint-lg) {
+    transform: translateY(-70%);
+  }
+
+  @media(--breakpoint-xlg) {
+    transform: translateY(0%);
+  }
+
   section.info {
     color: var(--offwhite);
     background-color: var(--dark-gray);

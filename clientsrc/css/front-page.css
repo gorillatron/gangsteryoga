@@ -1,7 +1,5 @@
 
 
-
-
 #front-page {
 
   opacity: 0.0001;
@@ -9,6 +7,18 @@
   width: 100%;
   min-height: 100%;
 
+  transform-origin: center top;
+  transform: scale(1);
+  transition: all 0.7137s cubic-bezier(.7,.38,.35,1.38);
+
+  @media(--breakpoint-lg) {
+    transform: scale(0.9);
+  }
+
+  @media(--breakpoint-xlg) {
+    transform: scale(1);
+  }
+  
 
   header#main-header {
 
@@ -87,7 +97,7 @@
       .text-content {
         display: table-cell;
         vertical-align: middle;
-        @media(--breakpoint-xlg) {
+        @media(--breakpoint-lg) {
           width: 50%;
           margin: 0px auto;
         }

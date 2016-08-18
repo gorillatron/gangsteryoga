@@ -1032,10 +1032,21 @@ hr{
 }
 @media(min-width: 1700px){
   #front-page header#main-header .hamburger{
-    -webkit-transform:translateX(7rem);
-            transform:translateX(7rem);
+    -webkit-transform:translateX(6rem);
+            transform:translateX(6rem);
     width:3.2rem;
     height:3.2rem;
+  }
+}
+@media(max-width: 40em){
+  #front-page header#main-header .hamburger{
+    font-size:1.0em;
+    -webkit-transform:translateX(0rem);
+            transform:translateX(0rem);
+  }
+  #front-page header#main-header .hamburger.close{
+    -webkit-transform:translateX(-10rem);
+            transform:translateX(-10rem);
   }
 }
 #front-page header#main-header .hamburger .line{
@@ -1062,11 +1073,11 @@ hr{
   margin-top:-15%;
 }
 #front-page header#main-header #main-menu{
-  font-size:1.4em;
-  -webkit-transition:-webkit-transform 0.3137s cubic-bezier(.7,.38,.35,1.38);
-  transition:-webkit-transform 0.3137s cubic-bezier(.7,.38,.35,1.38);
-  transition:transform 0.3137s cubic-bezier(.7,.38,.35,1.38);
-  transition:transform 0.3137s cubic-bezier(.7,.38,.35,1.38), -webkit-transform 0.3137s cubic-bezier(.7,.38,.35,1.38);
+  font-size:1.2em;
+  -webkit-transition:opacity 0.3137s ease-in, -webkit-transform 0.3137s cubic-bezier(.7,.38,.35,1.38);
+  transition:opacity 0.3137s ease-in, -webkit-transform 0.3137s cubic-bezier(.7,.38,.35,1.38);
+  transition:transform 0.3137s cubic-bezier(.7,.38,.35,1.38), opacity 0.3137s ease-in;
+  transition:transform 0.3137s cubic-bezier(.7,.38,.35,1.38), opacity 0.3137s ease-in, -webkit-transform 0.3137s cubic-bezier(.7,.38,.35,1.38);
   -webkit-transform:translateX(0rem);
           transform:translateX(0rem);
   font-weight:bold;
@@ -1078,21 +1089,23 @@ hr{
 }
 @media(max-width: 40em){
   #front-page header#main-header #main-menu{
-    font-size:1.1em;
+    font-size:1.0em;
+    -webkit-transform:translateX(0rem);
+            transform:translateX(0rem);
   }
 }
 @media(min-width: 1700px){
   #front-page header#main-header #main-menu{
-    -webkit-transform:translateX(1rem);
-            transform:translateX(1rem);
+    -webkit-transform:translateX(0rem);
+            transform:translateX(0rem);
   }
 }
 #front-page header#main-header #main-menu.closed{
   opacity:0;
-  -webkit-transform:translateX(0rem);
-          transform:translateX(0rem);
+  -webkit-transform:translateX(-8rem);
+          transform:translateX(-8rem);
 }
-@media(min-width: 1700px){
+@media(max-width: 40em){
   #front-page header#main-header #main-menu.closed{
     -webkit-transform:translateX(4rem);
             transform:translateX(4rem);

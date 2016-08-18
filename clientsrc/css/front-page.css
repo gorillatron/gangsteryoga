@@ -50,10 +50,19 @@
       transition: all 0.7137s cubic-bezier(.7,.38,.35,1.38);
       transform: translateX(0rem);
       @media(--breakpoint-xlg) {
-        transform: translateX(7rem);
+        transform: translateX(6rem);
         width: 3.2rem;
         height: 3.2rem;
       }
+
+      @media(--breakpoint-xs) {
+        font-size: 1.0em;
+        transform: translateX(0rem);
+        &.close {
+          transform: translateX(-10rem);
+        }
+      }
+      
     }
 
     .hamburger .line {
@@ -80,19 +89,20 @@
     }
 
     #main-menu {
-      font-size: 1.4em;
-      transition: transform 0.3137s cubic-bezier(.7,.38,.35,1.38);
+      font-size: 1.2em;
+      transition: transform 0.3137s cubic-bezier(.7,.38,.35,1.38), opacity 0.3137s ease-in;
       transform: translateX(0rem);
       font-weight: bold;
       z-index: 1;
       transform: translateX(0rem);
 
       @media(--breakpoint-xs) {
-        font-size: 1.1em;
+        font-size: 1.0em;
+        transform: translateX(0rem);
       }
 
       @media(--breakpoint-xlg) {
-        transform: translateX(1rem);
+        transform: translateX(0rem);
       }
 
       opacity: 1;
@@ -100,8 +110,8 @@
 
       &.closed {
         opacity: 0;
-        transform: translateX(0rem);
-        @media(--breakpoint-xlg) {
+        transform: translateX(-8rem);
+        @media(--breakpoint-xs) {
           transform: translateX(4rem);
         }
       }

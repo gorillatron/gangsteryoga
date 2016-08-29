@@ -25,6 +25,8 @@ body {
 
   header#main-header {
 
+    width: 100%;
+
     .logo {
       position: relative;
       z-index: 2;

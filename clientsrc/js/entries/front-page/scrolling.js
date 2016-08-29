@@ -63,9 +63,9 @@ export default (config) => {
   scrolls$.subscribe((waypoints) => {
     waypoints.forEach(wp => {
       wp.el.addClass("wp-in")
-      if(wp.el.hasClass("wide-text")) {
-        typestream({ el: wp.el.find(".text-content") })
-      }
+      // if(wp.el.hasClass("wide-text")) {
+      //   typestream({ el: wp.el.find(".text-content") })
+      // }
     })
   })
 

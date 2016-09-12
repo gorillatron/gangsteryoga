@@ -1,11 +1,130 @@
 extends ../layouts/default
+include ../mixins/vscript
+
 
 block js
-  +vscript("scroll")
+  +vscript('front-page')
 
 block content
-  
-  #root-container
+
+  include ./subpages/fengsler
+  include ./subpages/instruktoerer
+  include ./subpages/vaartarbeid
+  include ./subpages/yogasommetode
+
+
+  #front-page.relative
+
+
+    header#main-header.relative.fit.p3(style="background-image: url(/images/webgangster_14.jpg);")
+      .logo.left
+      nav#menu.right.right-align
+        ul.list-reset
+          li.mb1
+            a(href="/vaartarbeid") Om oss
+          li.mb1
+            a(href="/") Instruktører
+          li.mb1
+            a(href="/") Fengsler
+          li.mb1
+            a(href="/") Kontakt
+      
+      section#featured.clearfix.absolute.bottom-0.left-0.mb1.mx1
+        .text.col.col-7 
+          .content.p3 Gangster Yoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv. Puste seg gjennom utfordringer. Kjenne på stivheter og ubehag, og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil.
+        .video.col.col-5
+          .content
+            iframe.hide(src='https://player.vimeo.com/video/179913310?title=0&byline=0&portrait=0', width='100%', height='100%', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+
+    
+
+    section#content.clearfix.fit
+
+      section.clearfix.my1
+        
+        #map.col.col-8 map
+
+        #articles.col.col-4.center
+
+          article.mb2
+            .image
+              img(src="/images/webgangster_11.jpg")
+            h1.h3 Some article
+            p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+          
+          article.mb2
+            .image
+              img(src="/images/webgangster_7.jpg")
+            h1.h3 Some article
+            p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+          
+          article.mb2
+            .image
+              img(src="/images/webgangster_11.jpg")
+            h1.h3 Some article
+            p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+
+      //- section.wide-text.my4.clearfix.py2.lg-py4.px1.waypoint(data-waypoint-offset="-400", data-waypoint-offset-md="-860", data-waypoint-offset-xlg="-860")
+      //-   .text-content.center.lg-py3 Gangster Yoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv.
+      
+
+      //- section.links.clearfix.px1.waypoint(data-waypoint-offset="-610", data-waypoint-offset-md="-1100", data-waypoint-offset-xlg="-990")
+
+      //-   .col.col-12.lg-col-6.lg-pr3
+          
+      //-     a.link.image-link(href="/vaartarbeid")
+      //-       .image(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-007-filter@3x.png)")
+      //-       .text.px3
+      //-         span 
+      //-           | Vårt arbeid
+          
+      //-     a.link.text-link(href="/yogasommetode").mt4
+      //-       .box
+      //-       .text.px3
+      //-         span 
+      //-           | Hvorfor Yoga
+        
+      //-   .col.col-12.lg-col-6.lg-pl3.xs-hide.mt4.lg-mt0
+      //-     .photo(style="background-image: url(/images/webgangster-filter-lys@2x.png)")
+
+      
+      //- section.wide-text.my4.clearfix.py2.lg-py4.px1.waypoint(data-waypoint-offset="-450", data-waypoint-offset-md="-860", data-waypoint-offset-xlg="-990")
+      //-   .text-content.center.lg-py3 Puste seg gjennom utfordringer...
+
+
+      //- section.hero.max-width-4.mx-auto.mb4(style="background-image: url(/images/webgangster-bw@2x.png);").waypoint(data-waypoint-offset="-900", data-waypoint-offset-md="-1260", data-waypoint-offset-xlg="-1000").xs-hide
+      //- section.hero.max-width-4.mx-auto.mb4(style="background-image: url(/images/webgangster-filter-lys@2x.png);").waypoint(data-waypoint-offset="-600").sm-hide.md-hide.lg-hide
+
+
+      //- section.wide-text.my4.clearfix.py2.lg-py4.px1.waypoint(data-waypoint-offset="-400", data-waypoint-offset-md="-860", data-waypoint-offset-xlg="-950")
+      //-   .text-content.center.lg-py3
+      //-     | ...kjenne på stivheter og ubehag, 
+      //-     br
+      //-     | og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil.
+      
+
+      //- section.links.clearfix.mb4.px1.waypoint(data-waypoint-offset="-660", data-waypoint-offset-md="-1200", data-waypoint-offset-xlg="-1200")
+
+      //-   .col.col-12.lg-col-6.lg-pr3.xs-hide
+      //-     .photo.mb4(style="background-image: url(/images/webgangster-27-bw@2x.png)")
+
+        
+      //-   .col.col-12.lg-col-6.lg-pl3
+      //-     a.link.text-link(href="/fengsler").mb4
+      //-       .box
+      //-       .text.px3
+      //-         span 
+      //-           | Fengsler
+      //-     a.link(href="/instruktoerer")
+      //-       .image(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-005-filter-lys@2x.png)")
+      //-       .text.px3
+      //-         span 
+      //-           | Instruktører
+
+
+    
+           
+
   
                 
 

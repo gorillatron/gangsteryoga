@@ -1,5 +1,6 @@
 include ../mixins/flash-messages
 include ../mixins/vscript
+include ../mixins/vstyle
 
 doctype html
 html.full
@@ -15,7 +16,7 @@ html.full
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
 		//- All .less files will be automatically compiled and minified in production.
-		link(href="/styles/site.min.css", rel="stylesheet")
+		+vstyle("main")
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -37,56 +38,73 @@ html.full
 	//- HTML BODY
 	body
 
-			
-		#parallax-images
-			.img.a
-			.img.b
-			.img.c
-			.img.d
-		
-		header#main-header
-			nav.container
-				ul
-					li Gangsteryoga
-					li Fengsler
-					li Instruktører
-					li Om Yoga
-				ul.pull-right
-					li Kontakt
-					li For berørte
+		#root
+			block content
 
-		#content
+		#footer
+			section.info.p1.lg-p4.py2.clearfix.relative
 
-			.block.full#hero
-				br
-				//img.logo(src="/gfx/logo_white.svg")
-				img.logo(src="/gfx/hvit_positiv.svg")
-				.button.down
-					img.down(src="/gfx/down-chevron.svg")
+				.background-logo.z1
 
-			.block.seperator.first
-				.container
-					.pure-g
-						.pure-u-1-12
-						.pure-u-5-6
-							p Gangsteryoga er for de som tørr å møte seg selv. Og som våger å skape en litt bedre hverdag.
-							P Drives nå i sju av landets fengsler.
-							button.button Les Mer
-				
+				.clearfix.content.relative.z2
 
-			.block.full
+					.col.md-col-3.md-pr1.sm-mb2
+						h5.mb3 Kontakt
+						p.clearfix
+							| Adresse her…
+							br
+							br
+							| R. Alexander Medin (styreleder og instruktør)
+							| Bente Aabel (styremedlem og instruktør)
+							br 
+							br
+							| For mer informasjon om klasser, se ram@puroyoga.no
 
-			.block.seperator
-				h1 Fengsler
-				p Les mer om fengslene ->
-			
-			.block.full
+					.col.md-col-3.md-px1.sm-mb2
+						h5.mb3 Fenglser
+						.clearfix
+							ul.list-reset.m0
+								li Ila Fengsel
+								li Oslo Fengsel
+								li Ullersmo Fengsel
+								li Bredtveit Fengsel
+								li Ringerike Fengsel
+								li Stavanger Fengsel
+								li Kristiansand Fengsel
 
-			.block.seperator
-				h1 Instruktører
-				p Les mer om lærerene som er involvert ->
-			
-			.block.full
+					.col.md-col-3.md-px1.sm-mb2
+						.clearfix
+							.col.col-12
+								h5.mb3 Instruktører
+							.col.col-6.pr2 
+								ul.list-reset.m0
+									li R. Alexander Medin 
+									li Bente Aabel
+									li Anniken Binz
+									li Astrid Holte Østbye
+									li Atle Thomasen
+									li Cecilie Kjølleberg
+									li Johanna Gjestland
+									li Hanne Kjersem Engebraaten
+							.col.col-6
+								ul.list-reset.m0
+									li Kajsa Josefina Finnström
+									li Kari Skotens Vikjord
+									li Karin Krogh
+									li Målfrid Sand
+									li Sofia Breig
+									li Tina Ørbeck-Nilssen
+									li Trine Tschudi
+
+					.col.md-col-3.md-pl1
+						.clearfix
+							.col.col-12
+								h5.mb3 Instruktører
+								p.clearfix Har du kommentarer og/eller tilbakemeldinger på innhold, bilder o.l., send oss en melding…
+
+			section.copyright.center.py2.lg-py4 ©Kantalope 2016
+
+
 
 
 		
@@ -95,6 +113,6 @@ html.full
 		//- if user && user.canAccessKeystone
 		//- 	script(src='/keystone/js/content/editor.js')
 		
-		//+vscript("menu")
-		
+		script(src="//code.jquery.com/jquery-2.2.0.min.js")
+		+vscript("menu")
 		block js

@@ -1,0 +1,23 @@
+
+
+
+
+.mtn1 { margin-top:    -var(--space-1) }
+.mrn1 { margin-right:  -var(--space-1) }
+.mbn1 { margin-bottom: -var(--space-1) }
+.mln1 { margin-left:   -var(--space-1) }
+
+.mtn2 { margin-top:    -var(--space-2) }
+.mrn2 { margin-right:  -var(--space-2) }
+.mbn2 { margin-bottom: -var(--space-2) }
+.mln2 { margin-left:   -var(--space-2) }
+
+.mtn3 { margin-top:    -var(--space-3) }
+.mrn3 { margin-right:  -var(--space-3) }
+.mbn3 { margin-bottom: -var(--space-3) }
+.mln3 { margin-left:   -var(--space-3) }
+
+.mtn4 { margin-top:    -var(--space-4) }
+.mrn4 { margin-right:  -var(--space-4) }
+.mbn4 { margin-bottom: -var(--space-4) }
+.mln4 { margin-left:   -var(--space-4) }

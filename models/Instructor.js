@@ -12,7 +12,8 @@ const Types = keystone.Field.Types
 
 const Instructor = new keystone.List('Instructor', {
 	label: "Instruktør",
-	plural: "Instruktører"
+	plural: "Instruktører",
+	autokey: { from: 'name', path: 'key', unique: true },
 })
 
 
@@ -27,5 +28,5 @@ Instructor.add({
 
 
 Instructor.defaultSort = 'name'
-Instructor.defaultColumns = 'name, email'
+Instructor.defaultColumns = 'name, email, createdAt'
 Instructor.register()

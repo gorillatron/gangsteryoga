@@ -48,7 +48,12 @@ exports = module.exports = function(app) {
 
 	// Views
 	app.get('/', routes.views.index)
-	app.get('/yoga', routes.views.yoga)
+	app.get('/vaartarbeid', routes.views.index)
+	app.get('/fengsler', routes.views.index)
+	app.get('/yogasommetode', routes.views.index)
+	app.get('/instruktoerer', routes.views.index)
+	app.get('/instruktoerer/*', routes.views.index)
+	
 	app.all('/contact', routes.views.contact)
 	app.all('/gallery/:key', routes.views.gallery)
 

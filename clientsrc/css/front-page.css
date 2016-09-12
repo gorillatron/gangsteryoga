@@ -1,0 +1,146 @@
+
+body {
+  overflow-x: hidden;
+}
+
+#front-page {
+  overflow-x: hidden;
+  opacity: 0.0001;
+  transition: opacity 0.137s ease-out;
+  width: 100%;
+  min-height: 100%;
+
+  header#main-header {
+
+    height: 100vh;
+    background-size: cover;
+
+    .logo {
+      background-image: url(/images/gy_logo_hvit_positiv-01.svg);
+      background-size: cover;
+      height: 7rem;
+      width: 7rem;
+    }
+
+    nav#menu {
+      text-transform: uppercase;
+      font-size: 0.73em;
+      ul {
+        li {
+          a {
+            color: rgba(255,255,255, 0.95);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    #featured {
+
+      .text, .video {
+        height: 40vh;
+        .content {
+          height: 100%;
+          width: 100%;
+          color: rgba(255,255,255, 0.85);
+          background-color: rgba(0,0,0, 0.8);
+        }
+      }
+
+      .text {
+        font-size: 1.2em;
+        line-height: 2.3em;
+        padding-right: calc(var(--space-1) / 2);
+      }
+
+      .video {
+        .content {
+          padding: calc(var(--space-1) / 2);
+          .placeholder {
+            height: 100%;
+            width: 100%;
+            .image {
+              height: 100%;
+              width: 100%;
+              background-size: cover;
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+  section#content {
+
+    min-height: 100vh;
+    
+    #map {
+
+    }
+
+    #articles {
+      padding-left: calc(var(--space-1) / 1);
+      padding-right: calc(var(--space-1) / 1);
+      border-left: 5px solid rgb(20,20,20);
+
+      article {
+        
+        .image {
+          height: 13em;
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+        }
+
+        h1 {
+          text-transform: uppercase;
+          margin-top: var(--space-1);
+          margin-bottom: calc(var(--space-1) / 2);
+        }
+
+        p {
+          margin-top: 0px;
+          margin-bottom: var(--space-1);
+          font-size: 0.9em;
+        }
+
+      }
+    }
+
+  }
+
+}
+
+.subpage {
+  display: none;
+  position: fixed;
+  z-index: 300;
+  transition: all 0.137s ease-out;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  opacity: 0.001;
+  box-sizing: border-box;
+  background: rgba(255,255,255, 0.99);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  .content-container {
+    .content {
+      color: rgb(30,30,30);
+    }
+    
+    a.back {
+      color: inherit;
+    }
+  }
+
+}
+
+
+

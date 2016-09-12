@@ -9,7 +9,7 @@ var argv = require('yargs').argv
 
 var pckgJSON = require("./package.json")
 var prod = argv.prod || false
-var entrypath = path.join(__dirname, './clientsrc/entries/')
+var entrypath = path.join(__dirname, './clientsrc/js/entries/')
 var distFolder = path.join(__dirname, "public/js")
 
 
@@ -17,10 +17,12 @@ prod ?
   console.info("building for production"):
 console.info("building for development")
 
+
 var entries = fs.readdirSync(entrypath).reduce((acc, entryname) => {
-  acc[entryname.replace(".js", "")] = path.join(entrypath, entryname)
+  acc[entryname] = path.join(entrypath, entryname, 'index.js')
   return acc
 }, {})
+
 
 module.exports = {
   
@@ -58,11 +60,23 @@ module.exports = {
   ])
   .map(p => p())
   .filter(p => p !== null),
+
+  // postcss modules
+  postcss: () => [
+    require('postcss-import'),
+    require('postcss-custom-media'),
+    require('postcss-custom-properties'),
+    require('postcss-calc'),
+    require('postcss-color-function'),
+    require('postcss-discard-comments'),
+    require('autoprefixer')
+  ],
   
   
   // Compile using babel
   module: {
     loaders: [
+
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
@@ -70,7 +84,13 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+
+      {
+        test:   /\.css$/,
+        loader: "style-loader!css-loader!postcss-loader"
       }
+
     ]
   }
 

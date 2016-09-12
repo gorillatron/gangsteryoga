@@ -1,0 +1,10 @@
+
+#root {
+
+  width: 100%;
+  min-height: 100%;
+
+  @media(min-width: 96rem) {
+    margin-top: var(--space-4);
+  }
+}

@@ -989,7 +989,7 @@ body{
   background-size:cover;
 }
 #front-page header#main-header .logo{
-  background-image:url(/images/gy_logo_hvit_positiv-01.svg);
+  background-image:url(/gfx/gy_logo_hvit_positiv-01.svg);
   background-size:cover;
   height:7rem;
   width:7rem;
@@ -1002,58 +1002,121 @@ body{
   color:rgba(255,255,255, 0.95);
   text-decoration:none;
 }
-#front-page header#main-header #featured .text, #front-page header#main-header #featured .video{
-  height:40vh;
+#front-page header#main-header .video{
+  height:270px;
+  width:480px;
+  background:rgba(10,10,10, 0.7);
 }
-#front-page header#main-header #featured .text .content, #front-page header#main-header #featured .video .content{
-  height:100%;
-  width:100%;
-  color:rgba(255,255,255, 0.85);
-  background-color:rgba(0,0,0, 0.8);
-}
-#front-page header#main-header #featured .text{
-  font-size:1.2em;
-  line-height:2.3em;
-  padding-right:0.5rem;
-}
-#front-page header#main-header #featured .video .content{
+#front-page header#main-header .video .content{
+  position:relative;
   padding:0.5rem;
 }
-#front-page header#main-header #featured .video .content .placeholder{
-  height:100%;
-  width:100%;
-}
-#front-page header#main-header #featured .video .content .placeholder .image{
-  height:100%;
-  width:100%;
+#front-page header#main-header .video .content .play-button{
   background-size:cover;
-  opacity:0.8;
+  height:50px;
+  width:50px;
+  margin:110px auto;
 }
 #front-page section#content{
   min-height:100vh;
 }
-#front-page section#content #map{}
-#front-page section#content #articles{
-  padding-left:1rem;
-  padding-right:1rem;
-  border-left:5px solid rgb(20,20,20);
+#front-page section#content section#articles article{
+  font-family:'AlteHaasGroteskBold';
 }
-#front-page section#content #articles article .image{
+#front-page section#content section#articles article .image{
   height:13em;
   overflow:hidden;
 }
-#front-page section#content #articles article .image img{
+#front-page section#content section#articles article .image img{
   width:100%;
+  min-width:100%;
 }
-#front-page section#content #articles article h1{
+#front-page section#content section#articles article h1{
   text-transform:uppercase;
   margin-top:1rem;
   margin-bottom:0.5rem;
 }
-#front-page section#content #articles article p{
+#front-page section#content section#articles article p{
   margin-top:0px;
   margin-bottom:1rem;
   font-size:0.9em;
+}
+#front-page section#content section#hero-text{
+  background:rgba(0,0,0, 0.98);
+  color:rgba(255,255,255, 0.9);
+  line-height:2.1;
+  font-size:1.1em;
+  letter-spacing:0.03em;
+}
+#front-page section#content section#hero-text .col{
+  height:15em;
+}
+#front-page section#content section#hero-text .h1{
+  font-size:2.8rem;
+}
+#front-page section#content section#prisons{
+  position:relative;
+  height:100vh;
+}
+#front-page section#content section#prisons .background{
+  height:93%;
+  width:100%;
+  position:absolute;
+}
+#front-page section#content section#prisons .background img{
+  display:block;
+  height:100%;
+  margin:0px auto;
+}
+@media(min-width: 52em){
+  #front-page section#content section#prisons ul.prisons li{
+    position:absolute;
+    color:rgb(120,120,120);
+    text-align:center;
+  }
+  #front-page section#content section#prisons ul.prisons li h3{
+    margin-bottom:0.2em;
+  }
+  #front-page section#content section#prisons ul.prisons li a{
+    font-size:0.8em;
+    color:inherit;
+    text-decoration:none;
+  }
+  #front-page section#content section#prisons ul.prisons li:nth-child(1){
+    top:27%;
+    right:22%;
+  }
+  #front-page section#content section#prisons ul.prisons li:nth-child(2){
+    top:48%;
+    right:23%;
+  }
+  #front-page section#content section#prisons ul.prisons li:nth-child(3){
+    top:67%;
+    right:34%;
+  }
+  #front-page section#content section#prisons ul.prisons li:nth-child(4){
+    top:83%;
+    right:41%;
+  }
+  #front-page section#content section#prisons ul.prisons li:nth-child(5){
+    top:92%;
+    right:55%;
+  }
+  #front-page section#content section#prisons ul.prisons li:nth-child(6){
+    top:82%;
+    right:74%;
+  }
+  #front-page section#content section#prisons ul.prisons li:nth-child(7){
+    top:61%;
+    right:70%;
+  }
+}
+.middle-text{
+  display:table;
+}
+.middle-text .text{
+  display:table-cell;
+  vertical-align:middle;
 }
 .subpage{
   display:none;

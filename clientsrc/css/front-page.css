@@ -16,7 +16,7 @@ body {
     background-size: cover;
 
     .logo {
-      background-image: url(/images/gy_logo_hvit_positiv-01.svg);
+      background-image: url(/gfx/gy_logo_hvit_positiv-01.svg);
       background-size: cover;
       height: 7rem;
       width: 7rem;
@@ -35,37 +35,20 @@ body {
       }
     }
 
-    #featured {
+    .video {
 
-      .text, .video {
-        height: 40vh;
-        .content {
-          height: 100%;
-          width: 100%;
-          color: rgba(255,255,255, 0.85);
-          background-color: rgba(0,0,0, 0.8);
-        }
-      }
+      height: calc(9 * 30)px;
+      width: calc(16 * 30)px;
+      background: rgba(10,10,10, 0.7);
 
-      .text {
-        font-size: 1.2em;
-        line-height: 2.3em;
-        padding-right: calc(var(--space-1) / 2);
-      }
-
-      .video {
-        .content {
-          padding: calc(var(--space-1) / 2);
-          .placeholder {
-            height: 100%;
-            width: 100%;
-            .image {
-              height: 100%;
-              width: 100%;
-              background-size: cover;
-              opacity: 0.8;
-            }
-          }
+      .content {
+        position: relative;
+        padding: calc(var(--space-1) / 2);
+        .play-button {          
+          background-size: cover;
+          height: 50px;
+          width: 50px;
+          margin: calc((9 * 30) / 2 - 25)px auto;
         }
       }
     }
@@ -76,23 +59,19 @@ body {
   section#content {
 
     min-height: 100vh;
-    
-    #map {
 
-    }
-
-    #articles {
-      padding-left: calc(var(--space-1) / 1);
-      padding-right: calc(var(--space-1) / 1);
-      border-left: 5px solid rgb(20,20,20);
+    section#articles {
 
       article {
         
+        font-family: 'AlteHaasGroteskBold';
+
         .image {
           height: 13em;
           overflow: hidden;
           img {
             width: 100%;
+            min-width: 100%;
           }
         }
 
@@ -111,8 +90,97 @@ body {
       }
     }
 
+    section#hero-text {
+      background: rgba(0,0,0, 0.98);
+      color: rgba(255,255,255, 0.9);
+      line-height: 2.1;
+      font-size: 1.1em;
+      letter-spacing: 0.03em;
+      .col {
+        height: 15em;
+      }
+      .h1 {
+        font-size: calc(var(--h1) * 1.4);
+      }
+    }
+
+    section#prisons {
+      position: relative;
+      height: 100vh;
+
+      .background {
+        height: 93%;
+        width: 100%;
+        position: absolute;
+        img {
+          display: block;
+          height: 100%;
+          margin: 0px auto;
+        }
+      }
+
+      ul.prisons {
+
+        li {
+          @media(--breakpoint-md) {
+            position: absolute;
+            color: rgb(120,120,120);
+            text-align: center;
+
+            h3 {
+              margin-bottom: 0.2em;
+            }
+
+            a {
+              font-size: 0.8em;
+              color: inherit;
+              text-decoration: none;
+            }
+
+            &:nth-child(1) {
+              top: 27%;
+              right: 22%;
+            }
+            &:nth-child(2) {
+              top: 48%;
+              right: 23%;
+            }
+            &:nth-child(3) {
+              top: 67%;
+              right: 34%;
+            }
+            &:nth-child(4) {
+              top: 83%;
+              right: 41%;
+            }
+            &:nth-child(5) {
+              top: 92%;
+              right: 55%;
+            }
+            &:nth-child(6) {
+              top: 82%;
+              right: 74%;
+            }
+            &:nth-child(7) {
+              top: 61%;
+              right: 70%;
+            }
+          }
+        }
+
+      }
+    }
+
   }
 
+}
+
+.middle-text {
+  display: table;
+  .text {
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 
 .subpage {

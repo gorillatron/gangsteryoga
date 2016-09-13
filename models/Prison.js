@@ -19,6 +19,7 @@ const Prison = new keystone.List('Prison', {
 Prison.add(
   {
 	  name: { type: String, required: [true, "Navn mangler"], label: "Fengselsnavn" },
+    url: { type: Types.Url, initial: true, required: [true, "Hjemmeside mangler"], label: "Hjemmeside" },
     location: { type: Types.Location, label: "Addresse", defaults: { country: 'Norge' }},
 	  createdAt: { type: Date, default: Date.now, label: "Opprettet dato" }
   },

@@ -30,11 +30,13 @@ block content
           li.mb1
             a(href="/") Kontakt
       
-      .video.absolute.bottom-0.right-0.mb3.mr3
-        .content
-          .play-button.fit
-            img.mx-auto(src="/gfx/play.svg")
-          iframe.hide(src='https://player.vimeo.com/video/179913310?title=0&byline=0&portrait=0', width='100%', height='100%', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+      #featured.absolute.bottom-0.right-0.mb4.fit
+        .video.mx-auto
+          .content
+            .play-button.fit
+              img.mx-auto(src="/gfx/play.svg")
+            iframe.hide(src='https://player.vimeo.com/video/179913310?title=0&byline=0&portrait=0', width='100%', height='100%', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+        h1 How tough are you really?
 
     
 
@@ -65,34 +67,23 @@ block content
           .text.h1 - If you got the balls!
         .col.col-7.middle-text 
           .text Gangsteryoga i Norge er en idéell virksomhet som er underordnet stiftelsen «Yoga for Livet». Vårt langsiktige mål er å tilby forebyggende tiltak for ungdom på skråplanet og å gi tidligere innsatte muligheten til å bidra i prosessen. Gangsteryoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv. Puste seg gjennom utfordringer. Kjenne på stivheter og ubehag, og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil.  Ler mer
+      
+      section#hero-image.fit.px3.mb4.clearfix
+        img(src="/images/fotograf-nicki-twang-prisonyoga-013-copy@2x.png")
 
       section#prisons.fit.my4.clearfix
         .background
           img(src="/gfx/map.png")
         ul.prisons.list-reset
-          li
-            h3 Ringerike Fengsel
-            a(href="www.ringerikefengsel.no") www.ringerikefengsel.no
-            ul.list-reset.instructors
-              
-          li
-            h3 Bredtveit Fengsel
-            a(href="www.bredtveidtfengsel.no") www.bredtveidtfengsel.no
-          li
-            h3 Oslo Fengsel
-            a(href="www.oslofengsel.no") www.oslofengsel.no
-          li
-            h3 Ullersmo
-            a(href="www.ullsersmofengsel.no") www.ullsersmofengsel.no
-          li
-            h3 Kristiansand Fengsel
-            a(href="www.kristiansandfengsel.no") www.kristiansandfengsel.no
-          li
-            h3 Stavanger Fengsel
-            a(href="www.stavangerfengsel.no") www.stavangerfengsel.no
-          li
-            h3 Ila Fengsel
-            a(href="www.ilafengsel.no") www.ilafengsel.no
+          each prison in prisons
+            li.prison
+              h3= prison.name
+              a(href=prison.url)= prison.url
+              ul.list-reset.instructors
+                each instructor in prison.instructors
+                  li
+                    .image(style="background-image: url(" + instructor.photo.secure_url + ")")
+
       
       //- section.wide-text.my4.clearfix.py2.lg-py4.px1.waypoint(data-waypoint-offset="-400", data-waypoint-offset-md="-860", data-waypoint-offset-xlg="-860")
       //-   .text-content.center.lg-py3 Gangster Yoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv.

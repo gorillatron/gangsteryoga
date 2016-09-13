@@ -1002,16 +1002,21 @@ body{
   color:rgba(255,255,255, 0.95);
   text-decoration:none;
 }
-#front-page header#main-header .video{
+#front-page header#main-header #featured{
+  text-align:center;
+  color:rgb(249,249,249);
+  width:100%;
+}
+#front-page header#main-header #featured .video{
   height:270px;
   width:480px;
-  background:rgba(10,10,10, 0.7);
+  background:rgba(10,10,10, 0.8);
 }
-#front-page header#main-header .video .content{
+#front-page header#main-header #featured .video .content{
   position:relative;
   padding:0.5rem;
 }
-#front-page header#main-header .video .content .play-button{
+#front-page header#main-header #featured .video .content .play-button{
   background-size:cover;
   height:50px;
   width:50px;
@@ -1054,6 +1059,9 @@ body{
 #front-page section#content section#hero-text .h1{
   font-size:2.8rem;
 }
+#front-page section#content section#hero-image img{
+  width:100%;
+}
 #front-page section#content section#prisons{
   position:relative;
   height:100vh;
@@ -1068,47 +1076,70 @@ body{
   height:100%;
   margin:0px auto;
 }
+#front-page section#content section#prisons ul.prisons li.prison ul.instructors{
+  position:relative;
+  display:block;
+  margin:0px auto;
+}
+#front-page section#content section#prisons ul.prisons li.prison ul.instructors li{
+  display:inline-block;
+  margin:10px 5px 0px 0px;
+}
+#front-page section#content section#prisons ul.prisons li.prison ul.instructors li .image{
+  height:2.1em;
+  width:2.1em;
+  border-radius:100%;
+  background-size:cover;
+  -webkit-transition:all 0.177s cubic-bezier(.79,.29,.52,1);
+  transition:all 0.177s cubic-bezier(.79,.29,.52,1);
+  cursor:pointer;
+}
+#front-page section#content section#prisons ul.prisons li.prison ul.instructors li .image:hover{
+  -webkit-transform:scale(1.17);
+          transform:scale(1.17);
+}
 @media(min-width: 52em){
-  #front-page section#content section#prisons ul.prisons li{
+  #front-page section#content section#prisons ul.prisons li.prison{
     position:absolute;
+    height:100px;
     color:rgb(120,120,120);
     text-align:center;
   }
-  #front-page section#content section#prisons ul.prisons li h3{
+  #front-page section#content section#prisons ul.prisons li.prison h3{
     margin-bottom:0.2em;
   }
-  #front-page section#content section#prisons ul.prisons li a{
+  #front-page section#content section#prisons ul.prisons li.prison a{
     font-size:0.8em;
     color:inherit;
     text-decoration:none;
   }
-  #front-page section#content section#prisons ul.prisons li:nth-child(1){
+  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(1){
     top:27%;
-    right:22%;
+    right:37%;
   }
-  #front-page section#content section#prisons ul.prisons li:nth-child(2){
-    top:48%;
-    right:23%;
+  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(2){
+    top:53%;
+    right:30%;
   }
-  #front-page section#content section#prisons ul.prisons li:nth-child(3){
-    top:67%;
+  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(3){
+    top:79%;
     right:34%;
   }
-  #front-page section#content section#prisons ul.prisons li:nth-child(4){
-    top:83%;
-    right:41%;
-  }
-  #front-page section#content section#prisons ul.prisons li:nth-child(5){
+  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(4){
     top:92%;
     right:55%;
   }
-  #front-page section#content section#prisons ul.prisons li:nth-child(6){
-    top:82%;
-    right:74%;
+  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(5){
+    top:78%;
+    right:78%;
   }
-  #front-page section#content section#prisons ul.prisons li:nth-child(7){
-    top:61%;
+  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(6){
+    top:52%;
     right:70%;
+  }
+  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(7){
+    top:51%;
+    right:72%;
   }
 }
 .middle-text{

@@ -1,0 +1,18 @@
+
+#sub-page {
+
+  h1.main-heading {
+    display: inline-block;
+    padding-bottom: var(--space-1);
+    border-bottom: 3px solid rgb(20,20,20);
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  .quote {
+    color: #3135a7;
+    font-size: calc(var(--h2) * 0.9);
+  }
+}

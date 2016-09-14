@@ -2,6 +2,7 @@ include ../mixins/flash-messages
 include ../mixins/vscript
 include ../mixins/vstyle
 include ../mixins/menu
+include ../mixins/footer
 
 doctype html
 html.full
@@ -43,11 +44,12 @@ html.full
 			#front-page.relative
 
 
-				header#main-header.relative.fit.p3.mb2.md-mb3(style="background-image: url(/images/webgangster_14.jpg);")
+				header#main-header.relative.fit.p2.mb2.md-mb3(style="background-image: url(/images/webgangster_14.jpg);")
 
 					.movie-mode.z1
 
-					.logo.relative.left.z2
+					.logo-wrapper.relative.left.z2
+						.logo
 
 					+menu()
 					

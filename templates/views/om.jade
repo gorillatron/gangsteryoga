@@ -3,26 +3,56 @@ include ../mixins/vscript
 
 
 block js
+  +vscript('om')
 
 block content
 
-  #sub-page.relative
+  #om.relative.px2.lg-px4
+    section#content.clearfix.fit.lg-px2
+      
+      .clearfix
+        
+        .col.col-8.lg-pr2
 
+          h1.h1.main-heading Om oss
 
-    header#main-header.relative.fit.p3.mb2.md-mb3(style="background-image: url(/images/webgangster_14.jpg);")
+          .block.mb3
+            h3 Gangsteryoga
 
-      .logo.relative.left.z2
+            p Gangsteryoga i Norge er en idéell virksomhet som er underordnet stiftelsen «Yoga for Livet». Vårt langsiktige mål er å tilby forebyggende tiltak for ungdom på skråplanet og å gi tidligere innsatte muligheten til å bidra i prosessen. Gangsteryoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv. Puste seg gjennom utfordringer. Kjenne på stivheter og ubehag, og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil. Det er nedfelt i norsk lov at domfelte skal ha en tilværelse under soning som skal være så lik tilværelsen ellers i samfunnet som mulig. Det er frihetsberøvelsen som er selve straffen. Soningen skal ikke være mer tyngende enn nødvendig. På bakgrunn av dette har innsatte i norske fengsler mulighet til skole, arbeid, ulike program og kultur/-fritidsaktiviteter (St.meld.nr. 37).
 
-      nav#menu.relative.right.right-align.z2
-        ul.list-reset
-          li.mb1
-            a(href="/om") Om oss
-          li.mb1
-            a(href="/") Instruktører
-          li.mb1
-            a(href="/") Fengsler
-          li.mb1
-            a(href="/") Kontakt
+            p Gangsteryoga i Norge er en idéell virksomhet som er underordnet stiftelsen «Yoga for Livet». Vårt langsiktige mål er å tilby forebyggende tiltak for ungdom på skråplanet og å gi tidligere innsatte muligheten til å bidra i prosessen. Les mer på yogaforlivet.no
+          
+          .block.mb2
+            h3 Back In The Ring
+          
+          .block.mb3
+            h3 Støtte og sponsorer
+          
+          .video
+            .content.clearfix
+              .play-button.fit
+                img.mx-auto(src="/gfx/play.svg")
+              iframe.hidden(src='https://player.vimeo.com/video/179913310?title=0&byline=0&portrait=0', width='100%', height='100%', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
 
+        .col.col-4.pl4
 
-    section#content.clearfix.fit
+          .quote.pl2.mb4.pb2
+            span “Jeg har alltid hatt tusen tanker i hodet, slitt med mye aggresjon og vært plaget av ADHD. Yoga gir meg en opplevelse av å være nullstilt, fri og i total ro. Det er også en jævlig bra form for trening, som ikke bare gir fysisk styrke men også en form for impulskontroll og selvinnsikt."
+            br
+            br 
+            span Dennis Smaadal
+          
+          .quote.pl2.mb4.pb2
+            span “Yoga gjør vondt og det er ikke for pingler, det krever guts, tålmodighet og mange skygger unna. Men for de som gir det en sjanse åpnes det noen glugger innad og det vekker en god opplevelse i sinnet.”
+            br 
+            br 
+            span Farrad Reisdaen
+          
+          .quote.pl2.mb4.pb2
+            span “Yoga gir meg fred i sinnet og hjelper meg slippe  unødvendig stress som gnager i bakhodet.”
+            br
+            br
+            span Emari O´Garrow
+          
+            

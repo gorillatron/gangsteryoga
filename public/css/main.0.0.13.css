@@ -972,6 +972,89 @@ hr{
     margin-top:6rem;
   }
 }
+header#main-header{
+
+    height:100vh;
+    background-size:cover;
+    
+
+  }
+header#main-header .logo-wrapper .logo{
+  background-image:url(/gfx/gy_logo_hvit_positiv-01.svg);
+  background-size:cover;
+  height:7.5rem;
+  width:7.5rem;
+}
+header#main-header .movie-mode{
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:100%;
+  width:100%;
+  background-color:rgba(0,0,0, 0.70);
+  opacity:0;
+  -webkit-transition:opacity 0.7s ease-in;
+  transition:opacity 0.7s ease-in;
+}
+header#main-header .movie-mode.active{
+  opacity:1;
+}
+header#main-header nav#menu{
+  text-transform:uppercase;
+  font-size:0.73em;
+}
+header#main-header nav#menu ul li a{
+  color:rgba(255,255,255, 0.95);
+  text-decoration:none;
+}
+header#main-header #featured{
+  text-align:center;
+  color:rgb(249,249,249);
+  width:100%;
+}
+#sub-page header#main-header{
+    height:auto;
+  }
+#sub-page h1.main-heading{
+  display:inline-block;
+  padding-bottom:1rem;
+  border-bottom:3px solid rgb(20,20,20);
+}
+#sub-page p{
+  font-size:0.9em;
+}
+#sub-page .quote{
+  color:#3135a7;
+  font-size:1.53rem;
+}
+.video{
+    height:297px;
+    width:528px;
+    box-sizing:content-box;
+    background:rgba(10,10,10, 0.8);
+    -webkit-transition:background 0.7s ease-in;
+    transition:background 0.7s ease-in;
+  }
+.video.playing{
+  background:rgba(10,10,10, 0.03);
+}
+.video .content{
+  position:relative;
+}
+.video .content iframe{
+  opacity:1;
+  height:297px;
+  width:528px;
+}
+.video .content iframe.hidden{
+  opacity:0;
+}
+.video .content .play-button{
+  background-size:cover;
+  height:50px;
+  width:50px;
+  margin:123.5px auto;
+}
 body{
   overflow-x:hidden;
 }
@@ -983,71 +1066,6 @@ body{
   width:100%;
   min-height:100%;
 
-}
-#front-page header#main-header{
-  height:100vh;
-  background-size:cover;
-}
-#front-page header#main-header .logo{
-  background-image:url(/gfx/gy_logo_hvit_positiv-01.svg);
-  background-size:cover;
-  height:7rem;
-  width:7rem;
-}
-#front-page header#main-header .movie-mode{
-  position:absolute;
-  top:0px;
-  left:0px;
-  height:100%;
-  width:100%;
-  background-color:rgba(0,0,0, 0.73);
-  opacity:0;
-  -webkit-transition:opacity 0.7s ease-in;
-  transition:opacity 0.7s ease-in;
-}
-#front-page header#main-header .movie-mode.active{
-  opacity:1;
-}
-#front-page header#main-header nav#menu{
-  text-transform:uppercase;
-  font-size:0.73em;
-}
-#front-page header#main-header nav#menu ul li a{
-  color:rgba(255,255,255, 0.95);
-  text-decoration:none;
-}
-#front-page header#main-header #featured{
-  text-align:center;
-  color:rgb(249,249,249);
-  width:100%;
-}
-#front-page header#main-header #featured .video{
-  height:297px;
-  width:528px;
-  box-sizing:content-box;
-  background:rgba(10,10,10, 0.8);
-  -webkit-transition:background 0.7s ease-in;
-  transition:background 0.7s ease-in;
-}
-#front-page header#main-header #featured .video.playing{
-  background:rgba(10,10,10, 0.03);
-}
-#front-page header#main-header #featured .video .content{
-  position:relative;
-}
-#front-page header#main-header #featured .video .content iframe{
-  opacity:1;
-  height:297px;
-  width:528px;
-}
-#front-page header#main-header #featured .video .content iframe.hidden{
-  opacity:0;
-}
-#front-page header#main-header #featured .video .content .play-button{
-  background-size:cover;
-  height:50px;
-  width:50px;
-  margin:123.5px auto;
 }
 #front-page section#content{
   min-height:100vh;

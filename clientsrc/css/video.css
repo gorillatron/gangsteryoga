@@ -1,0 +1,31 @@
+.video {
+    height: calc((9 * 33))px;
+    width: calc((16 * 33))px;
+    box-sizing: content-box;
+    background: rgba(10,10,10, 0.8);
+    transition: background 0.7s ease-in;
+
+    &.playing {
+      background: rgba(10,10,10, 0.03);
+    }
+
+    .content {
+      position: relative;
+      
+      iframe {
+        &.hidden {
+          opacity: 0;
+        }
+        opacity: 1;
+        height: calc(9 * 33)px;
+        width: calc(16 * 33)px;
+      }
+
+      .play-button {          
+        background-size: cover;
+        height: 50px;
+        width: 50px;
+        margin: calc((9 * 33) / 2 - 25)px auto;
+      }
+    }
+  }

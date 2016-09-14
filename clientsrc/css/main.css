@@ -29,6 +29,9 @@
 @import './fonts';
 @import './variables';
 @import './root';
+@import './main-header';
+@import './subpage';
+@import './video';
 @import './front-page';
 @import './instruktoerer';
 @import './footer';

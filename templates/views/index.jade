@@ -7,193 +7,99 @@ block js
   +vscript('front-page')
 
 block content
+  section#content.clearfix.fit
 
-  include ./subpages/fengsler
-  include ./subpages/instruktoerer
-  include ./subpages/vaartarbeid
-  include ./subpages/yogasommetode
+    section#articles.clearfix.my3.md-my4.mxn2.px2.md-px4
 
-
-  #front-page.relative
-
-
-    header#main-header.relative.fit.p3.mb2.md-mb3(style="background-image: url(/images/webgangster_14.jpg);")
-
-      .movie-mode.z1
-
-      .logo.relative.left.z2
-
-      nav#menu.relative.right.right-align.z2
-        ul.list-reset
-          li.mb1
-            a(href="/vaartarbeid") Om oss
-          li.mb1
-            a(href="/") Instruktører
-          li.mb1
-            a(href="/") Fengsler
-          li.mb1
-            a(href="/") Kontakt
+      article.col.col-12.md-col-4.md-pr2.center.mb3.md-mb0
+          .image.mb2.mx-auto
+            img(src="/images/fotograf-nicki-twang-prisonyoga-013@2x.png")
+          h1.h3 Some article
+          p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
       
-      #featured.absolute.bottom-0.right-0.mb4.fit.z2
-        .video.mx-auto
-          .content.clearfix
-            .play-button.fit
-              img.mx-auto(src="/gfx/play.svg")
-            iframe.hidden(src='https://player.vimeo.com/video/179913310?title=0&byline=0&portrait=0', width='100%', height='100%', frameborder='0', autoplay='true' webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
-        h1 How tough are you really?
-
+      article.col.col-12.md-col-4.md-pr2.center.mb3.md-mb0
+          .image.mb2.mx-auto
+            img(src="/images/webgangster-5@2x.png")
+          h1.h3 Some article
+          p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+      
+      article.col.col-12.md-col-4.md-pr2.center.md-mb0
+          .image.mb2.mx-auto
+            img(src="/images/webgangster-11@2x.png")
+          h1.h3 Some article
+          p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+  
+    section#hero-text.fit.py2.md-py3.px2.md-px3.mb1.md-mb4.clearfix
+      .col.col-12.md-col-5.middle-text
+        .text.h2.md-h1 - If you got the balls!
+      .col.col-12.md-col-7.middle-text 
+        .text Gangsteryoga i Norge er en idéell virksomhet som er underordnet stiftelsen «Yoga for Livet». Vårt langsiktige mål er å tilby forebyggende tiltak for ungdom på skråplanet og å gi tidligere innsatte muligheten til å bidra i prosessen. Gangsteryoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv. Puste seg gjennom utfordringer. Kjenne på stivheter og ubehag, og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil.  Ler mer
     
+    section#hero-image.fit.px1.md-px3.mb4.clearfix
+      img(src="/images/fotograf-nicki-twang-prisonyoga-013@2x.png")
 
-    section#content.clearfix.fit
+    section#prisons.fit.my4.clearfix
+      .background
+        img(src="/gfx/map.png")
+      ul.prisons.list-reset
+        each prison in prisons
+          li.prison
+            h3= prison.name
+            a(href=prison.url)= prison.url
+            ul.list-reset.instructors
+              each instructor in prison.instructors
+                li
+                  .image(style="background-image: url(" + instructor.photo.secure_url + ")")
+  
+    section#gallery.px2.md-px4.pt3
+      .clearfix.mxn1.md-mxn2
 
-      section#articles.clearfix.my3.md-my4.mxn2.px2.md-px4
+        .col.col-3
+          .img.long(style="background-image: url(/images/webgangster-27-s@2x.png)")
+          .img.medium(style="background-image: url(/images/webgangster-7-s-bw.png)")
+          .img.short(style="background-image: url()")
+          .long.quote.middle-text
+            .text
+              span "Yoga hjelper meg i hverdagen å bli roligere, så jeg ikke slår ihjæl betjentene!"
+              br
+              span - Khalil
+          .img.short(style="background-image: url()")
 
-        article.col.col-12.md-col-4.md-pr2.center.mb3.md-mb0
-            .image.mb2.mx-auto
-              img(src="/images/fotograf-nicki-twang-prisonyoga-013@2x.png")
-            h1.h3 Some article
-            p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+        .col.col-3
+          .img.short(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-012@2x.png)")
+          .img.short.logo(style="background-image: url()")
+          .img.short(style="background-image: url()")
+          .img.short(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-007-copy@2x.png)")
+          .img.short(style="background-image: url()")
+          .img.long(style="background-image: url()")
         
-        article.col.col-12.md-col-4.md-pr2.center.mb3.md-mb0
-            .image.mb2.mx-auto
-              img(src="/images/webgangster-5@2x.png")
-            h1.h3 Some article
-            p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+        .col.col-3
+          .img.short(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-009-copy@2x.png)")
+          .img.short(style="background-image: url()")
+          .short.quote.middle-text
+            .text
+              span "Yoga gir selvinsikt."
+              br 
+              span - Julio Kopseng
+          .img.short.blue(style="background-image: url()")
+          .img.medium(style="background-image: url()")
+          .img.mediumeses(style="background-image: url()")
         
-        article.col.col-12.md-col-4.md-pr2.center.md-mb0
-            .image.mb2.mx-auto
-              img(src="/images/webgangster-11@2x.png")
-            h1.h3 Some article
-            p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-    
-      section#hero-text.fit.py2.md-py3.px2.md-px3.mb1.md-mb4.clearfix
-        .col.col-12.md-col-5.middle-text
-          .text.h2.md-h1 - If you got the balls!
-        .col.col-12.md-col-7.middle-text 
-          .text Gangsteryoga i Norge er en idéell virksomhet som er underordnet stiftelsen «Yoga for Livet». Vårt langsiktige mål er å tilby forebyggende tiltak for ungdom på skråplanet og å gi tidligere innsatte muligheten til å bidra i prosessen. Gangsteryoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv. Puste seg gjennom utfordringer. Kjenne på stivheter og ubehag, og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil.  Ler mer
-      
-      section#hero-image.fit.px1.md-px3.mb4.clearfix
-        img(src="/images/fotograf-nicki-twang-prisonyoga-013@2x.png")
-
-      section#prisons.fit.my4.clearfix
-        .background
-          img(src="/gfx/map.png")
-        ul.prisons.list-reset
-          each prison in prisons
-            li.prison
-              h3= prison.name
-              a(href=prison.url)= prison.url
-              ul.list-reset.instructors
-                each instructor in prison.instructors
-                  li
-                    .image(style="background-image: url(" + instructor.photo.secure_url + ")")
-    
-      section#gallery.px2.md-px4.pt3
-        .clearfix.mxn1.md-mxn2
-
-          .col.col-3
-            .img.long(style="background-image: url(/images/webgangster-27-s@2x.png)")
-            .img.medium(style="background-image: url(/images/webgangster-7-s-bw.png)")
-            .img.short(style="background-image: url()")
-            .long.quote.middle-text
-              .text
-                span "Yoga hjelper meg i hverdagen å bli roligere, så jeg ikke slår ihjæl betjentene!"
-                br
-                span - Khalil
-            .img.short(style="background-image: url()")
-
-          .col.col-3
-            .img.short(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-012@2x.png)")
-            .img.short.logo(style="background-image: url()")
-            .img.short(style="background-image: url()")
-            .img.short(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-007-copy@2x.png)")
-            .img.short(style="background-image: url()")
-            .img.long(style="background-image: url()")
-          
-          .col.col-3
-            .img.short(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-009-copy@2x.png)")
-            .img.short(style="background-image: url()")
-            .short.quote.middle-text
-              .text
-                span "Yoga gir selvinsikt."
-                br 
-                span - Julio Kopseng
-            .img.short.blue(style="background-image: url()")
-            .img.medium(style="background-image: url()")
-            .img.mediumeses(style="background-image: url()")
-          
-          .col.col-3
-            .img.medium(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-005@2x.png)")
-            .img.long(style="background-image: url()")
-            .img.long.blue(style="background-image: url()")
-            .img.short(style="background-image: url()")
-            .img.short(style="background-image: url()")
-
-      
-      //- section.wide-text.my4.clearfix.py2.md-py4.px1.waypoint(data-waypoint-offset="-400", data-waypoint-offset-md="-860", data-waypoint-offset-xlg="-860")
-      //-   .text-content.center.md-py3 Gangster Yoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv.
-      
-
-      //- section.links.clearfix.px1.waypoint(data-waypoint-offset="-610", data-waypoint-offset-md="-1100", data-waypoint-offset-xlg="-990")
-
-      //-   .col.col-12.md-col-6.md-pr3
-          
-      //-     a.link.image-link(href="/vaarxtarbeid")
-      //-       .image(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-007-filter@3x.png)")
-      //-       .text.px3
-      //-         span 
-      //-           | Vårt arbeid
-          
-      //-     a.link.text-link(href="/yogasommetode").mt4
-      //-       .box
-      //-       .text.px3
-      //-         span 
-      //-           | Hvorfor Yoga
-        
-      //-   .col.col-12.md-col-6.md-pl3.xs-hide.mt4.md-mt0
-      //-     .photo(style="background-image: url(/images/webgangster-filter-lys@2x.png)")
-
-      
-      //- section.wide-text.my4.clearfix.py2.md-py4.px1.waypoint(data-waypoint-offset="-450", data-waypoint-offset-md="-860", data-waypoint-offset-xlg="-990")
-      //-   .text-content.center.md-py3 Puste seg gjennom utfordringer...
+        .col.col-3
+          .img.medium(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-005@2x.png)")
+          .img.long(style="background-image: url()")
+          .img.long.blue(style="background-image: url()")
+          .img.short(style="background-image: url()")
+          .img.short(style="background-image: url()")
 
 
-      //- section.hero.max-width-4.mx-auto.mb4(style="background-image: url(/images/webgangster-bw@2x.png);").waypoint(data-waypoint-offset="-900", data-waypoint-offset-md="-1260", data-waypoint-offset-xlg="-1000").xs-hide
-      //- section.hero.max-width-4.mx-auto.mb4(style="background-image: url(/images/webgangster-filter-lys@2x.png);").waypoint(data-waypoint-offset="-600").sm-hide.md-hide.md-hide
-
-
-      //- section.wide-text.my4.clearfix.py2.md-py4.px1.waypoint(data-waypoint-offset="-400", data-waypoint-offset-md="-860", data-waypoint-offset-xlg="-950")
-      //-   .text-content.center.md-py3
-      //-     | ...kjenne på stivheter og ubehag, 
-      //-     br
-      //-     | og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil.
-      
-
-      //- section.links.clearfix.mb4.px1.waypoint(data-waypoint-offset="-660", data-waypoint-offset-md="-1200", data-waypoint-offset-xlg="-1200")
-
-      //-   .col.col-12.md-col-6.md-pr3.xs-hide
-      //-     .photo.mb4(style="background-image: url(/images/webgangster-27-bw@2x.png)")
-
-        
-      //-   .col.col-12.md-col-6.md-pl3
-      //-     a.link.text-link(href="/fengsler").mb4
-      //-       .box
-      //-       .text.px3
-      //-         span 
-      //-           | Fengsler
-      //-     a.link(href="/instruktoerer")
-      //-       .image(style="background-image: url(/images/fotograf-nicki-twang-prisonyoga-005-filter-lys@2x.png)")
-      //-       .text.px3
-      //-         span 
-      //-           | Instruktører
-
-
-    
-           
 
   
-                
+          
+
+
+              
 
 
 
-      
+    

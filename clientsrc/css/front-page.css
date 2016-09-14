@@ -102,7 +102,7 @@ body {
         font-family: 'AlteHaasGroteskBold';
 
         .image {
-          height: 13em;
+          height: 8em;
           overflow: hidden;
           img {
             width: 100%;
@@ -132,7 +132,10 @@ body {
       font-size: 1.1em;
       letter-spacing: 0.03em;
       .col {
-        height: 15em;
+        height: 8em;
+        @media(--breakpoint-md) {
+          height: 15em;
+        }
       }
       .h1 {
         font-size: calc(var(--h1) * 1.4);
@@ -233,6 +236,102 @@ body {
         }
 
       }
+    }
+
+    section#gallery {
+
+      .col {
+        &:nth-child(1) {
+          padding-right: var(--space-1);
+        }
+        &:nth-child(2) {
+          padding-left: calc(var(--space-1) / 2);
+          padding-right: calc(var(--space-1) / 2);
+        }
+        &:nth-child(3) {
+          padding-left: var(--space-1);
+          padding-right: calc(var(--space-1) / 2);
+        }
+        &:nth-child(4) {
+          padding-left: var(--space-1);
+        }
+      }
+
+      .img {
+        background-color: #3135a7;
+        background-size: cover;
+        width: 100%;
+      }
+
+      .short, .medium, .long {
+        margin-bottom: var(--space-1);
+      }
+
+      .quote {
+        color: #3135a7;
+        font-size: var(--h5);
+      }
+
+      .short {
+        min-height: calc(7.5rem * 0.8);
+      }
+
+      .medium {
+        min-height: calc(10.5rem * 0.8);
+      }
+
+      .mediumeses {
+        min-height: calc(10rem * 0.8);
+      }
+
+      .long {
+        min-height: calc(13rem * 0.8);
+      }
+
+      @media(--breakpoint-md) {
+
+        .col {
+          &:nth-child(1) {
+            padding-right: var(--space-2);
+          }
+          &:nth-child(2) {
+            padding-left: var(--space-1);
+            padding-right: calc(var(--space-1) + (var(--space-1) / 2));
+          }
+          &:nth-child(3) {
+            padding-left: calc(var(--space-1) + (var(--space-1) / 2));
+            padding-right: var(--space-1)
+          }
+          &:nth-child(4) {
+            padding-left: var(--space-2);
+          }
+        }
+
+        .short, .medium, .long {
+          margin-bottom: var(--space-2);
+        }
+
+        .quote {
+          font-size: var(--h1);
+        }
+
+        .short {
+          min-height: 15rem;
+        }
+
+        .medium {
+          min-height: 21rem;
+        }
+
+        .mediumeses {
+          min-height: 20rem;
+        }
+
+        .long {
+          min-height: 26rem;
+        }
+      }
+
     }
 
   }

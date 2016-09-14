@@ -1056,7 +1056,7 @@ body{
   font-family:'AlteHaasGroteskBold';
 }
 #front-page section#content section#articles article .image{
-  height:13em;
+  height:8em;
   overflow:hidden;
 }
 #front-page section#content section#articles article .image img{
@@ -1081,7 +1081,12 @@ body{
   letter-spacing:0.03em;
 }
 #front-page section#content section#hero-text .col{
-  height:15em;
+  height:8em;
+}
+@media(min-width: 52em){
+  #front-page section#content section#hero-text .col{
+    height:15em;
+  }
 }
 #front-page section#content section#hero-text .h1{
   font-size:2.8rem;
@@ -1167,6 +1172,78 @@ body{
   #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(7){
     top:51%;
     right:72%;
+  }
+}
+#front-page section#content section#gallery .col:nth-child(1){
+  padding-right:1rem;
+}
+#front-page section#content section#gallery .col:nth-child(2){
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+}
+#front-page section#content section#gallery .col:nth-child(3){
+  padding-left:1rem;
+  padding-right:0.5rem;
+}
+#front-page section#content section#gallery .col:nth-child(4){
+  padding-left:1rem;
+}
+#front-page section#content section#gallery .img{
+  background-color:#3135a7;
+  background-size:cover;
+  width:100%;
+}
+#front-page section#content section#gallery .short, #front-page section#content section#gallery .medium, #front-page section#content section#gallery .long{
+  margin-bottom:1rem;
+}
+#front-page section#content section#gallery .quote{
+  color:#3135a7;
+  font-size:.875rem;
+}
+#front-page section#content section#gallery .short{
+  min-height:6rem;
+}
+#front-page section#content section#gallery .medium{
+  min-height:8.4rem;
+}
+#front-page section#content section#gallery .mediumeses{
+  min-height:8rem;
+}
+#front-page section#content section#gallery .long{
+  min-height:10.4rem;
+}
+@media(min-width: 52em){
+  #front-page section#content section#gallery .col:nth-child(1){
+    padding-right:2rem;
+  }
+  #front-page section#content section#gallery .col:nth-child(2){
+    padding-left:1rem;
+    padding-right:1.5rem;
+  }
+  #front-page section#content section#gallery .col:nth-child(3){
+    padding-left:1.5rem;
+    padding-right:1rem
+  }
+  #front-page section#content section#gallery .col:nth-child(4){
+    padding-left:2rem;
+  }
+  #front-page section#content section#gallery .short, #front-page section#content section#gallery .medium, #front-page section#content section#gallery .long{
+    margin-bottom:2rem;
+  }
+  #front-page section#content section#gallery .quote{
+    font-size:2.0rem;
+  }
+  #front-page section#content section#gallery .short{
+    min-height:15rem;
+  }
+  #front-page section#content section#gallery .medium{
+    min-height:21rem;
+  }
+  #front-page section#content section#gallery .mediumeses{
+    min-height:20rem;
+  }
+  #front-page section#content section#gallery .long{
+    min-height:26rem;
   }
 }
 .middle-text{

@@ -1,9 +1,8 @@
 
-.subpage.instruktoerer {
+#instruktoerer {
 
   .photo {
     border-radius: 100%;
-    border: 4px solid rgba(20,20,20, 1);
   }
 
   .instructor-list {

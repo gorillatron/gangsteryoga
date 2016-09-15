@@ -3,20 +3,19 @@ import keystone from 'keystone'
 const Enquiry = keystone.list('Enquiry')
 
 
-export default function contact(req, res) {
+export default function kontakt(req, res) {
 	
 	const view = new keystone.View(req, res)
 	const locals = res.locals
 	
 	// Set locals
-	locals.section = 'contact'
-	locals.enquiryTypes = Enquiry.fields.enquiryType.ops
+	locals.section = 'kontakt'
 	locals.formData = req.body || {}
 	locals.validationErrors = {}
 	locals.enquirySubmitted = false
 	
 	// On POST requests, add the Enquiry item to the database
-	view.on('post', { action: 'contact' }, function(next) {
+	view.on('post', { action: 'kontakt' }, function(next) {
 		
 		const newEnquiry = new Enquiry.model(),
 			updater = newEnquiry.getUpdateHandler(req);
@@ -36,6 +35,6 @@ export default function contact(req, res) {
 		
 	})
 	
-	view.render('contact')
+	view.render('kontakt')
 	
 }

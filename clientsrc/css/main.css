@@ -22,6 +22,7 @@
 @import 'basscss-addons/modules/responsive-layout';
 @import 'basscss-addons/modules/responsive-position';
 @import 'basscss-addons/modules/responsive-type-scale';
+@import 'basscss-addons/modules/responsive-typography';
 @import './basscss-addons/margin';
 
 

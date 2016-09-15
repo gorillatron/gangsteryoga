@@ -49,9 +49,16 @@ exports = module.exports = function(app) {
 	// Views
 	app.get('/', routes.views.index)
 	app.get('/om', routes.views.om)
-	app.get('/admin', (req, res) => res.redirect('/keystone'));
+	app.get('/vaartarbeid', routes.views.vaartarbeid)
+	app.get('/fengsler', routes.views.fengsler)
+	app.get('/instruktoerer', routes.views.instruktoerer)
+	app.get('/kontakt', routes.views.kontakt)
+
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
+
+	app.get('/admin', (req, res) => res.redirect('/keystone'));
+
 
 }

@@ -12,7 +12,7 @@
   }
 
   .quote {
-    color: #3135a7;
+    color: var(--saphire);
     font-size: calc(var(--h2) * 0.9);
   }
 }

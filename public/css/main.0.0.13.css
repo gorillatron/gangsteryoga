@@ -1028,8 +1028,8 @@ header#main-header #featured{
   font-size:1.53rem;
 }
 .video{
-    height:297px;
-    width:528px;
+    height:279px;
+    width:496px;
     box-sizing:content-box;
     background:rgba(10,10,10, 0.8);
     -webkit-transition:background 0.7s ease-in;
@@ -1043,8 +1043,8 @@ header#main-header #featured{
 }
 .video .content iframe{
   opacity:1;
-  height:297px;
-  width:528px;
+  height:279px;
+  width:496px;
 }
 .video .content iframe.hidden{
   opacity:0;
@@ -1053,7 +1053,7 @@ header#main-header #featured{
   background-size:cover;
   height:50px;
   width:50px;
-  margin:123.5px auto;
+  margin:114.5px auto;
 }
 body{
   overflow-x:hidden;

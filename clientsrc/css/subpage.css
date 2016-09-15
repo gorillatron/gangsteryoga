@@ -12,7 +12,17 @@
   }
 
   .quote {
+    position: relative;
     color: var(--saphire);
     font-size: calc(var(--h2) * 0.9);
+    .logo {
+      position: absolute;
+      top: 5px;
+      left: -1.5em;
+      background-image: url(/gfx/gy_logo_blue_positiv-01.png);
+      background-size: cover;
+      height: 1.7em;
+      width: 1.7em;
+    }
   }
 }

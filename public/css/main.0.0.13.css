@@ -1042,8 +1042,18 @@ header#main-header #featured{
   font-size:0.9em;
 }
 #sub-page .quote{
+  position:relative;
   color:#3135a7;
   font-size:1.53rem;
+}
+#sub-page .quote .logo{
+  position:absolute;
+  top:5px;
+  left:-1.5em;
+  background-image:url(/gfx/gy_logo_blue_positiv-01.png);
+  background-size:cover;
+  height:1.7em;
+  width:1.7em;
 }
 .video{
     height:279px;

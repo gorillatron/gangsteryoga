@@ -1140,86 +1140,6 @@ body{
 #front-page section#content section#hero-image img{
   width:100%;
 }
-#front-page section#content section#prisons{
-  position:relative;
-  height:100vh;
-}
-#front-page section#content section#prisons .background{
-  height:93%;
-  width:100%;
-  position:absolute;
-}
-#front-page section#content section#prisons .background img{
-  display:block;
-  height:100%;
-  margin:0px auto;
-}
-#front-page section#content section#prisons ul.prisons li.prison ul.instructors{
-  position:relative;
-  display:block;
-  margin:0px auto;
-}
-#front-page section#content section#prisons ul.prisons li.prison ul.instructors li{
-  display:inline-block;
-  margin:10px 5px 0px 0px;
-}
-#front-page section#content section#prisons ul.prisons li.prison ul.instructors li .image{
-  height:2.1em;
-  width:2.1em;
-  border-radius:100%;
-  background-size:cover;
-  -webkit-transition:all 0.177s cubic-bezier(.79,.29,.52,1);
-  transition:all 0.177s cubic-bezier(.79,.29,.52,1);
-  cursor:pointer;
-}
-#front-page section#content section#prisons ul.prisons li.prison ul.instructors li .image:hover{
-  -webkit-transform:scale(1.17);
-          transform:scale(1.17);
-}
-@media(min-width: 52em){
-  #front-page section#content section#prisons ul.prisons li.prison{
-    position:absolute;
-    height:100px;
-    color:rgb(120,120,120);
-    text-align:center;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison h3{
-    margin-bottom:0.2em;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison a{
-    font-size:0.8em;
-    color:inherit;
-    text-decoration:none;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(1){
-    top:27%;
-    right:37%;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(2){
-    top:53%;
-    right:30%;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(3){
-    top:79%;
-    right:34%;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(4){
-    top:92%;
-    right:55%;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(5){
-    top:78%;
-    right:78%;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(6){
-    top:52%;
-    right:70%;
-  }
-  #front-page section#content section#prisons ul.prisons li.prison.prison:nth-child(7){
-    top:51%;
-    right:72%;
-  }
-}
 #front-page section#content section#gallery .col:nth-child(1){
   padding-right:1rem;
 }
@@ -1335,10 +1255,10 @@ body{
           transform:scale(1.1);
 }
 #instruktoerer .instructor-list .instructor .photo{
-  -webkit-transition:-webkit-transform 0.167s cubic-bezier(.62,.35,.3,1.33);
-  transition:-webkit-transform 0.167s cubic-bezier(.62,.35,.3,1.33);
-  transition:transform 0.167s cubic-bezier(.62,.35,.3,1.33);
-  transition:transform 0.167s cubic-bezier(.62,.35,.3,1.33), -webkit-transform 0.167s cubic-bezier(.62,.35,.3,1.33);
+  -webkit-transition:-webkit-transform 0.217s cubic-bezier(.62,.35,.3,1.43);
+  transition:-webkit-transform 0.217s cubic-bezier(.62,.35,.3,1.43);
+  transition:transform 0.217s cubic-bezier(.62,.35,.3,1.43);
+  transition:transform 0.217s cubic-bezier(.62,.35,.3,1.43), -webkit-transform 0.217s cubic-bezier(.62,.35,.3,1.43);
   height:10rem;
   width:10rem;
   background-color:black;
@@ -1376,6 +1296,94 @@ body{
   opacity:0.017;
 }
 #footer section.copyright{}
+.prisons-wrapper{
+  position:relative;
+  height:100vh;
+}
+.prisons-wrapper .background{
+  height:93%;
+  width:100%;
+  position:absolute;
+}
+.prisons-wrapper .background img{
+  display:block;
+  height:100%;
+  margin:0px auto;
+}
+.prisons-wrapper ul.prisons li.prison ul.instructors{
+  position:relative;
+  display:block;
+  margin:0px auto;
+}
+.prisons-wrapper ul.prisons li.prison ul.instructors li{
+  display:inline-block;
+  margin:10px 5px 0px 0px;
+}
+.prisons-wrapper ul.prisons li.prison ul.instructors li .image{
+  height:2.1em;
+  width:2.1em;
+  border-radius:100%;
+  background-size:cover;
+  -webkit-transition:all 0.177s cubic-bezier(.79,.29,.52,1);
+  transition:all 0.177s cubic-bezier(.79,.29,.52,1);
+  cursor:pointer;
+}
+.prisons-wrapper ul.prisons li.prison ul.instructors li .image:hover{
+  -webkit-transform:scale(1.17);
+          transform:scale(1.17);
+}
+@media(min-width: 52em){
+  .prisons-wrapper ul.prisons li.prison{
+    position:absolute;
+    height:100px;
+    color:rgb(120,120,120);
+    text-align:center;
+  }
+  .prisons-wrapper ul.prisons li.prison h3{
+    margin-bottom:0.2em;
+  }
+  .prisons-wrapper ul.prisons li.prison a{
+    font-size:0.8em;
+    color:inherit;
+    text-decoration:none;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(1){
+    top:27%;
+    right:33%;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(2){
+    top:53%;
+    right:30%;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(3){
+    top:79%;
+    right:34%;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(4){
+    top:92%;
+    right:55%;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(5){
+    top:78%;
+    right:78%;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(6){
+    top:52%;
+    right:74%;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(7){
+    top:32%;
+    right:72%;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(8){
+    top:11%;
+    right:61%;
+  }
+  .prisons-wrapper ul.prisons li.prison.prison:nth-child(9){
+    top:-4%;
+    right:55%;
+  }
+}
 html, body{
   min-height:100%;
   font-family:"AlteHaasGrotesk";

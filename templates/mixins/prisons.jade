@@ -1,0 +1,14 @@
+
+mixin prisons(prisons)
+  .prisons-wrapper
+    .background
+      img(src="/gfx/map.png")
+    ul.prisons.list-reset
+      each prison in prisons
+        li.prison
+          h3= prison.name
+          a(href=prison.url)= prison.url
+          ul.list-reset.instructors
+            each instructor in prison.instructors
+              li
+                .image(style="background-image: url(" + instructor.photo.secure_url + ")")

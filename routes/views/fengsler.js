@@ -10,6 +10,8 @@ export default function fengsler(req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'fengsler'
+
+	view.query('prisons', keystone.list('Prison').model.find().populate('instructors'))
 	
 	// Render the view
 	view.render('fengsler')

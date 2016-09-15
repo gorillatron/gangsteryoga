@@ -1,5 +1,6 @@
 extends ../layouts/subpage
 include ../mixins/vscript
+include ../mixins/prisons
 
 
 block js
@@ -14,3 +15,14 @@ block content
         .col.col-12.lg-pr2
 
           h1.h1.main-heading Fengsler
+
+          ul.list-reset
+            each prison in prisons
+              li.mb1
+                h3.m0.inline-block= prison.name
+                span   -  
+                a.inline-block(href=prison.url)= prison.url
+
+
+          section#prisons.fit.my4.clearfix.xs-hide.sm-hide
+            +prisons(prisons)

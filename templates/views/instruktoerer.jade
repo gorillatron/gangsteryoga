@@ -18,7 +18,7 @@ block content
           .instructor-list.clearfix
 
             each instructor in instructors
-              a(href="/instruktoerer/" + instructor.key).instructor.col.col-12.md-col-3.mb3
+              a(href="/instruktoerer/" + instructor.key).instructor.col.col-12.sm-col-6.md-col-3.mb3
                 .inline-block.center
                   .photo.md-mx-auto(style="background-image: url(" +instructor.photo.secure_url+ ")")
                   h3.md-h4= instructor.name.full

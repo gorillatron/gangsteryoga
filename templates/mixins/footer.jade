@@ -47,7 +47,8 @@ mixin footer()
             .col.col-6.pr1
               ul.list-reset.m0
                 each instructor in instructors.slice(0, instructors.length / 2)
-                  a(href="/instruktoerer/" + instructor.key)=instructor.name.full
+                  li
+                    a(href="/instruktoerer/" + instructor.key)=instructor.name.full
 
             .col.col-6
               ul.list-reset.m0

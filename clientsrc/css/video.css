@@ -1,6 +1,12 @@
 .video {
-    height: calc((9 * 31))px;
-    width: calc((16 * 31))px;
+    
+    width: 100%;
+
+    @media(--breakpoint-md) {
+      height: calc((9 * 31))px;
+      width: calc((16 * 31))px;
+    }
+
     box-sizing: content-box;
     background: rgba(10,10,10, 0.8);
     transition: background 0.7s ease-in;
@@ -17,15 +23,23 @@
           opacity: 0;
         }
         opacity: 1;
-        height: calc(9 * 31)px;
-        width: calc(16 * 31)px;
+        width: 100%;
+        @media(--breakpoint-md) {
+          height: calc((9 * 31))px;
+          width: calc((16 * 31))px;
+        }
       }
-
+      
       .play-button {          
         background-size: cover;
         height: 50px;
         width: 50px;
-        margin: calc((9 * 31) / 2 - 25)px auto;
+        margin: 0% auto;
+        padding-top: 35%;
+        @media(--breakpoint-md) {
+          padding-top: 0%;
+          margin: calc((9 * 31) / 2 - 25)px auto;
+        }
       }
     }
   }

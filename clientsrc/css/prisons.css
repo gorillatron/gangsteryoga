@@ -25,8 +25,8 @@
           display: inline-block;
           margin: 10px 5px 0px 0px;  
           .image {
-            height: 2.1em;
-            width: 2.1em;
+            height: 2.3em;
+            width: 2.3em;
             border-radius: 100%;
             background-size: cover;
             transition: all 0.177s cubic-bezier(.79,.29,.52,1);

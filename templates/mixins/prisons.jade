@@ -10,5 +10,6 @@ mixin prisons(prisons)
           a(href=prison.url)= prison.url
           ul.list-reset.instructors
             each instructor in prison.instructors
-              li
-                .image(style="background-image: url(" + instructor.photo.secure_url + ")")
+              a(href="/instruktoerer/" + instructor.key)
+                li
+                  .image(style="background-image: url(" + instructor.photo.secure_url + ")")

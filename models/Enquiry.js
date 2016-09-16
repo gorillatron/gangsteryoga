@@ -21,12 +21,11 @@ const Enquiry = new keystone.List('Enquiry', {
 Enquiry.add({
 	name: { type: Types.Name, required: [true, "Navn mangler"], label: "Navn" },
 	email: { type: Types.Email, required: [true, "Epost mangler"], label: "Epost" },
-	phone: { type: String, label: "Telefon" },
 	message: { type: Types.Markdown, required: [true, "Beskjed mangler"], label: "Beskjed" },
 	createdAt: { type: Date, default: Date.now, label: "Opprettet dato" }
 })
 
 
 Enquiry.defaultSort = '-createdAt'
-Enquiry.defaultColumns = 'name, email, enquiryType, createdAt'
+Enquiry.defaultColumns = 'name, email, createdAt'
 Enquiry.register()

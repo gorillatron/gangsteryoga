@@ -15,16 +15,16 @@ export default function kontakt(req, res) {
 	locals.enquirySubmitted = false
 	
 	// On POST requests, add the Enquiry item to the database
-	view.on('post', { action: 'kontakt' }, function(next) {
+	view.on('post', { action: 'kontakt' }, (next) => {
 		
 		const newEnquiry = new Enquiry.model(),
-			updater = newEnquiry.getUpdateHandler(req);
+			updater = newEnquiry.getUpdateHandler(req)
 		
 		updater.process(req.body, {
 			flashErrors: true,
-			fields: 'name, email, phone, enquiryType, message',
-			errorMessage: 'There was a problem submitting your enquiry:'
-		}, function(err) {
+			fields: 'name, email, message',
+			errorMessage: 'Kunne ikke sende forespørsel.'
+		}, (err) => {
 			if (err) {
 				locals.validationErrors = err.errors
 			} else {

@@ -1,0 +1,37 @@
+
+#kontakt {
+
+  
+  tr td {
+    vertical-align: bottom;
+  }
+
+  label {
+    font-size: 0.9em;
+  }
+
+  input, textarea {
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: rgb(30,30,30);
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .error {
+    color: var(--error);
+    input, textarea {
+      border-color: var(--error);
+    }
+  }
+
+  form.sendt {
+    input, textarea {
+      border: none;
+      color: rgb(60,60,60);
+    }
+  }
+
+}

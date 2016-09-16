@@ -35,8 +35,10 @@
 @import './video';
 @import './front-page';
 @import './instruktoerer';
+@import './contact-form';
 @import './footer';
 @import './prisons';
+@import './buttons';
 
 
 html, body {

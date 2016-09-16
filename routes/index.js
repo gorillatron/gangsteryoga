@@ -52,7 +52,7 @@ exports = module.exports = function(app) {
 	app.get('/vaartarbeid', routes.views.vaartarbeid)
 	app.get('/fengsler', routes.views.fengsler)
 	app.get('/instruktoerer', routes.views.instruktoerer)
-	app.get('/kontakt', routes.views.kontakt)
+	app.all('/kontakt', routes.views.kontakt)
 
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

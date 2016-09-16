@@ -5,6 +5,11 @@
     border-radius: 100%;
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   .instructor-list {
 
     .instructor {
@@ -28,11 +33,16 @@
     }
   }
 
-  .instructor-detail {
+  .instructor-details {
     .photo {
-      height: 15rem;
-      width: 15rem;
+      height: 13rem;
+      width: 13rem;
+      @media(--breakpoint-xlg) {
+        height: 15rem;
+        width: 15rem;
+      }
       overflow: hidden;
+      background-size: cover;
       img {
         min-width: 15rem;
       }

@@ -12,6 +12,7 @@ export default function fengsler(req, res) {
 	locals.section = 'fengsler'
 
 	view.query('prisons', keystone.list('Prison').model.find().populate('instructors'))
+	view.query('instructors', keystone.list('Instructor').model.find())
 	
 	// Render the view
 	view.render('fengsler')

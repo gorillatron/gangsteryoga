@@ -52,6 +52,7 @@ exports = module.exports = function(app) {
 	app.get('/vaartarbeid', routes.views.vaartarbeid)
 	app.get('/fengsler', routes.views.fengsler)
 	app.get('/instruktoerer', routes.views.instruktoerer)
+	app.get('/instruktoerer/:key', routes.views.instruktoerer)
 	app.all('/kontakt', routes.views.kontakt)
 
 

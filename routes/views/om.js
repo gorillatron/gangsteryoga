@@ -10,6 +10,9 @@ export default function om(req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'om'
+
+	view.query('prisons', keystone.list('Prison').model.find().populate('instructors'))
+	view.query('instructors', keystone.list('Instructor').model.find())
 	
 	// Render the view
 	view.render('om')

@@ -1245,6 +1245,10 @@ body{
 #instruktoerer .photo{
   border-radius:100%;
 }
+#instruktoerer a{
+  color:inherit;
+  text-decoration:none;
+}
 #instruktoerer .instructor-list .instructor{
   text-decoration:none;
   color:inherit;
@@ -1264,12 +1268,19 @@ body{
   background-color:black;
   background-size:cover;
 }
-#instruktoerer .instructor-detail .photo{
-  height:15rem;
-  width:15rem;
+#instruktoerer .instructor-details .photo{
+  height:13rem;
+  width:13rem;
   overflow:hidden;
+  background-size:cover;
 }
-#instruktoerer .instructor-detail .photo img{
+@media(min-width: 1700px){
+  #instruktoerer .instructor-details .photo{
+    height:15rem;
+    width:15rem;
+  }
+}
+#instruktoerer .instructor-details .photo img{
   min-width:15rem;
 }
 #kontakt tr td{
@@ -1305,6 +1316,13 @@ body{
 
   transition:all 0.7137s cubic-bezier(.7,.38,.35,1.38);
 
+}
+#footer a{
+  text-decoration:none;
+  color:inherit;
+}
+#footer a.underline{
+  text-decoration:underline;
 }
 #footer section.info{
   color:rgb(247,247,247);

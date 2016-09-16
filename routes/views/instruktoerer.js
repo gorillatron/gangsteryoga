@@ -11,9 +11,15 @@ export default function instruktoerer(req, res) {
 	// item in the header navigation.
 	locals.section = 'instruktoerer'
 
+	view.query('prisons', keystone.list('Prison').model.find().populate('instructors'))
 	view.query('instructors', keystone.list('Instructor').model.find())
-	
-	// Render the view
-	view.render('instruktoerer')
+
+	if(req.params.key) {
+		view.query('instructor', keystone.list('Instructor').model.findOne().where({key: req.params.key }))
+		view.render('instruktoer')
+	}
+	else {
+		view.render('instruktoerer')
+	}
 	
 }

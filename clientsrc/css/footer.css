@@ -21,11 +21,11 @@
       position: absolute;
       top: -12%;
       right: 1%;
-      background-image: url(/gfx/logo_white.svg);
+      background-image: url(/gfx/gy_logo_hvit_positiv-01.svg);
       background-size: cover;
       height: 130%;
       width: 650px;
-      opacity: 0.017;
+      opacity: 0.02;
     }
 
   }

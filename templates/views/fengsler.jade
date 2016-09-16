@@ -16,12 +16,16 @@ block content
 
           h1.h1.main-heading Fengsler
 
-          ul.list-reset
+          ul.list-reset.mb2
             each prison in prisons
               li.mb1
                 h3.m0.inline-block= prison.name
                 span   -  
                 a.inline-block(href=prison.url)= prison.url
+          
+          p 
+            | Se oversikt over instruktører 
+            a(href="/instruktoerer") her
 
 
           section#prisons.fit.my4.clearfix.xs-hide.sm-hide

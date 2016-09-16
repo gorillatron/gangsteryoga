@@ -14,7 +14,7 @@ block content
       
       .clearfix
         
-        .col.col-4.lg-pr2
+        .col.col-12.md-col-4.md-pr2
 
           p
             | Liljan Olsen
@@ -41,9 +41,9 @@ block content
           p Tlf: +47 90978888
 
         
-        .col.col-6
+        .col.col-12.md-col-6
 
-          p Send oss en melding:
+          p.pb1 Send oss en melding:
 
 
           form.clearfix(method="post", class=enquirySubmitted ? "sendt" : "")
@@ -65,7 +65,7 @@ block content
                 td.pb1
                   textarea(name="message", disabled=enquirySubmitted ? true : false)= formData.message || ""
               tr
-                td(colspan="2").pb2
+                td(colspan="2").pb1
                   if enquirySubmitted
                     .success.mb2.right.underline Melding sendt!
                   else

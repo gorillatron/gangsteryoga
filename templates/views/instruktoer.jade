@@ -21,5 +21,13 @@ block content
           .instructor-details.clearfix
             .col.col-12.lg-col-4.px0.lg-px2.pb2
               .photo.mx-auto.md-mx0(style="background-image: url(" + instructor.photo.secure_url + ")")
-            .col.col-12.lg-col-8.bio!= instructor.bio.html
+            .col.col-12.lg-col-8
+              .bio.mb2!= instructor.bio.html
+              p
+                | #{instructor.name.full} underviser ved 
+                if instructorPrisons.length > 1
+                  | #{instructorPrisons.slice(0, instructorPrisons.length-1).map(i => i.name).join(', ')}
+                  | og #{instructorPrisons[instructorPrisons.length-1].name}
+                else
+                  | #{instructorPrisons[0].name}
             

@@ -75,8 +75,8 @@ hr{
   border-bottom-style:solid;
   border-bottom-color:#ccc;
 }
-.h1{ font-size:2.0rem }
-.h2{ font-size:1.7rem }
+.h1{ font-size:1.85rem }
+.h2{ font-size:1.6rem }
 .h3{ font-size:1.25rem }
 .h4{ font-size:1rem }
 .h5{ font-size:.875rem }
@@ -911,8 +911,8 @@ hr{
 @media (min-width: 40em){
   .sm-h00{ font-size:4rem }
   .sm-h0{ font-size:3rem }
-  .sm-h1{ font-size:2.0rem }
-  .sm-h2{ font-size:1.7rem }
+  .sm-h1{ font-size:1.85rem }
+  .sm-h2{ font-size:1.6rem }
   .sm-h3{ font-size:1.25rem }
   .sm-h4{ font-size:1rem }
   .sm-h5{ font-size:.875rem }
@@ -921,8 +921,8 @@ hr{
 @media (min-width: 52em){
   .md-h00{ font-size:4rem }
   .md-h0{ font-size:3rem }
-  .md-h1{ font-size:2.0rem }
-  .md-h2{ font-size:1.7rem }
+  .md-h1{ font-size:1.85rem }
+  .md-h2{ font-size:1.6rem }
   .md-h3{ font-size:1.25rem }
   .md-h4{ font-size:1rem }
   .md-h5{ font-size:.875rem }
@@ -931,8 +931,8 @@ hr{
 @media (min-width: 64rem){
   .lg-h00{ font-size:4rem }
   .lg-h0{ font-size:3rem }
-  .lg-h1{ font-size:2.0rem }
-  .lg-h2{ font-size:1.7rem }
+  .lg-h1{ font-size:1.85rem }
+  .lg-h2{ font-size:1.6rem }
   .lg-h3{ font-size:1.25rem }
   .lg-h4{ font-size:1rem }
   .lg-h5{ font-size:.875rem }
@@ -1017,6 +1017,9 @@ header#main-header .movie-mode{
 header#main-header .movie-mode.active{
   opacity:1;
 }
+header#main-header .movie-mode.always-active{
+  opacity:1!important;
+}
 header#main-header nav#menu{
   text-transform:uppercase;
   font-size:0.73em;
@@ -1044,7 +1047,7 @@ header#main-header #featured{
 #sub-page .quote{
   position:relative;
   color:#3135a7;
-  font-size:1.53rem;
+  font-size:1.44rem;
 }
 #sub-page .quote .logo{
   position:absolute;
@@ -1075,32 +1078,33 @@ header#main-header #featured{
 }
 .video .content{
   position:relative;
+  height:100%;
 }
 .video .content iframe{
+  z-index:1;
   opacity:1;
   width:100%;
+  min-height:250px;
+  height:100%;
 }
 .video .content iframe.hidden{
   opacity:0;
 }
 @media(min-width: 52em){
   .video .content iframe{
-    height:279px;
-    width:496px;
+    height:279pxpx;
+    width:496pxpx;
   }
 }
 .video .content .play-button{
+  z-index:2;
+  position:absolute;
   background-size:cover;
+  top:50%;
+  left:50%;
   height:50px;
   width:50px;
-  margin:0% auto;
-  padding-top:35%;
-}
-@media(min-width: 52em){
-  .video .content .play-button{
-    padding-top:0%;
-    margin:114.5px auto;
-  }
+  margin:-25px 0px 0px -25px;
 }
 body{
   overflow-x:hidden;
@@ -1154,7 +1158,7 @@ body{
   }
 }
 #front-page section#content section#hero-text .h1{
-  font-size:2.8rem;
+  font-size:2.59rem;
 }
 #front-page section#content section#hero-image img{
   width:100%;
@@ -1174,8 +1178,18 @@ body{
   padding-left:1rem;
 }
 #front-page section#content section#gallery .img{
+  position:relative;
   background-color:#3135a7;
+  width:100%;
   background-size:cover;
+}
+#front-page section#content section#gallery .img .blue{
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  background-color:#3135a7;
+  opacity:0.6;
+  height:100%;
   width:100%;
 }
 #front-page section#content section#gallery .short, #front-page section#content section#gallery .medium, #front-page section#content section#gallery .long{
@@ -1183,7 +1197,7 @@ body{
 }
 #front-page section#content section#gallery .quote{
   color:#3135a7;
-  font-size:.875rem;
+  font-size:0.7875rem;
 }
 #front-page section#content section#gallery .short{
   min-height:6rem;
@@ -1196,6 +1210,13 @@ body{
 }
 #front-page section#content section#gallery .long{
   min-height:10.4rem;
+}
+#front-page section#content section#gallery .logo{
+  background-image:url(/gfx/gy_logo_blue_positiv.svg);
+  background-position:center center;
+  background-size:70% 70%;
+  background-repeat:no-repeat;
+  background-color:transparent;
 }
 @media(min-width: 52em){
   #front-page section#content section#gallery .col:nth-child(1){
@@ -1216,7 +1237,7 @@ body{
     margin-bottom:2rem;
   }
   #front-page section#content section#gallery .quote{
-    font-size:2.0rem;
+    font-size:1.85rem;
   }
   #front-page section#content section#gallery .short{
     min-height:15rem;

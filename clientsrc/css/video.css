@@ -3,8 +3,8 @@
     width: 100%;
 
     @media(--breakpoint-md) {
-      height: calc((9 * 31))px;
-      width: calc((16 * 31))px;
+      height: var(--video-fullheight);
+      width: var(--video-fullwidth);
     }
 
     box-sizing: content-box;
@@ -17,29 +17,32 @@
 
     .content {
       position: relative;
+      height: 100%;
       
       iframe {
+        z-index: 1;
         &.hidden {
           opacity: 0;
         }
         opacity: 1;
         width: 100%;
+        min-height: 250px;
+        height: 100%;
         @media(--breakpoint-md) {
-          height: calc((9 * 31))px;
-          width: calc((16 * 31))px;
+          height: var(--video-fullheight)px;
+          width: var(--video-fullwidth)px;
         }
       }
       
-      .play-button {          
+      .play-button {
+        z-index: 2;
+        position: absolute;          
         background-size: cover;
+        top: 50%;
+        left: 50%;
         height: 50px;
         width: 50px;
-        margin: 0% auto;
-        padding-top: 35%;
-        @media(--breakpoint-md) {
-          padding-top: 0%;
-          margin: calc((9 * 31) / 2 - 25)px auto;
-        }
+        margin: -25px 0px 0px -25px;
       }
     }
   }

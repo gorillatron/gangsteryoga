@@ -1,8 +1,8 @@
 
 :root {
 
-  --h1: 2.0rem;
-  --h2: 1.7rem;
+  --h1: 1.85rem;
+  --h2: 1.6rem;
   --h3: 1.25rem;
   --h4: 1rem;
   --h5: .875rem;
@@ -22,6 +22,9 @@
   --width-2: 48rem;
   --width-3: 64rem;
   --width-4: 82rem;
+
+  --video-fullheight: calc((9 * 31))px;
+  --video-fullwidth: calc((16 * 31))px;
 
   --breakpoint-sm: min-width 40em;
   --breakpoint-md: min-width 52em;

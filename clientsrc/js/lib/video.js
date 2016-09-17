@@ -2,29 +2,33 @@
 import Player from '@vimeo/player'
 import raf from 'raf'
 
-const playButton = $('.video .play-button')
-const movieMode = $('.movie-mode')
-const video = $('.video')
-const videoFrame = $('.video iframe')
-const player = new Player(videoFrame)
+export default function(videoel) {
 
-playButton.click(() => {
-  player.play()
-})
+  const playButton = videoel.find('.play-button')
+  const movieMode = videoel.find('.movie-mode')
+  const video = videoel
+  const videoFrame = videoel.find('iframe')
+  const player = new Player(videoFrame)
 
-const onPlay = () => {
-  raf(() => playButton.addClass('hide'))
-  raf(() => movieMode.addClass('active'))
-  raf(() => video.addClass('playing'))
-  raf(() => videoFrame.removeClass('hidden'))
-  $('body').one('click', () => player.pause())
+  playButton.click(() => {
+    setTimeout(() => player.play(), 33)
+  })
+
+  const onPlay = () => {
+    raf(() => playButton.addClass('hide'))
+    //raf(() => movieMode.addClass('active'))
+    raf(() => video.addClass('playing'))
+    raf(() => videoFrame.removeClass('hidden'))
+    $('body').one('click', () => player.pause())
+  }
+
+  const onStop = () => {
+    raf(() => video.removeClass('playing'))
+    raf(() => movieMode.removeClass('active'))
+  }
+
+  player.on('play', onPlay)
+  player.on('pause', onStop)
+  player.on('stop', onStop)
+
 }
-
-const onStop = () => {
-  raf(() => video.removeClass('playing'))
-  raf(() => movieMode.removeClass('active'))
-}
-
-player.on('play', onPlay)
-player.on('pause', onStop)
-player.on('stop', onStop)

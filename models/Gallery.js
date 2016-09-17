@@ -14,6 +14,7 @@ const Gallery = new keystone.List('Gallery', {
 	label: "Galleri",
 	plural: "Gallerier",
 	autokey: { from: 'name', path: 'key', unique: true },
+	hidden: true
 })
 
 

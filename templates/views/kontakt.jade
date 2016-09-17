@@ -65,11 +65,11 @@ block content
                 td.pb1
                   textarea(name="message", disabled=enquirySubmitted ? true : false)= formData.message || ""
               tr
-                td(colspan="2").pb1
+                td(colspan="2").pb3.md-pb2
                   if enquirySubmitted
                     .success.mb2.right.underline Melding sendt!
                   else
                     button(type="submit").right send melding
               tr
                 td(colspan="2")
-                  small Pårørende: Vi ønsker å synliggjøre vårt arbeid på en god og ærlig måte. Føler du deg støtt av noe av innholdet? Gi oss en tilbakemelding her:
+                  small Pårørende: Vi ønsker å synliggjøre vårt arbeid på en god og ærlig måte. Føler du deg støtt av noe av innholdet? Gi oss en tilbakemelding her.

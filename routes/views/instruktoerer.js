@@ -15,7 +15,25 @@ export default function instruktoerer(req, res) {
 	view.query('instructors', keystone.list('Instructor').model.find())
 
 	if(req.params.key) {
-		view.query('instructor', keystone.list('Instructor').model.findOne().where({key: req.params.key }))
+		view.on('init', (next) => {
+
+			keystone.list('Instructor').model
+				.findOne()
+				.where({key: req.params.key })
+				.exec((err, instructor) => {
+					keystone.list('Prison').model
+						.find()
+						.where('instructors')
+						.in([instructor.id])
+						.exec((err, instructorPrisons) => {
+							console.log(instructorPrisons)
+							locals.instructor = instructor
+							locals.instructorPrisons = instructorPrisons
+							next()
+						})
+				})
+
+		})
 		view.render('instruktoer')
 	}
 	else {

@@ -12,18 +12,18 @@ block content
       
       .clearfix
         
-        .col.col-12.lg-pr2
+        .col.col-12.lg-pr2.mb4.md-mb0
 
           h1.h1.main-heading Fengsler
 
           ul.list-reset.mb2
             each prison in prisons
-              li.mb1
-                h3.m0.inline-block= prison.name
-                span   -  
+              li.mb1.clearfix
+                h4.md-h3.m0.inline-block= prison.name
+                br
                 a.inline-block(href=prison.url)= prison.url
           
-          p 
+          p
             | Se oversikt over instruktører 
             a(href="/instruktoerer") her
 

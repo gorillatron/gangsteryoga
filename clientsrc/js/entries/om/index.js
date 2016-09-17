@@ -8,4 +8,5 @@ $(document).ready(() => {
       $("#front-page").css('opacity', 1)
     }, 66)
 
+    video($('.video'))
 })

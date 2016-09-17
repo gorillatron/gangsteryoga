@@ -1,6 +1,5 @@
 
 import keystone from 'keystone'
-import split from 'split-array'
 
 const Types = keystone.Field.Types
 
@@ -10,8 +9,9 @@ const Types = keystone.Field.Types
  * =============
  */
 
-const Frontpage = new keystone.List('Gallery', {
+const Frontpage = new keystone.List('Frontpage', {
 	label: "Forside",
+  hidden: true
 })
 
 

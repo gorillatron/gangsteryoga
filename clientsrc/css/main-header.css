@@ -24,6 +24,9 @@ header#main-header {
       &.active {
         opacity: 1;
       }
+      &.always-active {
+        opacity: 1!important;
+      }
     }
 
     nav#menu {

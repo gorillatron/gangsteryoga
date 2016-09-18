@@ -1165,6 +1165,17 @@ body{
   background-size:50%;
   background-image:url(/gfx/dn-logo.png);
 }
+#front-page section#content section#articles .article .brand-logo.amagasinet{
+  display:table;
+}
+#front-page section#content section#articles .article .brand-logo.amagasinet .text{
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+  font-family:"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight:600;
+  font-size:1.5em;
+}
 #front-page section#content section#hero-text{
   background:rgba(0,0,0, 0.98);
   color:rgba(255,255,255, 0.9);

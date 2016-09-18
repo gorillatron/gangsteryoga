@@ -68,6 +68,16 @@ block content
       .col.col-12
         h1.mt0 Fengsler
       .col.col-12.md-col-6.clearfix
+
+        p 
+          | Gangsteryoga drives nå i 
+          b.h3 #{prisons.length} fengsler 
+          | i Norge.
+          br
+          | Og har til sammen 
+          b.h3 #{instructors.length} Instruktører 
+          | som underviser regelmessig.
+
         ul.list-reset.prisons.col.col-6
           each prison in prisons.slice(0, Math.floor(prisons.length / 2))
             +prison(prison)

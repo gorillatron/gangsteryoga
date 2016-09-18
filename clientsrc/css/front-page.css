@@ -5,8 +5,6 @@ body {
 
 #front-page {
   overflow-x: hidden;
-  opacity: 0.0001;
-  transition: opacity 0.137s ease-out;
   width: 100%;
   min-height: 100%;
 

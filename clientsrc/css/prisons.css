@@ -29,6 +29,7 @@
           display: inline-block;
           margin: 10px 5px 0px 0px;
           .image {
+            background-color: rgb(20,20,20);
             height: 1.2em;
             width: 1.2em;
             border-radius: 100%;

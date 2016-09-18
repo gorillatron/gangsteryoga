@@ -984,6 +984,10 @@ hr{
 
   width:100%;
   min-height:100%;
+
+  opacity:0.0001;
+  -webkit-transition:opacity 0.237s ease-out;
+  transition:opacity 0.237s ease-out;
 }
 @media(min-width: 96rem){
   #root{
@@ -1118,9 +1122,6 @@ body{
 }
 #front-page{
   overflow-x:hidden;
-  opacity:0.0001;
-  -webkit-transition:opacity 0.137s ease-out;
-  transition:opacity 0.137s ease-out;
   width:100%;
   min-height:100%;
 
@@ -1447,6 +1448,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   margin:10px 5px 0px 0px;
 }
 #prisons ul.prisons li.prison ul.instructors li .image{
+  background-color:rgb(20,20,20);
   height:1.2em;
   width:1.2em;
   border-radius:100%;

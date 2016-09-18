@@ -21,6 +21,12 @@ export default function instruktoerer(req, res) {
 				.findOne()
 				.where({key: req.params.key })
 				.exec((err, instructor) => {
+
+					if(!instructor) {
+						res.status = 404
+						return res.send("not found")
+					}
+
 					keystone.list('Prison').model
 						.find()
 						.where('instructors')

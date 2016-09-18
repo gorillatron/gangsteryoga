@@ -19,9 +19,9 @@ block content
             span= instructor.name.full
 
           .instructor-details.clearfix
-            .col.col-12.lg-col-4.px0.lg-px2.pb2
-              .photo.mx-auto.md-mx0(style="background-image: url(" + instructor.photo.secure_url + ")")
-            .col.col-12.lg-col-8
+            .col.col-12
+              if instructor.photo.secure_url
+                .photo.mx-auto.md-mx2.md-left.mx2.mb3(style="background-image: url(" + instructor.photo.secure_url + ")")
               .bio.mb2!= instructor.bio.html
               p
                 | #{instructor.name.full} underviser ved 

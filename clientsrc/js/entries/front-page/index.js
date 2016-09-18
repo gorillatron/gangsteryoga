@@ -1,6 +1,7 @@
 
 import video from '../../lib/video'
 import gallery from '../../lib/gallery'
+import mapstyles from './mapstyles'
 
 
 $(document).ready(() => {
@@ -11,7 +12,7 @@ $(document).ready(() => {
 
     gallery($('#gallery'))
 
-    video($('#featured-video'))
+    video($('#main-header'))
     video($('#mobile-video'))
 
 })

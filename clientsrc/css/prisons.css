@@ -1,4 +1,52 @@
-.prisons-wrapper {
+
+#prisons {
+  
+  #map {
+    /*background-image: url(/gfx/norgeskart_fengsler-01.png);*/
+    background-size: cover;
+    background-position: center center;
+    img {
+      display: block;
+      width: 80%;
+      margin: 0px auto;
+    }
+  }
+
+  ul.prisons {
+
+    a {
+      color: inherit;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    li.prison {
+
+      ul.instructors {
+        position: relative;
+        margin: 0px auto;
+        li {
+          display: inline-block;
+          margin: 10px 5px 0px 0px;
+          .image {
+            height: 1.2em;
+            width: 1.2em;
+            border-radius: 100%;
+            background-size: cover;
+            transition: all 0.177s cubic-bezier(.79,.29,.52,1);
+            cursor: pointer;
+            &:hover {
+              transform: scale(1.17);
+            }
+          }
+        }
+      }
+    }
+}
+
+}
+
+/*.prisons-wrapper {
   position: relative;
   height: 100vh;
 
@@ -94,4 +142,4 @@
     }
 
   }
-}
+}*/

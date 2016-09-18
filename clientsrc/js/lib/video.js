@@ -16,7 +16,7 @@ export default function(videoel) {
 
   const onPlay = () => {
     raf(() => playButton.addClass('hide'))
-    //raf(() => movieMode.addClass('active'))
+    raf(() => movieMode.addClass('active'))
     raf(() => video.addClass('playing'))
     raf(() => videoFrame.removeClass('hidden'))
     $('body').one('click', () => player.pause())

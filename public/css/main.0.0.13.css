@@ -1058,6 +1058,13 @@ header#main-header #featured{
   height:1.7em;
   width:1.7em;
 }
+#sub-page blockquote{
+  font-size:1.25rem;
+  padding:1rem;
+}
+#sub-page blockquote small{
+  font-size:0.8rem;
+}
 .video{
     
     width:100%;
@@ -1121,26 +1128,42 @@ body{
 #front-page section#content{
   min-height:100vh;
 }
-#front-page section#content section#articles article{
+#front-page section#content section#articles .article{
+  color:inherit;
+  text-decoration:none;
   font-family:'AlteHaasGroteskBold';
 }
-#front-page section#content section#articles article .image{
+#front-page section#content section#articles .article .image{
   height:8em;
   overflow:hidden;
 }
-#front-page section#content section#articles article .image img{
+#front-page section#content section#articles .article .image img{
   width:100%;
   min-width:100%;
 }
-#front-page section#content section#articles article h1{
+#front-page section#content section#articles .article h1{
   text-transform:uppercase;
   margin-top:1rem;
   margin-bottom:0.5rem;
 }
-#front-page section#content section#articles article p{
+#front-page section#content section#articles .article p{
   margin-top:0px;
   margin-bottom:1rem;
   font-size:0.9em;
+}
+#front-page section#content section#articles .article .brand-logo{
+  width:100%;
+  height:3rem;
+  background-position:center center;
+  background-size:70% 70%;
+  background-repeat:no-repeat;
+}
+#front-page section#content section#articles .article .brand-logo.aftenposten{
+  background-image:url(/gfx/Aftenposten_logo.svg);
+}
+#front-page section#content section#articles .article .brand-logo.dn{
+  background-size:50%;
+  background-image:url(/gfx/dn-logo.png);
 }
 #front-page section#content section#hero-text{
   background:rgba(0,0,0, 0.98);
@@ -1282,6 +1305,14 @@ body{
 .subpage .content-container a.back{
   color:inherit;
 }
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+.gmnoprint a, .gmnoprint span, .gm-style-cc{
+    display:none;
+}
+.gmnoprint div{
+    background:none !important;
+}
 #instruktoerer .photo{
   border-radius:100%;
 }
@@ -1382,93 +1413,40 @@ body{
   opacity:0.02;
 }
 #footer section.copyright{}
-.prisons-wrapper{
-  position:relative;
-  height:100vh;
+#prisons #map{
+  background-size:cover;
+  background-position:center center;
 }
-.prisons-wrapper .background{
-  height:93%;
-  width:100%;
-  position:absolute;
-}
-.prisons-wrapper .background img{
+#prisons #map img{
   display:block;
-  height:100%;
+  width:80%;
   margin:0px auto;
 }
-.prisons-wrapper ul.prisons li.prison ul.instructors{
+#prisons ul.prisons a{
+  color:inherit;
+  font-size:1.2rem;
+  text-decoration:none;
+}
+#prisons ul.prisons li.prison ul.instructors{
   position:relative;
-  display:block;
   margin:0px auto;
 }
-.prisons-wrapper ul.prisons li.prison ul.instructors li{
+#prisons ul.prisons li.prison ul.instructors li{
   display:inline-block;
   margin:10px 5px 0px 0px;
 }
-.prisons-wrapper ul.prisons li.prison ul.instructors li .image{
-  height:2.3em;
-  width:2.3em;
+#prisons ul.prisons li.prison ul.instructors li .image{
+  height:1.2em;
+  width:1.2em;
   border-radius:100%;
   background-size:cover;
   -webkit-transition:all 0.177s cubic-bezier(.79,.29,.52,1);
   transition:all 0.177s cubic-bezier(.79,.29,.52,1);
   cursor:pointer;
 }
-.prisons-wrapper ul.prisons li.prison ul.instructors li .image:hover{
+#prisons ul.prisons li.prison ul.instructors li .image:hover{
   -webkit-transform:scale(1.17);
           transform:scale(1.17);
-}
-@media(min-width: 52em){
-  .prisons-wrapper ul.prisons li.prison{
-    position:absolute;
-    height:100px;
-    color:rgb(120,120,120);
-    text-align:center;
-  }
-  .prisons-wrapper ul.prisons li.prison h3{
-    margin-bottom:0.2em;
-  }
-  .prisons-wrapper ul.prisons li.prison a{
-    font-size:0.8em;
-    color:inherit;
-    text-decoration:none;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(1){
-    top:27%;
-    right:33%;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(2){
-    top:53%;
-    right:30%;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(3){
-    top:79%;
-    right:34%;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(4){
-    top:92%;
-    right:55%;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(5){
-    top:78%;
-    right:78%;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(6){
-    top:52%;
-    right:74%;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(7){
-    top:32%;
-    right:72%;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(8){
-    top:11%;
-    right:61%;
-  }
-  .prisons-wrapper ul.prisons li.prison.prison:nth-child(9){
-    top:-4%;
-    right:55%;
-  }
 }
 button{
   border:0px solid transparent;

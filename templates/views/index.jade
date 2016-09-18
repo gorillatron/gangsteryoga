@@ -1,11 +1,21 @@
 extends ../layouts/default
 include ../mixins/vscript
-include ../mixins/prisons
 
 
 block js
-  script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAfOc1bjMyAuwGfseYBu6_R730zk8fw2w")
   +vscript('front-page')
+
+mixin prison(prison) 
+  li.prison.mb2(data-json=JSON.stringify(prison))
+    .mr1
+      a(href=prison.url)= prison.name
+    small Instruktører:
+    ul.list-reset.instructors
+      each instructor in prison.instructors
+        a(href="/instruktoerer/" + instructor.key).text-decoration-none
+          li
+            .image(style="background-image: url(" + instructor.photo.secure_url + ")")
 
 block content
 
@@ -19,19 +29,25 @@ block content
 
     section#articles.clearfix.my3.md-my4.mxn2.px2.md-px4
 
-      article.col.col-12.md-col-4.md-pr2.center.mb3.md-mb0
+      a(href="http://www.aftenposten.no/100Sport/sprek/Gangsteryoga-skal-hjelpe-de-innsatte-ut-av-kriminaliteten-816834_1.snd#&gid=1&pid=1", target="_blank").col.col-12.md-col-4.md-pr2.center.mb3.md-mb0.article
           .image.mb2.mx-auto
-            img(src="/images/fotograf-nicki-twang-prisonyoga-013@2x.png")
-          h1.h3 Some article
-          p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            img(src="/images/aftenposten-article.jpeg")
+          h1.h3 «Gangsteryoga» skal hjelpe de innsatte ut av kriminaliteten
+          p.px1 
+            | - Å være tøff og gjemme seg inne i et hardt skall er lett. Det som er vanskelig er å tørre å være sårbar. 
+            | Det sier den mangeårige instruktøren Alexander Medin.
+
+
+          .brand-logo.aftenposten
       
-      article.col.col-12.md-col-4.md-pr2.center.mb3.md-mb0
+      a(href="http://www.dn.no/dnaktiv/2011/09/29/trener-yoga-bak-murene", target="_blank").article.col.col-12.md-col-4.md-pr2.center.mb3.md-mb0
           .image.mb2.mx-auto
-            img(src="/images/webgangster-5@2x.png")
-          h1.h3 Some article
-          p.px3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            img(src="/images/dn-article.jpg")
+          h1.h3 Trener yoga bak murene
+          p.px1 Erling Havnå soner 16 år for norgeshistoriens mest omtalte ran. Nå skal yoga forberede ham på livet utenfor murene.
+          .brand-logo.dn
       
-      article.col.col-12.md-col-4.md-pr2.center.md-mb0
+      a.article.col.col-12.md-col-4.md-pr2.center.md-mb0
           .image.mb2.mx-auto
             img(src="/images/webgangster-11@2x.png")
           h1.h3 Some article
@@ -46,8 +62,21 @@ block content
     section#hero-image.fit.px1.md-px3.md-mb4.my2.clearfix
       img(src="/images/fotograf-nicki-twang-prisonyoga-013@2x.png")
 
-    section#prisons.fit.my4.clearfix.xs-hide.sm-hide
-      +prisons(prisons)
+    section#prisons.fit.my4.px1.md-px3.clearfix
+      .col.col-12
+        h1.mt0 Fengsler
+      .col.col-12.md-col-6.clearfix
+        ul.list-reset.prisons.col.col-6
+          each prison in prisons.slice(0, Math.floor(prisons.length / 2))
+            +prison(prison)
+
+        ul.list-reset.prisons.col.col-6
+          each prison in prisons.slice(Math.floor(prisons.length / 2))
+            +prison(prison)
+
+      .col.col-12.md-col-6#map.xs-hide.sm-hide
+        img.mt2(src="/gfx/norgeskart_fengsler-01.png")
+
   
     section#gallery.px2.md-px4.md-mt4
       .clearfix.mxn1.md-mxn2
@@ -78,9 +107,9 @@ block content
           .img.short(style="background-image: url(/images/Fotograf_Nicki_Twang_prisonyoga_014.jpg)")
           .short.quote.middle-text
             .text
-              span "Sitat om noe."
+              span "Yoga gir meg større tillitt til livet."
               br 
-              span - Deltager
+              span - Karl Opsahl
           .img.short(style="background-image: url(/images/Fotograf_Nicki_Twang_prisonyoga_001copy.jpg)")
             .blue
           .img.medium(style="background-image: url(/images/webgangster_21.jpg)")

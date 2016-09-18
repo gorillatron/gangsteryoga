@@ -25,4 +25,12 @@
       width: 1.7em;
     }
   }
+
+  blockquote {
+    font-size: var(--h3);
+    padding: var(--space-1);
+    small {
+      font-size: 0.8rem;
+    }
+  }
 }

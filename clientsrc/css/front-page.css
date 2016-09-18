@@ -16,8 +16,9 @@ body {
 
     section#articles {
 
-      article {
-        
+      .article {
+        color: inherit;
+        text-decoration:none;
         font-family: 'AlteHaasGroteskBold';
 
         .image {
@@ -39,6 +40,21 @@ body {
           margin-top: 0px;
           margin-bottom: var(--space-1);
           font-size: 0.9em;
+        }
+
+        .brand-logo {
+          width: 100%;
+          height: 3rem;
+          background-position: center center;
+          background-size: 70% 70%;
+          background-repeat: no-repeat;
+          &.aftenposten {
+            background-image: url(/gfx/Aftenposten_logo.svg);
+          }
+          &.dn {
+            background-size: 50%;
+            background-image: url(/gfx/dn-logo.png);
+          }
         }
 
       }
@@ -219,6 +235,16 @@ body {
     }
   }
 
+}
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
 }
 
 

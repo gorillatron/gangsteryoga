@@ -11,6 +11,10 @@
     font-size: 0.9em;
   }
 
+  img {
+    width: 100%;
+  }
+
   .quote {
     position: relative;
     color: var(--saphire);

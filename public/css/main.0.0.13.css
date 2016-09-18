@@ -1048,6 +1048,9 @@ header#main-header #featured{
 #sub-page p{
   font-size:0.9em;
 }
+#sub-page img{
+  width:100%;
+}
 #sub-page .quote{
   position:relative;
   color:#3135a7;

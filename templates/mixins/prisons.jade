@@ -1,15 +1,37 @@
 
-mixin prisons(prisons)
-  .prisons-wrapper
-    .background
-      img(src="/gfx/map.png")
-    ul.prisons.list-reset
-      each prison in prisons
-        li.prison
-          h3= prison.name
-          a(href=prison.url)= prison.url
-          ul.list-reset.instructors
-            each instructor in prison.instructors
-              a(href="/instruktoerer/" + instructor.key)
-                li
-                  .image(style="background-image: url(" + instructor.photo.secure_url + ")")
+mixin prison(prison, detailed=false) 
+  li.prison.mb2(data-json=JSON.stringify(prison))
+    .mr1
+      a(href=prison.url)= prison.name
+    small Instruktører:
+    ul.list-reset.instructors
+      each instructor in prison.instructors
+        a(href="/instruktoerer/" + instructor.key).text-decoration-none
+          li
+            .image(style="background-image: url(" + instructor.photo.secure_url + ")")
+
+mixin prisons(prisons, detailed=false)
+  #prisons.clearfix
+    .col.col-12
+      h1.mt0 Fengsler
+    .col.col-12.md-col-6.clearfix
+
+      p 
+        | Gangsteryoga drives nå i 
+        b.h3 #{prisons.length} fengsler 
+        | i Norge.
+        br
+        | Og har til sammen 
+        b.h3 #{instructors.length} Instruktører 
+        | som underviser regelmessig.
+
+      ul.list-reset.prisons.col.col-6
+        each prison in prisons.slice(0, Math.floor(prisons.length / 2))
+          +prison(prison, detailed)
+
+      ul.list-reset.prisons.col.col-6
+        each prison in prisons.slice(Math.floor(prisons.length / 2))
+          +prison(prison, detailed)
+
+    .col.col-12.md-col-6#map.xs-hide.sm-hide
+      img.mt2(src="/gfx/norgeskart_fengsler-01.png")

@@ -3,12 +3,12 @@ mixin menu()
   nav#menu.relative.right.right-align.z2
     ul.list-reset.my0
       li.mb1
-        a(href="/om") Om oss
+        a(href="/om", class=section== "om" ? "active" : "") Om oss
       li.mb1
-        a(href="/vaartarbeid") Vårt arbeid
+        a(href="/vaartarbeid", class=section== "vaartarbeid" ? "active" : "") Vårt arbeid
       li.mb1
-        a(href="/fengsler") Fengsler
+        a(href="/fengsler", class=section== "fengsler" ? "active" : "") Fengsler
       li.mb1
-        a(href="/instruktoerer") Instruktører
+        a(href="/instruktoerer", class=section== "instruktoerer" ? "active" : "") Instruktører
       li
-        a(href="/kontakt") Kontakt
+        a(href="/kontakt", class=section== "kontakt" ? "active" : "") Kontakt

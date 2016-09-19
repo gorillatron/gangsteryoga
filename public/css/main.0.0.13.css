@@ -1032,6 +1032,9 @@ header#main-header nav#menu ul li a{
   color:rgba(255,255,255, 0.95);
   text-decoration:none;
 }
+header#main-header nav#menu ul li a.active{
+  font-family:'AlteHaasGroteskBold';
+}
 header#main-header #featured{
   text-align:center;
   color:rgb(249,249,249);

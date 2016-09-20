@@ -20,8 +20,12 @@ body {
         font-family: 'AlteHaasGroteskBold';
 
         .image {
-          height: 8em;
+          height: 10em;
           overflow: hidden;
+
+          @media(min-width: 1700px) {
+            height: 15em;
+          }
           
           img {
             width: 100%;
@@ -51,7 +55,8 @@ body {
             background-image: url(/gfx/Aftenposten_logo.svg);
           }
           &.dn {
-            background-size: 50%;
+            height: 4.5rem;
+            background-size: 40%;
             background-image: url(/gfx/dn-logo.png);
           }
           &.amagasinet {

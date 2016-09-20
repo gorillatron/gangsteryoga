@@ -989,11 +989,6 @@ hr{
   -webkit-transition:opacity 0.237s ease-out;
   transition:opacity 0.237s ease-out;
 }
-@media(min-width: 96rem){
-  #root{
-    margin-top:6rem;
-  }
-}
 header#main-header{
 
     height:100vh;
@@ -1006,6 +1001,11 @@ header#main-header{
 @media(min-width: 64rem){
   header#main-header{
     background-image:url(/images/webgangster_14@2x.jpg);
+  }
+}
+@media(min-width: 1800px){
+  header#main-header{
+    background-image:url(/images/webgangster_14@3x.jpg);
   }
 }
 header#main-header .logo-wrapper .logo{
@@ -1148,8 +1148,13 @@ body{
   font-family:'AlteHaasGroteskBold';
 }
 #front-page section#content section#articles .article .image{
-  height:8em;
+  height:10em;
   overflow:hidden;
+}
+@media(min-width: 1700px){
+  #front-page section#content section#articles .article .image{
+    height:15em;
+  }
 }
 #front-page section#content section#articles .article .image img{
   width:100%;
@@ -1176,7 +1181,8 @@ body{
   background-image:url(/gfx/Aftenposten_logo.svg);
 }
 #front-page section#content section#articles .article .brand-logo.dn{
-  background-size:50%;
+  height:4.5rem;
+  background-size:40%;
   background-image:url(/gfx/dn-logo.png);
 }
 #front-page section#content section#articles .article .brand-logo.amagasinet{
@@ -1487,6 +1493,10 @@ button{
 html, body{
   min-height:100%;
   font-family:"AlteHaasGrotesk";
+}
+.content-wrapper{
+  max-width:1700px;
+  margin:0px auto;
 }
 a{
   tap-highlight-color:rgba(0,0,0,0);

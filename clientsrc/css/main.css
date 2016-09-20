@@ -46,6 +46,11 @@ html, body {
   font-family: "AlteHaasGrotesk";
 }
 
+.content-wrapper {
+  max-width: 1700px;
+  margin: 0px auto;
+}
+
 a {
   tap-highlight-color: rgba(0,0,0,0);
   -moz-tap-highlight-color: rgba(0,0,0,0);

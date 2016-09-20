@@ -1,5 +1,5 @@
 
-mixin prison(prison, detailed=false) 
+mixin prison(prison, detailed) 
   li.prison.mb2(data-json=JSON.stringify(prison))
     .mr1
       a(href=prison.url)= prison.name
@@ -10,7 +10,7 @@ mixin prison(prison, detailed=false)
           li
             .image(style="background-image: url(" + instructor.photo.secure_url + ")")
 
-mixin prisons(prisons, detailed=false)
+mixin prisons(prisons, detailed)
   #prisons.clearfix
     .col.col-12
       h1.mt0 Fengsler

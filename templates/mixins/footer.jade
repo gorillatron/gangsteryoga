@@ -2,67 +2,67 @@
 mixin footer()
   #footer
     section.info.p1.lg-p4.py2.clearfix.relative
+      .content-wrapper
+        .background-logo.z1
 
-      .background-logo.z1
+        .clearfix.content.relative.z2
 
-      .clearfix.content.relative.z2
+          .col.md-col-3.md-pr1.mb2
+            h5.mb1.md-mb3 Kontakt
+            p.clearfix
+              | Liljan Olsen
+              | Styreleder
+              br
+              br
+              | R. Alexander Medin
+              | Styremedlem og instruktør
+              br
+              br
+              | Bente Aabel
+              | Styremedlem og instruktør
+              br
+              br
+              | Bygdøy allé 16
+              | 0262 Oslo
+              br
+              | Mail: post@nosenyoga.no
+              br 
+              | Tlf: +47 90978888
+              br
+              br
+              a(href="/kontakt").underline send oss en melding
 
-        .col.md-col-3.md-pr1.mb2
-          h5.mb1.md-mb3 Kontakt
-          p.clearfix
-            | Liljan Olsen
-            | Styreleder
-            br
-            br
-            | R. Alexander Medin
-            | Styremedlem og instruktør
-            br
-            br
-            | Bente Aabel
-            | Styremedlem og instruktør
-            br
-            br
-            | Bygdøy allé 16
-            | 0262 Oslo
-            br
-            | Mail: post@nosenyoga.no
-            br 
-            | Tlf: +47 90978888
-            br
-            br
-            a(href="/kontakt").underline send oss en melding
-
-        .col.md-col-3.md-px1.mb2
-          h5.mb1.md-mb3 Fenglser
-          .clearfix
-            ul.list-reset.m0
-              each prison in prisons
-                li= prison.name
-
-        .col.md-col-3.md-px1.mb2
-          .clearfix
-            .col.col-12
-              h5.mb1.md-mb3 Instruktører
-            
-            .col.col-6.pr1
+          .col.md-col-3.md-px1.mb2
+            h5.mb1.md-mb3 Fenglser
+            .clearfix
               ul.list-reset.m0
-                each instructor in instructors.slice(0, instructors.length / 2)
-                  li
-                    a(href="/instruktoerer/" + instructor.key)=instructor.name.full
+                each prison in prisons
+                  li= prison.name
 
-            .col.col-6
-              ul.list-reset.m0
-                each instructor in instructors.slice(instructors.length / 2)
-                  li
-                    a(href="/instruktoerer/" + instructor.key)=instructor.name.full
+          .col.md-col-3.md-px1.mb2
+            .clearfix
+              .col.col-12
+                h5.mb1.md-mb3 Instruktører
+              
+              .col.col-6.pr1
+                ul.list-reset.m0
+                  each instructor in instructors.slice(0, instructors.length / 2)
+                    li
+                      a(href="/instruktoerer/" + instructor.key)=instructor.name.full
 
-        .col.md-col-3.mb2
-          .clearfix
-            .col.col-12
-              h5.mb1.md-mb3 Pårørende
-              p.clearfix 
-                | Vi ønsker å synliggjøre vårt arbeid på en god og ærlig måte. Føler du deg støtt av noe av innholdet? Gi oss en tilbakemelding her. 
-                a(href="/kontakt").underline  send oss en melding…
+              .col.col-6
+                ul.list-reset.m0
+                  each instructor in instructors.slice(instructors.length / 2)
+                    li
+                      a(href="/instruktoerer/" + instructor.key)=instructor.name.full
+
+          .col.md-col-3.mb2
+            .clearfix
+              .col.col-12
+                h5.mb1.md-mb3 Pårørende
+                p.clearfix 
+                  | Vi ønsker å synliggjøre vårt arbeid på en god og ærlig måte. Føler du deg støtt av noe av innholdet? Gi oss en tilbakemelding her. 
+                  a(href="/kontakt").underline  send oss en melding…
 
     section.copyright.center.py2.lg-py4 
       a(href="mailto:post@kantalope.no")

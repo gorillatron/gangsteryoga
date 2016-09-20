@@ -7,7 +7,7 @@ header#main-header {
     @media(--breakpoint-lg) {
       background-image: url(/images/webgangster_14@2x.jpg);
     }
-    @media(min-width: 1800px) {
+    @media(min-width: 1700px) {
       background-image: url(/images/webgangster_14@3x.jpg);
     }
 

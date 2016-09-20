@@ -7,69 +7,69 @@ block js
 block content
 
   #kontakt.relative.px2.lg-px4.mb4.lg-px2
+    .content-wrapper
+      h1.h1.main-heading Kontakt
 
-    h1.h1.main-heading Kontakt
-
-    section#content.clearfix.fit
-      
-      .clearfix
+      section#content.clearfix.fit
         
-        .col.col-12.md-col-4.md-pr2
-
-          p
-            | Liljan Olsen
-            br
-            | Styreleder
+        .clearfix
           
-          p
-            | R. Alexander Medin
-            br 
-            | Styremedlem og instruktør
-          
-          p
-            | Bente Aabel
-            br 
-            | Styremedlem og instruktør
-          
-          p
-            | Bygdøy allé 16
-            br
-            | 0262 Oslo
-          
-          p Mail: post@nosenyoga.no
-          
-          p Tlf: +47 90978888
+          .col.col-12.md-col-4.md-pr2
 
-        
-        .col.col-12.md-col-6
+            p
+              | Liljan Olsen
+              br
+              | Styreleder
+            
+            p
+              | R. Alexander Medin
+              br 
+              | Styremedlem og instruktør
+            
+            p
+              | Bente Aabel
+              br 
+              | Styremedlem og instruktør
+            
+            p
+              | Bygdøy allé 16
+              br
+              | 0262 Oslo
+            
+            p Mail: post@nosenyoga.no
+            
+            p Tlf: +47 90978888
 
-          p.pb1 Send oss en melding:
+          
+          .col.col-12.md-col-6
+
+            p.pb1 Send oss en melding:
 
 
-          form.clearfix(method="post", class=enquirySubmitted ? "sendt" : "")
-            input(type="hidden", name="action", value="kontakt")
-            table.fit
-              tr(class=validationErrors.name ? "error" : "")
-                td.pb1
-                  label(for="name.full") Navn:
-                td.pb1
-                  input(name="name.full", type="text", value=formData['name.full'] || "", disabled=enquirySubmitted ? true : false)
-              tr(class=validationErrors.email ? "error" : "")
-                td.pb1
-                  label(for="email") Epost:
-                td.pb1
-                  input(name="email", type="text", value=formData.email || "", disabled=enquirySubmitted ? true : false)
-              tr(class=validationErrors.message ? "error" : "")
-                td.pb1
-                  label(for="message") Melding:
-                td.pb1
-                  textarea(name="message", disabled=enquirySubmitted ? true : false)= formData.message || ""
-              tr
-                td(colspan="2").pb3.md-pb2
-                  if enquirySubmitted
-                    .success.mb2.right.underline Melding sendt!
-                  else
-                    button(type="submit").right send melding
-              tr
-                td(colspan="2")
-                  small Pårørende: Vi ønsker å synliggjøre vårt arbeid på en god og ærlig måte. Føler du deg støtt av noe av innholdet? Gi oss en tilbakemelding her.
+            form.clearfix(method="post", class=enquirySubmitted ? "sendt" : "")
+              input(type="hidden", name="action", value="kontakt")
+              table.fit
+                tr(class=validationErrors.name ? "error" : "")
+                  td.pb1
+                    label(for="name.full") Navn:
+                  td.pb1
+                    input(name="name.full", type="text", value=formData['name.full'] || "", disabled=enquirySubmitted ? true : false)
+                tr(class=validationErrors.email ? "error" : "")
+                  td.pb1
+                    label(for="email") Epost:
+                  td.pb1
+                    input(name="email", type="text", value=formData.email || "", disabled=enquirySubmitted ? true : false)
+                tr(class=validationErrors.message ? "error" : "")
+                  td.pb1
+                    label(for="message") Melding:
+                  td.pb1
+                    textarea(name="message", disabled=enquirySubmitted ? true : false)= formData.message || ""
+                tr
+                  td(colspan="2").pb3.md-pb2
+                    if enquirySubmitted
+                      .success.mb2.right.underline Melding sendt!
+                    else
+                      button(type="submit").right send melding
+                tr
+                  td(colspan="2")
+                    small Pårørende: Vi ønsker å synliggjøre vårt arbeid på en god og ærlig måte. Føler du deg støtt av noe av innholdet? Gi oss en tilbakemelding her.

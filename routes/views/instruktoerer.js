@@ -32,9 +32,10 @@ export default function instruktoerer(req, res) {
 						.where('instructors')
 						.in([instructor.id])
 						.exec((err, instructorPrisons) => {
-							console.log(instructorPrisons)
+							
 							locals.instructor = instructor
 							locals.instructorPrisons = instructorPrisons
+							
 							next()
 						})
 				})

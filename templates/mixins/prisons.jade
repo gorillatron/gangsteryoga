@@ -7,7 +7,7 @@ mixin prison(prison, detailed)
     ul.list-reset.instructors
       each instructor in prison.instructors
         a(href="/instruktoerer/" + instructor.key).text-decoration-none
-          li
+          li(title=instructor.name.full)
             .image(style="background-image: url(" + instructor.photo.secure_url + ")")
 
 mixin prisons(prisons, detailed)

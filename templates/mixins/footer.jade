@@ -8,7 +8,7 @@ mixin footer()
         .clearfix.content.relative.z2
 
           .col.md-col-3.md-pr1.mb2
-            h5.mb1.md-mb3 Kontakt
+            h5.mb1.md-mb2 Kontakt
             p.clearfix
               | Liljan Olsen
               | Styreleder
@@ -33,16 +33,23 @@ mixin footer()
               a(href="/kontakt").underline send oss en melding
 
           .col.md-col-3.md-px1.mb2
-            h5.mb1.md-mb3 Fenglser
+            h5.mb1.md-mb2 Fenglser
             .clearfix
-              ul.list-reset.m0
-                each prison in prisons
-                  li= prison.name
+
+              .col.col-6.pr1
+                ul.list-reset.m0
+                  each prison in prisons.slice(0, prisons.length / 2)
+                    li= prison.name
+              
+              .col.col-6
+                ul.list-reset.m0
+                  each prison in prisons.slice(prisons.length / 2)
+                    li= prison.name
 
           .col.md-col-3.md-px1.mb2
             .clearfix
               .col.col-12
-                h5.mb1.md-mb3 Instruktører
+                h5.mb1.md-mb2 Instruktører
               
               .col.col-6.pr1
                 ul.list-reset.m0
@@ -59,7 +66,7 @@ mixin footer()
           .col.md-col-3.mb2
             .clearfix
               .col.col-12
-                h5.mb1.md-mb3 Pårørende
+                h5.mb1.md-mb2 Pårørende
                 p.clearfix 
                   | Vi ønsker å synliggjøre vårt arbeid på en god og ærlig måte. Føler du deg støtt av noe av innholdet? Gi oss en tilbakemelding her. 
                   a(href="/kontakt").underline  send oss en melding…

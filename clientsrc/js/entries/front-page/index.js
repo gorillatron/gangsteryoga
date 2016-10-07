@@ -1,7 +1,7 @@
 
 import video from '../../lib/video'
 import gallery from '../../lib/gallery'
-import mapstyles from './mapstyles'
+import minitooltip from 'minitooltip'
 
 
 $(document).ready(() => {

@@ -4,6 +4,7 @@ include ../mixins/vstyle
 include ../mixins/menu
 include ../mixins/og_tags
 include ../mixins/footer
+include ../mixins/analytics_tag
 
 doctype html
 html.full
@@ -39,6 +40,8 @@ html.full
 
 		//- Add any other template-specific HEAD tags by extending the head block
 		block head
+
+		+analytics()
 
 	//- HTML BODY
 	body

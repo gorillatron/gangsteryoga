@@ -1,6 +1,6 @@
 
 mixin prison(prison, detailed) 
-  li.prison.mb2(data-json=JSON.stringify(prison))
+  .prison.mb2(data-json=JSON.stringify(prison))
     .mr1
       a(href=prison.url)= prison.name
     small Instruktører:
@@ -14,9 +14,9 @@ mixin prisons(prisons, detailed)
   #prisons.clearfix
     .col.col-12
       h1.mt0 Fengsler
-    .col.col-12.md-col-6.clearfix
+    .col.col-12.clearfix
 
-      p 
+      p.mb2
         | Gangsteryoga drives nå i 
         b.h3 #{prisons.length} fengsler 
         | i Norge.
@@ -24,14 +24,8 @@ mixin prisons(prisons, detailed)
         | Og har til sammen 
         b.h3 #{instructors.length} Instruktører 
         | som underviser regelmessig.
-
-      ul.list-reset.prisons.col.col-6
-        each prison in prisons.slice(0, Math.floor(prisons.length / 2))
-          +prison(prison, detailed)
-
-      ul.list-reset.prisons.col.col-6
-        each prison in prisons.slice(Math.floor(prisons.length / 2))
-          +prison(prison, detailed)
-
-    .col.col-12.md-col-6#map.xs-hide.sm-hide
-      img.mt2(src="/gfx/norgeskart_fengsler-01.png")
+      
+      .clearfix.prisons
+        each prison in prisons
+          .col.col-12.sm-col-6.md-col-3
+            +prison(prison, detailed)

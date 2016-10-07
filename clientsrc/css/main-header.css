@@ -12,11 +12,12 @@ header#main-header {
     }*/
 
     .logo-wrapper {
+      margin-top: 10px;
       .logo {
         background-image: url(/gfx/gy_logo_svart_positiv-01.svg);
         background-size: cover;
-        height: 8rem;
-        width: 8rem;
+        height: 8.2rem;
+        width: 8.2rem;
       }
     }
 
@@ -43,7 +44,7 @@ header#main-header {
       ul {
         li {
           a {
-            color: rgba(255,255,255, 0.95);
+            color: rgba(10,10,10, 0.98);
             text-decoration: none;
             &.active {
               font-family: 'AlteHaasGroteskBold';

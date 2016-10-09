@@ -1,6 +1,6 @@
 
-mixin menu()
-  nav#menu.relative.md-right.md-right-align.z2.center
+mixin menu(subpage)
+  nav#menu.relative.md-right.md-right-align.z2.center(class=subpage ? "right-align" : "md-right-align")
     ul.list-reset.my0
       li.mb1
         a(href="/om", class=section== "om" ? "active" : "") Om oss

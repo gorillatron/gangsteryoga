@@ -59,7 +59,9 @@ header#main-header {
       color: rgb(249,249,249);
       width: 100%;
       top: 50%;
-      margin-top: calc(var(--video-fullheight) / 2 * -1);
+      @media(--breakpoint-md) {
+        margin-top: calc(var(--video-fullheight) / 2 * -1);
+      }
     }
     
 

@@ -65,8 +65,8 @@ header#main-header {
   }
 
   :root {
-    --height: 38;
-    --width: 38;
+    --height: 40;
+    --width: 40;
   }
 
   .hamburger {
@@ -78,10 +78,10 @@ header#main-header {
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     .line {
-      height: calc(var(--height) / 100 * 8)px;
+      height: calc(var(--height) / 100 * 10)px;
       width: 100%;
-      margin-bottom: calc(var(--height) / 100 * 39)px;
-      background-color: rgb(20,20,20);
+      margin-bottom: calc(var(--height) / 100 * 36)px;
+      background-color: rgb(250,250,250);
       transition: transform 0.13s ease-in-out;
       &:nth-child(3) {
         margin-bottom: 0%;
@@ -98,19 +98,25 @@ header#main-header {
         }
       }
     }
+
+    &.black {
+      .line {
+        background-color: rgb(20,20,20);
+      }
+    }
     
     
     &.cross {
       .line:nth-child(3) {
         
-        transform: translateY(calc(((var(--height) / 2) - (var(--height) / 100 * 8) / 2) * -1)px) rotateZ(45deg);
+        transform: translateY(calc(((var(--height) / 2) - (var(--height) / 100 * 10) / 2) * -1)px) rotateZ(45deg);
       }
       .line:nth-child(2) {
         transform: rotateZ(-45deg);
       }
       .line:nth-child(1) {
         
-        transform: translateY(calc(((var(--height) / 2) - (var(--height) / 100 * 8) / 2) * 1)px) rotateZ(45deg);
+        transform: translateY(calc(((var(--height) / 2) - (var(--height) / 100 * 10) / 2) * 1)px) rotateZ(45deg);
       }
     }
     

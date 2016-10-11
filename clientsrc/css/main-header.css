@@ -64,23 +64,18 @@ header#main-header {
     height: auto;
   }
 
-  :root {
-    --height: 40;
-    --width: 40;
-  }
-
   .hamburger {
-    margin-top: calc(145 / 2 - (var(--height) / 2))px;
+    margin-top: calc(145 / 2 - (var(--hamburger-height) / 2))px;
     top: var(--space-2);
     right: var(--space-2);
-    width: var(--width)px;
-    height: var(--height)px;
+    width: var(--hamburger-width)px;
+    height: var(--hamburger-height)px;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     .line {
-      height: calc(var(--height) / 100 * 10)px;
+      height: calc(var(--hamburger-height) / 100 * 10)px;
       width: 100%;
-      margin-bottom: calc(var(--height) / 100 * 36)px;
+      margin-bottom: calc(var(--hamburger-height) / 100 * 36)px;
       background-color: rgb(250,250,250);
       transition: all 0.17s cubic-bezier(.55,.3,.36,1.33);
       &:nth-child(3) {
@@ -89,7 +84,7 @@ header#main-header {
     }
     
     @media (--breakpoint-md) {
-      margin-right: calc(145 / 2 - (var(--height) / 2))px;
+      margin-right: calc(145 / 2 - (var(--hamburger-height) / 2))px;
       &:hover {
         .line:nth-child(3) {
           transform: translateY(4px);
@@ -109,13 +104,13 @@ header#main-header {
     
     &.cross {
       .line:nth-child(3) {
-        transform: translateY(calc(((var(--height) / 2) - (var(--height) / 100 * 10) / 2) * -1)px) rotateZ(45deg);
+        transform: translateY(calc(((var(--hamburger-height) / 2) - (var(--hamburger-height) / 100 * 10) / 2) * -1)px) rotateZ(45deg);
       }
       .line:nth-child(2) {
         transform: rotateZ(-45deg);
       }
       .line:nth-child(1) {
-        transform: translateY(calc(((var(--height) / 2) - (var(--height) / 100 * 10) / 2) * 1)px) rotateZ(45deg);
+        transform: translateY(calc(((var(--hamburger-height) / 2) - (var(--hamburger-height) / 100 * 10) / 2) * 1)px) rotateZ(45deg);
       }
     }
     

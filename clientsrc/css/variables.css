@@ -38,6 +38,9 @@
   --saphire: #3135a7;
   --error: #d83a19;
 
+  --hamburger-height: 40;
+  --hamburger-width: 40;
+
 }
 
 @custom-media --breakpoint-sm (min-width: 40em);

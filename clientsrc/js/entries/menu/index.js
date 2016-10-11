@@ -38,14 +38,14 @@ $(document).ready(() => {
       root.css({transform: `translateX(-${menuWidth}px)`})
       toggleButton.css({position: `fixed`})
       menu.addClass("open")
-      toggleButton.addClass('cross black')
+      toggleButton.addClass('cross')
       state.closeTimer = setTimeout(_ => setMenu(false), menuCloseTime)
     }
     else {
       root.css({transform: `translateX(-${0}px)`})
       toggleButton.css({position: `absolute`})
       menu.removeClass("open")
-      toggleButton.removeClass('cross black')
+      toggleButton.removeClass('cross')
     }
   }
 

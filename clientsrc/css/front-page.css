@@ -18,6 +18,7 @@ body {
         color: inherit;
         text-decoration:none;
         font-family: 'AlteHaasGroteskBold';
+        display: table;
 
         .image {
           height: 10em;
@@ -33,13 +34,25 @@ body {
           }
         }
 
-        h1 {
+        .title {
+          display: table;
+          width: 100%;
+          .content {
+            width: 100%;
+            vertical-align: middle;
+            display: table-cell;
+          }
+        }
+
+        .title {
           text-transform: uppercase;
+          height: 5em;
           margin-top: var(--space-1);
           margin-bottom: calc(var(--space-1) / 2);
         }
 
-        p {
+        .text {
+          height: 9em;
           margin-top: 0px;
           margin-bottom: var(--space-1);
           font-size: 0.9em;
@@ -55,13 +68,13 @@ body {
             background-image: url(/gfx/Aftenposten_logo.svg);
           }
           &.dn {
-            height: 4.5rem;
+            
             background-size: 40%;
             background-image: url(/gfx/dn-logo.png);
           }
           &.amagasinet {
             display: table;
-            .text {
+            .brand-text {
               display: table-cell;
               vertical-align: middle;
               text-align: center;
@@ -127,7 +140,7 @@ body {
           top: 0px;
           bottom: 0px;
           background-color: #3135a7;
-          opacity: 0.6;
+          opacity: 0.4;
           height: 100%;
           width: 100%;
         }

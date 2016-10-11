@@ -9,8 +9,8 @@ header#main-header {
       .logo {
         background-image: url(/gfx/gy_logo_hvit_positiv-01.svg);
         background-size: cover;
-        height: 130px;
-        width: 130px;
+        height: 145px;
+        width: 145px;
       }
     }
 
@@ -70,7 +70,7 @@ header#main-header {
   }
 
   .hamburger {
-    margin-top: calc(130 / 2 - (var(--height) / 2)- 5)px;
+    margin-top: calc(145 / 2 - (var(--height) / 2))px;
     top: var(--space-2);
     right: var(--space-2);
     width: var(--width)px;
@@ -88,7 +88,8 @@ header#main-header {
       }
     }
     
-    @media (min-width: 768px) {
+    @media (--breakpoint-md) {
+      margin-right: calc(145 / 2 - (var(--height) / 2))px;
       &:hover {
         .line:nth-child(3) {
           transform: translateY(4px);

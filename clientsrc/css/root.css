@@ -12,7 +12,7 @@
   position: fixed;
   padding-top: 7.5em;
   z-index: 1;
-  width: 15em;
+  width: 19em;
   text-align: right;
   background: white;
   right: 0px;
@@ -26,5 +26,10 @@
   a {
     color: inherit;
     text-decoration: none;
+  }
+  ul {
+    @media(--breakpoint-md) {
+      padding-right: calc(145 / 2 - (var(--height) / 2))px;
+    }
   }
 }

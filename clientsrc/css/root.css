@@ -5,7 +5,7 @@
   min-height: 100%;
 
   opacity: 0.0001;
-  transition: opacity 0.237s ease-out;
+  transition: all 0.237s cubic-bezier(.55,.3,.36,1.33);
 }
 
 #main-menu {

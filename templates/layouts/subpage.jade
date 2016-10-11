@@ -44,20 +44,24 @@ html.full
 	//- HTML BODY
 	body
 
-		#root
+		#root.z3
 			#sub-page.relative
 
 				header#main-header.relative.fit.p2.mb2.md-mb3.clearfix(style="background-image: url(/gfx/bg.jpg);")
-
-					
 
 					.logo-wrapper.relative.left.z1
 						a(href="/")
 							.logo
 
-					+menu(true)
 					
 				block content
+		
+		.hamburger.absolute.relative.z3.right-0.top-0.pt2.mr2
+			.line
+			.line
+			.line
+
+		+menu()
 
 		+footer()
 

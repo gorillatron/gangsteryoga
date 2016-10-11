@@ -4,6 +4,7 @@ $(document).ready(() => {
 
 
   const menu = $("#main-menu")
+  const root = $("#root")
   const toggleButton = $(".hamburger")
 
   let menuCloseTime = 5 * 1000
@@ -23,6 +24,7 @@ $(document).ready(() => {
 
   const setMenu = open => {
     
+    const menuWidth = menu.outerWidth()
     state.open = open
 
     $(document).off('click.menuclose')
@@ -33,11 +35,15 @@ $(document).ready(() => {
     }
 
     if(state.open) {
+      root.css({transform: `translateX(-${menuWidth}px)`})
+      toggleButton.css({position: `fixed`})
       menu.addClass("open")
       toggleButton.addClass('cross black')
       state.closeTimer = setTimeout(_ => setMenu(false), menuCloseTime)
     }
     else {
+      root.css({transform: `translateX(-${0}px)`})
+      toggleButton.css({position: `absolute`})
       menu.removeClass("open")
       toggleButton.removeClass('cross black')
     }

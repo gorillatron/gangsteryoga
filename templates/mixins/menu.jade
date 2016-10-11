@@ -1,10 +1,6 @@
 
 mixin menu(subpage)
-  .hamburger.right.relative.z2
-    .line
-    .line
-    .line
-  nav#main-menu.inactive.p2
+  nav#main-menu.inactive.p2.z1
     ul.list-reset
       li.mb1
         a(href="/om", class=section== "om" ? "active" : "") Om oss
@@ -17,17 +13,3 @@ mixin menu(subpage)
       li
         a(href="/kontakt", class=section== "kontakt" ? "active" : "") Kontakt
 
-
-mixin oldmenu(subpage)
-  nav#menu
-    ul.list-reset.my0
-      li.mb1
-        a(href="/om", class=section== "om" ? "active" : "") Om oss
-      li.mb1
-        a(href="/vaartarbeid", class=section== "vaartarbeid" ? "active" : "") Vårt arbeid
-      li.mb1
-        a(href="/fengsler", class=section== "fengsler" ? "active" : "") Fengsler
-      li.mb1
-        a(href="/instruktoerer", class=section== "instruktoerer" ? "active" : "") Instruktører
-      li
-        a(href="/kontakt", class=section== "kontakt" ? "active" : "") Kontakt

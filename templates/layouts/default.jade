@@ -46,7 +46,7 @@ html.full
 	//- HTML BODY
 	body.minitooltip
 
-		#root
+		#root.z3
 			#front-page.relative
 				header#main-header.relative.fit.p2.mb2.md-mb1(style="background-image: url(/gfx/bg.jpg)")
 
@@ -56,7 +56,10 @@ html.full
 						a(href="/")
 							.logo
 					
-					+menu()
+					.hamburger.right.relative.z3
+						.line
+						.line
+						.line
 					
 					#featured.absolute.right-0.mb2.fit.z2.px1.mt3.clearfix
 						#featured-video.video.mx-auto.xs-hide
@@ -67,6 +70,8 @@ html.full
 						h1.relative.mt4 How tough are you really?
 					
 				block content
+
+		+menu()
 
 		+footer()
 

@@ -7,3 +7,24 @@
   opacity: 0.0001;
   transition: opacity 0.237s ease-out;
 }
+
+#main-menu {
+  position: fixed;
+  padding-top: 7.5em;
+  z-index: 1;
+  width: 15em;
+  text-align: right;
+  background: white;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  transform: translateX(600px);
+  transition: transform 0.237s ease-out;
+  &.open {
+    transform: translateX(0px);
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

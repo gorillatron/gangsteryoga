@@ -5,12 +5,23 @@ header#main-header {
     background-position: 25% 50%;
 
     .logo-wrapper {
+      
       margin-top: 1px;
       .logo {
         background-image: url(/gfx/gy_logo_hvit_positiv-01.svg);
         background-size: cover;
-        height: 145px;
-        width: 145px;
+        height: var(--logo-height)px;
+        width: var(--logo-width)px;
+      }
+      .text {
+        display: table;
+        float: right;
+        height: var(--logo-height)px;
+        color: rgb(250,250,250);
+        .content {
+          display: table-cell;
+          vertical-align: middle;
+        }
       }
     }
 
@@ -65,7 +76,7 @@ header#main-header {
   }
 
   .hamburger {
-    margin-top: calc(145 / 2 - (var(--hamburger-height) / 2))px;
+    margin-top: calc(var(--logo-height) / 2 - (var(--hamburger-height) / 2))px;
     top: var(--space-2);
     right: var(--space-2);
     width: var(--hamburger-width)px;

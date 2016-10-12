@@ -41,6 +41,9 @@
   --hamburger-height: 40;
   --hamburger-width: 40;
 
+  --logo-height: 130;
+  --logo-width: 130;
+
 }
 
 @custom-media --breakpoint-sm (min-width: 40em);

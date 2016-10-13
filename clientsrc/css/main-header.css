@@ -87,6 +87,7 @@ header#main-header {
       height: calc(var(--hamburger-height) / 100 * 10)px;
       width: 100%;
       margin-bottom: calc(var(--hamburger-height) / 100 * 36)px;
+      border-radius: 4px;
       background-color: rgb(250,250,250);
       transition: all 0.17s cubic-bezier(.55,.3,.36,1.33);
       &:nth-child(3) {

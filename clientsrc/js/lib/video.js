@@ -11,7 +11,7 @@ export default function(videoel) {
   const player = new Player(videoFrame)
 
   playButton.click(() => {
-    setTimeout(() => player.play(), 33)
+    player.play()
   })
 
   const onPlay = () => {

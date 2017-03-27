@@ -1,12 +1,18 @@
 
-import routing from './routing'
-import parallaxing from './parallaxing'
+import video from '../../lib/video'
+import gallery from '../../lib/gallery'
+import minitooltip from 'minitooltip'
 
-$('.subpage').scroll((event) => {
-  event.stopPropagation()
-  event.preventDefault()
-  return false
+
+$(document).ready(() => {
+
+   setTimeout(_ => {
+      $("#front-page").css('opacity', 1)
+    }, 66)
+
+    gallery($('#gallery'))
+
+    video($('#main-header'))
+    video($('#mobile-video'))
+
 })
-
-routing()
-parallaxing()

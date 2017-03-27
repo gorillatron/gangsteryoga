@@ -1,0 +1,15 @@
+
+mixin menu(subpage)
+  nav#main-menu.inactive.p2.z1
+    ul.list-reset
+      li.mb1
+        a(href="/om", class=section== "om" ? "active" : "") Om oss
+      li.mb1
+        a(href="/vaartarbeid", class=section== "vaartarbeid" ? "active" : "") Vårt arbeid
+      li.mb1
+        a(href="/fengsler", class=section== "fengsler" ? "active" : "") Fengsler
+      li.mb1
+        a(href="/instruktoerer", class=section== "instruktoerer" ? "active" : "") Instruktører
+      li
+        a(href="/kontakt", class=section== "kontakt" ? "active" : "") Kontakt
+

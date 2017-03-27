@@ -22,20 +22,33 @@
 @import 'basscss-addons/modules/responsive-layout';
 @import 'basscss-addons/modules/responsive-position';
 @import 'basscss-addons/modules/responsive-type-scale';
+@import 'basscss-addons/modules/responsive-typography';
 @import './basscss-addons/margin';
 
 
 /* Site modules */
 @import './fonts';
 @import './variables';
+@import './root';
+@import './main-header';
+@import './subpage';
+@import './video';
 @import './front-page';
 @import './instruktoerer';
+@import './contact-form';
 @import './footer';
+@import './prisons';
+@import './buttons';
 
 
 html, body {
   min-height: 100%;
   font-family: "AlteHaasGrotesk";
+}
+
+.content-wrapper {
+  max-width: 1700px;
+  margin: 0px auto;
 }
 
 a {

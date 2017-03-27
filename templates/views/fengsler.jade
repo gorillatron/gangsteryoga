@@ -1,0 +1,15 @@
+extends ../layouts/subpage
+include ../mixins/vscript
+include ../mixins/prisons
+
+
+block js
+
+block content
+
+  #fengsler.relative.px2.lg-px4
+    .content-wrapper
+      +prisons(prisons, true)      
+      p
+        | Se oversikt over instruktører 
+        a(href="/instruktoerer") her

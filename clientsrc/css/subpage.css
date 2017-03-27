@@ -1,0 +1,40 @@
+
+#sub-page {
+
+  h1.main-heading {
+    display: inline-block;
+    padding-bottom: var(--space-1);
+    border-bottom: 3px solid rgb(20,20,20);
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .quote {
+    position: relative;
+    color: var(--saphire);
+    font-size: calc(var(--h2) * 0.9);
+    .logo {
+      position: absolute;
+      top: 5px;
+      left: -1.5em;
+      background-image: url(/gfx/gy_logo_blue_positiv-01.png);
+      background-size: cover;
+      height: 1.7em;
+      width: 1.7em;
+    }
+  }
+
+  blockquote {
+    font-size: var(--h3);
+    padding: var(--space-1);
+    small {
+      font-size: 0.8rem;
+    }
+  }
+}

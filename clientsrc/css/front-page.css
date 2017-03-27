@@ -1,193 +1,241 @@
 
+body {
+  overflow-x: hidden;
+}
 
 #front-page {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100%;
 
-  opacity: 0.0001;
-  transition: opacity 0.137s ease-out;
+  section#content {
 
-  #cover {
-    position: relative;
-    height: 95vh;
-    transition: all 0.137s ease-out;
-    overflow: hidden;
+    min-height: 100vh;
 
-    @media (--breakpoint-md) {
-      height: 75vh;
-    }
+    section#articles {
 
-    .background-image {
-      z-index: 1;
-      position: absolute;
-      background-image: url('/images/cover_mobile.png');
-      background-size: cover;
-      height: 106%;
-      width: 106%;
-      margin: -2.5%;
-      @media (--breakpoint-md) {
-        background-image: url('/images/cover.png');
-        min-height: 60rem;
-      }
-      &.animate-translate {
-        transition: transform 0.400s ease-in-out;
-      }
-    }
-
-    .logo {
-      position: relative;
-      z-index: 2;
-      height: 30vh;
-      width: 30vh;
-      background-image: url('/gfx/gy_logo_svart_positiv.png');
-      background-size: cover;
-      transition: all 0.15s ease-out;
-      margin-top: 25vh;
-
-      @media (--breakpoint-lg) {
-        height: 15vh;
-        width: 15vh;
-      }
-
-    }
-
-    .hamburger-wrapper {
-      z-index: 2;
-      transition: all 0.15s ease-out;
-      padding-top: var(--space-2);
-    }
-
-    .hamburger {
-      width: 2.5rem;
-      height: 2.5rem;
-      cursor: pointer;
-    }
-
-    .hamburger .line {
-      background: rgb(20,20,20);
-      width: 100%;
-      height: 15%;
-      margin-bottom: 25%
-    }
-
-  }
-
-  #main-nav {
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-  }
-
-  .content {
-
-    .sm-punchline {
-      background-color: black;
-      color: var(--light-green);
-      font-size: 1.37em;
-      line-height: 1.5em;
-    }
-
-    .text, .link {
-      @media (--breakpoint-md) {
-        height: var(--content-block-height);
-      }
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-
-    .text {
-      box-sizing: border-box;
-      transition: all 0.137s ease-out;
-
-      &.vertical {
-        @media (--breakpoint-md) {
-          height: calc(var(--content-block-height) * 2);
-        }
-      }
-
-      .text-block {
-        height: 100%;
-        background-color: white;
-        color: var(--light-green);
-        border: 10px solid var(--light-green);
+      .article {
+        color: inherit;
+        text-decoration:none;
+        font-family: 'AlteHaasGroteskBold';
         display: table;
-        p {
-          display: table-cell; 
-          vertical-align: middle; 
-          text-align: center; 
+
+        .image {
+          height: 10em;
+          overflow: hidden;
+
+          @media(min-width: 1700px) {
+            height: 15em;
+          }
+          
+          img {
+            width: 100%;
+            min-width: 100%;
+          }
         }
-      }
-    }
 
-    .link {
-      position: relative;
-      transition: all 0.137s ease-out;
-      min-height: var(--content-block-height);
-      font-size: 2.5rem;
-      text-decoration: none;
-      color: inherit;
-      overflow: hidden;
-      cursor: pointer;
+        .title {
+          display: table;
+          width: 100%;
+          .content {
+            width: 100%;
+            vertical-align: middle;
+            display: table-cell;
+          }
+        }
 
-      .image {
-        display: table;
-        z-index: 1;
-        min-height: var(--content-block-height);
-        width: 100.1%;
-        background-size: cover;
+        .title {
+          text-transform: uppercase;
+          height: 5em;
+          margin-top: var(--space-1);
+          margin-bottom: calc(var(--space-1) / 2);
+        }
 
         .text {
-          display: table-cell; 
-          vertical-align: middle; 
-          text-align: center; 
-          transition: transform 0.137s ease-out;
+          height: 9em;
+          margin-top: 0px;
+          margin-bottom: var(--space-1);
+          font-size: 0.9em;
         }
 
-        &:hover .text {
-          transform: scale(1.137);
+        .brand-logo {
+          width: 100%;
+          height: 3rem;
+          background-position: center center;
+          background-size: 70% 70%;
+          background-repeat: no-repeat;
+          &.aftenposten {
+            background-image: url(/gfx/Aftenposten_logo.svg);
+          }
+          &.dn {
+            
+            background-size: 40%;
+            background-image: url(/gfx/dn-logo.png);
+          }
+          &.amagasinet {
+            display: table;
+            .brand-text {
+              display: table-cell;
+              vertical-align: middle;
+              text-align: center;
+              font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+              font-weight: 600;
+              font-size: 1.5em;
+            }
+          }
         }
 
-      }
-
-      @media (--breakpoint-md) {
-        &.outlined-r {
-          box-shadow: 0px 0px 0px 15px rgb(255,255,255);
-        }
-        
-        &.outlined-l {
-          box-shadow: 0px 0px 0px 15px rgb(255,255,255);
-        }
-      }
-      
-
-    }
-
-    .photo {
-      transition: all 0.137s ease-out;
-      background-size: cover;
-      height: calc(calc(var(--content-block-height) * 2));
-      &.overflow-down {
-        height: calc(calc(var(--content-block-height) * 2) + var(--space-3));
-      }
-    }
-
-    .pull-up-3 {
-      @media (--breakpoint-md) {
-        margin-top: -calc(var(--content-block-height) + var(--space-3));
       }
     }
 
-    .pull-up-6 {
-      @media (--breakpoint-md) {
-        margin-top: -calc(calc(var(--content-block-height) + var(--space-3)) * 2.7);
+    section#hero-text {
+      background: rgba(0,0,0, 0.98);
+      color: rgba(255,255,255, 0.9);
+      line-height: 2.1;
+      font-size: 1.1em;
+      letter-spacing: 0.03em;
+      .col {
+        height: 8em;
+        @media(--breakpoint-md) {
+          height: 15em;
+        }
+      }
+      .h1 {
+        font-size: calc(var(--h1) * 1.4);
       }
     }
 
-    .large-photo {
-      height: 64rem;
+    section#hero-image {
+      img {
+        width: 100%;
+      }
+    }
+
+    section#gallery {
+
+      .col {
+        &:nth-child(1) {
+          padding-right: var(--space-1);
+        }
+        &:nth-child(2) {
+          padding-left: calc(var(--space-1) / 2);
+          padding-right: calc(var(--space-1) / 2);
+        }
+        &:nth-child(3) {
+          padding-left: var(--space-1);
+          padding-right: calc(var(--space-1) / 2);
+        }
+        &:nth-child(4) {
+          padding-left: var(--space-1);
+        }
+      }
+
+      .img {
+        position: relative;
+        background-color: #3135a7;
+        width: 100%;
+        background-size: cover;
+        .blue {
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          background-color: #3135a7;
+          opacity: 0.4;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+
+      .short, .medium, .long {
+        margin-bottom: var(--space-1);
+      }
+
+      .quote {
+        color: #3135a7;
+        font-size: calc(var(--h5) * 0.9);
+      }
+
+      .short {
+        min-height: calc(7.5rem * 0.8);
+      }
+
+      .medium {
+        min-height: calc(10.5rem * 0.8);
+      }
+
+      .mediumeses {
+        min-height: calc(10rem * 0.8);
+      }
+
+      .long {
+        min-height: calc(13rem * 0.8);
+      }
+
+      .logo {
+        background-image: url(/gfx/gy_logo_blue_positiv.svg);
+        background-position: center center;
+        background-size: 70% 70%;
+        background-repeat: no-repeat;
+        background-color: transparent;
+      }
+
+      @media(--breakpoint-md) {
+
+        .col {
+          &:nth-child(1) {
+            padding-right: var(--space-2);
+          }
+          &:nth-child(2) {
+            padding-left: var(--space-1);
+            padding-right: calc(var(--space-1) + (var(--space-1) / 2));
+          }
+          &:nth-child(3) {
+            padding-left: calc(var(--space-1) + (var(--space-1) / 2));
+            padding-right: var(--space-1)
+          }
+          &:nth-child(4) {
+            padding-left: var(--space-2);
+          }
+        }
+
+        .short, .medium, .long {
+          margin-bottom: var(--space-2);
+        }
+
+        .quote {
+          font-size: var(--h1);
+        }
+
+        .short {
+          min-height: 15rem;
+        }
+
+        .medium {
+          min-height: 21rem;
+        }
+
+        .mediumeses {
+          min-height: 20rem;
+        }
+
+        .long {
+          min-height: 26rem;
+        }
+      }
+
     }
 
   }
 
+}
+
+.middle-text {
+  display: table;
+  .text {
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 
 .subpage {
@@ -201,13 +249,13 @@
   height: 100%;
   opacity: 0.001;
   box-sizing: border-box;
-  background: rgba(10,10,10, 0.97);
+  background: rgba(255,255,255, 0.99);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
   .content-container {
     .content {
-      color: var(--light-green);
+      color: rgb(30,30,30);
     }
     
     a.back {
@@ -215,6 +263,16 @@
     }
   }
 
+}
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
 }
 
 

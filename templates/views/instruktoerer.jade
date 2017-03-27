@@ -1,0 +1,25 @@
+extends ../layouts/subpage
+include ../mixins/vscript
+
+
+block js
+
+block content
+
+  #instruktoerer.relative.px2.lg-px4.mb3
+    section#content.clearfix.fit.lg-px2
+      .content-wrapper
+        .clearfix.center.md-left-align
+          
+          .col.col-12.lg-pr2
+
+            h1.h1.main-heading.mb3 Instruktører
+
+            .instructor-list.clearfix
+
+              each instructor in instructors
+                a(href="/instruktoerer/" + instructor.key).instructor.col.col-12.sm-col-6.md-col-3.mb3
+                  .inline-block.center
+                    .photo.md-mx-auto(style="background-image: url(" +instructor.photo.secure_url+ ")")
+                    h3.md-h4= instructor.name.full
+            

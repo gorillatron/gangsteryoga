@@ -1,0 +1,34 @@
+extends ../layouts/subpage
+include ../mixins/vscript
+
+
+block js
+
+block content
+
+  #instruktoerer.relative.px2.lg-px4.mb4
+    section#content.clearfix.fit.lg-px2
+      
+      .content-wrapper
+        .clearfix.center.md-left-align
+          
+          .col.col-12.lg-pr2
+
+            h1.h1.main-heading.mb3 
+              a(href="/instruktoerer") Instruktører 
+              | / 
+              span= instructor.name.full
+
+            .instructor-details.clearfix
+              .col.col-12
+                if instructor.photo.secure_url
+                  .photo.mx-auto.md-mx2.md-left.mx2.mb3(style="background-image: url(" + instructor.photo.secure_url + ")")
+                .bio.mb2!= instructor.bio.html
+                p
+                  | #{instructor.name.full} underviser ved 
+                  if instructorPrisons.length > 1
+                    | #{instructorPrisons.slice(0, instructorPrisons.length-1).map(i => i.name).join(', ')}
+                    | og #{instructorPrisons[instructorPrisons.length-1].name}
+                  else
+                    | #{instructorPrisons[0].name}
+            

@@ -1,6 +1,10 @@
 include ../mixins/flash-messages
 include ../mixins/vscript
 include ../mixins/vstyle
+include ../mixins/menu
+include ../mixins/og_tags
+include ../mixins/footer
+include ../mixins/analytics_tag
 
 doctype html
 html.full
@@ -11,8 +15,10 @@ html.full
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
-		title= title || 'gangsteryoga'
-		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+		+ogtags()
+
+		title= title || 'gangsteryoga – for en litt bedre hverdag'
+		link(rel="shortcut icon", href="/gfx/gy_ico.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
 		//- All .less files will be automatically compiled and minified in production.
@@ -35,73 +41,39 @@ html.full
 		//- Add any other template-specific HEAD tags by extending the head block
 		block head
 
+		+analytics()
+
 	//- HTML BODY
-	body
+	body.minitooltip
 
-		#root.max-width-4.mx-auto.lg-mt4.mt0.relative
+		#root.z3
+			#front-page.relative
+				header#main-header.relative.fit.p2.mb2.md-mb1(style="background-image: url(/gfx/bg.jpg)")
 
-			block content
+					.movie-mode.z1
 
-			#footer.mt4
-				section.info.px4.py3.clearfix.relative
+					.logo-wrapper.relative.left.z1.mb2.md-mb0
+						a(href="/").left
+							.logo
+						.text.xs-hide.sm-hide
+							h2.content.pl1 - How tough are you really?
+					
+					#featured.absolute.right-0.mb2.fit.z2.px1.mt3.clearfix
+						#featured-video.video.mx-auto.xs-hide
+							.content.clearfix
+								iframe(src='https://player.vimeo.com/video/179913310?title=0&byline=0&portrait=0&color=3135a7', width='100%', height='100%', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+						h1.relative.mt2.md-mt4.md-hide.lg-hide How tough are you really?
+					
+				block content
+		
+		.hamburger.absolute.z3
+			.line
+			.line
+			.line
 
-					.background-logo.z1
+		+menu()
 
-					.clearfix.content.relative.z2
-
-						.col.md-col-3.md-pr1.sm-mb2
-							h5.mb3 Kontakt
-							.clearfix
-								| Adresse her…
-								br
-								br
-								| R. Alexander Medin (styreleder og instruktør)
-								| Bente Aabel (styremedlem og instruktør)
-								br 
-								br
-								| For mer informasjon om klasser, se ram@puroyoga.no
-
-						.col.md-col-3.md-px1.sm-mb2
-							h5.mb3 Fenglser
-							.clearfix
-								ul.list-reset
-									li Ila Fengsel
-									li Oslo Fengsel
-									li Ullersmo Fengsel
-									li Bredtveit Fengsel
-									li Ringerike Fengsel
-									li Stavanger Fengsel
-									li Kristiansand Fengsel
-
-						.col.md-col-3.md-px1.sm-mb2
-							.clearfix
-								.col.col-12.mb3
-									h5 Instruktører
-								.col.col-6.pr2 
-									ul.list-reset
-										li R. Alexander Medin 
-										li Bente Aabel
-										li Anniken Binz
-										li Astrid Holte Østbye
-										li Atle Thomasen
-										li Cecilie Kjølleberg
-										li Johanna Gjestland
-										li Hanne Kjersem Engebraaten
-								.col.col-6
-									ul.list-reset
-										li Kajsa Josefina Finnström
-										li Kari Skotens Vikjord
-										li Karin Krogh
-										li Målfrid Sand
-										li Sofia Breig
-										li Tina Ørbeck-Nilssen
-										li Trine Tschudi
-
-						.col.md-col-3.md-pl1
-							h5.mb3 Føler du deg støtt?
-							div Har du kommentarer og/eller tilbakemeldinger på innhold, bilder o.l., send oss en melding…
-
-				section.copyright.center.py4 ©Kantalope 2016
+		+footer()
 
 
 
@@ -114,4 +86,5 @@ html.full
 		
 		script(src="//code.jquery.com/jquery-2.2.0.min.js")
 		+vscript("menu")
+		+vscript("pageload")
 		block js

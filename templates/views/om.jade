@@ -1,0 +1,80 @@
+extends ../layouts/subpage
+include ../mixins/vscript
+
+
+block js
+  +vscript('om')
+
+block content
+
+  #om.relative.px2.lg-px4
+    section#content.clearfix.fit.lg-px2
+      
+      .clearfix.content-wrapper
+        
+        .col.col-12.md-col-8.lg-pr2
+
+          h1.h1.main-heading Om oss
+
+          .block.mb3
+            h3 Gangsteryoga
+
+            p Gangsteryoga i Norge er en idéell virksomhet som er underordnet stiftelsen «Yoga for Livet». Vårt langsiktige mål er å tilby forebyggende tiltak for ungdom på skråplanet og å gi tidligere innsatte muligheten til å bidra i prosessen. Gangsteryoga setter søkelys på det å være menneske og hvordan man får kontakt med det innerste i seg selv. Puste seg gjennom utfordringer. Kjenne på stivheter og ubehag, og gradvis bygge opp en større klarhet i sinnet som blir vedvarende og stabil. 
+
+            p 
+              | Det er nedfelt i norsk lov at domfelte skal ha en tilværelse under soning som skal være så lik tilværelsen ellers i samfunnet som mulig. Det er frihetsberøvelsen som er selve straffen. Soningen skal ikke være mer tyngende enn nødvendig. På bakgrunn av dette har innsatte i norske fengsler mulighet til skole, arbeid, ulike program og kultur/-fritidsaktiviteter (St.meld.nr. 37).
+            img(src="/images/webgangster-5@2x.png")
+            p
+              | En av hensiktene med 
+              a(href="http://www.yogaforlivet.no") Yoga for Livet 
+              | er å tilrettelegge for en meningsfull hverdag blandt insatte i norske fengsler.
+          
+          .block.mb2
+            h3 Back In The Ring
+            p Back in the Ring begynte som et prøveprosjekt i 2013. Med Yoga som virkemiddel ønsket vi å utforske alternative veier i behandlingen av rusavhengige. Vi tror på arbeid, sysselsetning og at våre deltagere selv må ta aktivt ansvar for sin tilfriskningsprosess. Når det personlige ansvaret vokser gjennom selvinnsikt blir hverdagen til våre deltagere mer meningsfull og de blir aktive bidragsytere til samfunnet. 
+            a(href="http://www.backinthering.no") Les mer om Back in the Ring.
+          
+          .block.mb3
+            h3 Støtte og sponsorer
+            p 
+              | Vi er veldig takknemmlige til 
+              a(href="https://www.extrastiftelsen.no") Extrastiftelsen  
+              | for hjelp og støtte til prosjektene Gangsteryoga og Back in the Ring.
+            p 
+              | Stor takk til 
+              a(href="http://www.helsedirektoratet.no") Helsedirektoratet 
+              | som støtter prosjektet Back in the Ring.
+          
+          .video.mb4
+            .content.clearfix
+              .play-button.fit
+                img.mx-auto(src="/gfx/play.svg")
+              iframe.hidden(src='https://player.vimeo.com/video/179913310?title=0&byline=0&portrait=0', width='100%', height='100%', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+
+        .col.col-12.md-col-4.pl4.xs-hide.sm-hide.md-hide.pt2
+
+          .quote.pl2.mb3.pb2
+            .logo
+            span “Jeg har alltid hatt tusen tanker i hodet, slitt med mye aggresjon og vært plaget av ADHD. Yoga gir meg en opplevelse av å være nullstilt, fri og i total ro. Det er også en jævlig bra form for trening, som ikke bare gir fysisk styrke men også en form for impulskontroll og selvinnsikt."
+            br
+            br 
+            span - Dennis
+          
+          .image.pl2.mb3
+            img(src="/images/webgangster_21_color.jpg")
+          
+          .quote.pl2.mb3.pb2
+            .logo
+            span “Yoga gjør vondt og det er ikke for pingler, det krever guts, tålmodighet og mange skygger unna. Men for de som gir det en sjanse åpnes det noen glugger innad og det vekker en god opplevelse i sinnet.”
+            br 
+            br 
+            span - Farrad
+          
+          .quote.pl2.mb3.pb2
+            .logo
+            span “Yoga gir meg fred i sinnet og hjelper meg slippe  unødvendig stress som gnager i bakhodet.”
+            br
+            br
+            span - Emari
+          
+            

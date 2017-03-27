@@ -1,0 +1,31 @@
+
+mixin prison(prison, detailed) 
+  .prison.mb2(data-json=JSON.stringify(prison))
+    .mr1
+      a(href=prison.url)= prison.name
+    small Instruktører:
+    ul.list-reset.instructors
+      each instructor in prison.instructors
+        a(href="/instruktoerer/" + instructor.key).text-decoration-none
+          li(title=instructor.name.full)
+            .image(style="background-image: url(" + instructor.photo.secure_url + ")")
+
+mixin prisons(prisons, detailed)
+  #prisons.clearfix
+    .col.col-12
+      h1.mt0 Fengsler
+    .col.col-12.clearfix
+
+      p.mb2
+        | Gangsteryoga drives nå i 
+        b.h3 #{prisons.length} fengsler 
+        | i Norge.
+        br
+        | Og har til sammen 
+        b.h3 #{instructors.length} Instruktører 
+        | som underviser regelmessig.
+      
+      .clearfix.prisons
+        each prison in prisons
+          .col.col-12.sm-col-6.md-col-3
+            +prison(prison, detailed)

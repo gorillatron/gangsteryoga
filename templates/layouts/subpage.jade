@@ -1,0 +1,81 @@
+include ../mixins/flash-messages
+include ../mixins/vscript
+include ../mixins/vstyle
+include ../mixins/menu
+include ../mixins/og_tags
+include ../mixins/footer
+include ../mixins/analytics_tag
+
+doctype html
+html.full
+
+	//- HTML HEADER
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		+ogtags()
+		title= title || 'gangsteryoga'
+		link(rel="shortcut icon", href="/gfx/gy_ico.ico", type="image/x-icon")
+
+		//- Customise the stylesheet for your site by editing /public/styles/site.less
+		//- All .less files will be automatically compiled and minified in production.
+		+vstyle("main")
+
+		//- This file provides the default styling for the KeystoneJS Content Editor
+		if user && user.canAccessKeystone
+			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
+
+		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8
+		//-[if lt IE 9]
+			script(src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js")
+			script(src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js")
+		//-[endif]
+
+		//- Include template-specific stylesheets by extending the css block
+		block css
+
+		//- Add any other template-specific HEAD tags by extending the head block
+		block head
+
+		+analytics()
+
+	//- HTML BODY
+	body.minitooltip
+
+		#root.z3
+			#sub-page.relative
+
+				header#main-header.relative.fit.p2.mb2.md-mb3.clearfix(style="background-image: url(/gfx/bg.jpg);")
+
+					.logo-wrapper.relative.left.z1
+						a(href="/")
+							.logo
+
+
+				block content
+			
+		.hamburger.absolute.z3
+			.line
+			.line
+			.line
+		
+		+menu()
+
+		+footer()
+
+
+
+
+		
+		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
+		//- which generate links to edit content for users who can access Keystone
+		//- if user && user.canAccessKeystone
+		//- 	script(src='/keystone/js/content/editor.js')
+		
+		script(src="//code.jquery.com/jquery-2.2.0.min.js")
+		+vscript("menu")
+		+vscript("pageload")
+		+vscript("subpages")
+		block js

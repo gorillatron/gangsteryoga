@@ -1,44 +1,53 @@
 
 
-const sidebar = $("#main-sidebar")
-const toggleButton = $("#cover .hamburger")
-const nav = $("#main-nav")
-const cover = $("#cover")
-
-let menuCloseTime = 5 * 1000
-let state = {open: false, closeTimer: null}
+$(document).ready(() => {
 
 
-toggleButton.on("click", event => {
-  setMenu(!state.open)
-})
+  const menu = $("#main-menu")
+  const root = $("#root")
+  const toggleButton = $(".hamburger")
+
+  let menuCloseTime = 5 * 1000
+  let state = {open: false, closeTimer: null}
 
 
-const setMenu = open => {
-  let transform = null
-
-  state.open = open
-
-  $(document).off('click.menuclose')
-
-  if(state.closeTimer) {
-    clearTimeout(state.closeTimer)
-    state.closeTimer = null
-  }
-
-  if(state.open) {
-    transform = 'translatex(-' + nav.outerWidth() + 'px)'
-    setTimeout(_ => $(document).one('click.menuclose', _ => setMenu(false)))
-    state.closeTimer = setTimeout(_ => setMenu(false), menuCloseTime)
-  }
-  else {
-    transform = 'translatex(0px)'
-  }
-  
-  cover.css({
-    '-ms-transform': transform,
-    '-moz-transform': transform,
-    '-webkit-transform': transform,
-    'transform': transform
+  toggleButton.on("click", event => {
+    setMenu(!state.open)
   })
-}
+
+  menu.on('click', (event) => {
+    if(menu.hasClass('closed')) {
+      event.preventDefault()
+      return false
+    }
+  })
+
+  const setMenu = open => {
+    
+    const menuWidth = menu.outerWidth()
+    state.open = open
+
+    $(document).off('click.menuclose')
+
+    if(state.closeTimer) {
+      clearTimeout(state.closeTimer)
+      state.closeTimer = null
+    }
+
+    if(state.open) {
+      root.css({transform: `translateX(-${menuWidth}px)`})
+      toggleButton.css({position: `fixed`})
+      menu.addClass("open")
+      toggleButton.addClass('cross black')
+      state.closeTimer = setTimeout(_ => setMenu(false), menuCloseTime)
+    }
+    else {
+      root.css({transform: `translateX(-${0}px)`})
+      toggleButton.css({position: `absolute`})
+      menu.removeClass("open")
+      toggleButton.removeClass('cross black')
+    }
+  }
+
+
+})

@@ -1,0 +1,35 @@
+
+#root {
+
+  width: 100%;
+  min-height: 100%;
+
+  opacity: 0.0001;
+  transition: all 0.337s cubic-bezier(.55,.3,.36,1.33);
+}
+
+#main-menu {
+  position: fixed;
+  padding-top: 7.5em;
+  z-index: 1;
+  width: 19em;
+  text-align: right;
+  background: white;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  transform: translateX(600px);
+  transition: transform 0.237s ease-out;
+  &.open {
+    transform: translateX(0px);
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  ul {
+    @media(--breakpoint-md) {
+      padding-right: calc(145 / 2 - (var(--hamburger-height) / 2))px;
+    }
+  }
+}

@@ -1,6 +1,21 @@
 
 #footer {
   
+  font-size: 0.8em;
+
+  transition: all 0.7137s cubic-bezier(.7,.38,.35,1.38);
+
+  a {
+    text-decoration: none;
+    &.underline {
+      text-decoration: underline;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+    color: inherit;
+  }
+
   section.info {
     color: var(--offwhite);
     background-color: var(--dark-gray);
@@ -9,11 +24,11 @@
       position: absolute;
       top: -12%;
       right: 1%;
-      background-image: url(/gfx/logo_white.svg);
+      background-image: url(/gfx/gy_logo_hvit_negativ-01.svg);
       background-size: cover;
-      height: 130%;
-      width: 650px;
-      opacity: 0.1;
+      height: 110%;
+      width: 305px;
+      opacity: 0.06;
     }
 
   }

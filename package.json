@@ -15,7 +15,7 @@
     "basscss-addons": "^1.0.0",
     "basscss-basic": "^1.0.0",
     "dotenv": "^1.1.0",
-    "keystone": "^0.3.19",
+    "keystone": "next",
     "lodash": "^4.12.0",
     "minitooltip": "^0.2.3",
     "popmotion": "^5.0.12",
